@@ -5,19 +5,23 @@ export function Content() {
       <h2>Dashboard</h2>
 
       <div class="card">
-        Listening Progress
+        <h3>Compréhension Orale (CO)</h3>
+        <p>Practice Listening</p>
       </div>
 
       <div class="card">
-        Reading Progress
+        <h3>Compréhension Écrite (CE)</h3>
+        <p>Practice Reading</p>
       </div>
 
       <div class="card">
-        Speaking Progress
+        <h3>Expression Orale (EO)</h3>
+        <p>Practice Speaking</p>
       </div>
 
       <div class="card">
-        Writing Progress
+        <h3>Expression Écrite (EE)</h3>
+        <p>Practice Writing</p>
       </div>
 
     </main>
