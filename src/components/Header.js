@@ -1,7 +1,7 @@
 export function Header() {
   return `
-    <header>
-      <h1>TEFAQ Master</h1>
+    <header class="header">
+      <h2>TEFAQ Master</h2>
     </header>
   `;
 }
