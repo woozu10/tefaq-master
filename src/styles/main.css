@@ -51,3 +51,24 @@ section {
   border-radius: 12px;
   padding: 16px;
 }
+
+.header{
+  background:#1f2937;
+  padding:20px;
+}
+
+.layout{
+  display:flex;
+}
+
+.sidebar{
+  width:220px;
+  min-height:100vh;
+  background:#111827;
+  padding:20px;
+}
+
+.content{
+  flex:1;
+  padding:20px;
+}
