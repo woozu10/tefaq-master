@@ -85,3 +85,9 @@ section {
   border-radius:8px;
   cursor:pointer;
 }
+.card{
+  background:#1f2937;
+  padding:20px;
+  border-radius:10px;
+  margin-bottom:20px;
+}
