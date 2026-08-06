@@ -3,7 +3,7 @@ import { Navigation } from "./Navigation.js";
 export function Header() {
   return `
     <header class="header">
-      <h2>TEFAQ Master</h2>
+      <h1>TEFAQ Master</h1>
       ${Navigation()}
     </header>
   `;
