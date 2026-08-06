@@ -1,6 +1,6 @@
 export function Navigation() {
   return `
-    <nav>
+    <nav class="navigation">
       <button>Dashboard</button>
       <button>CO</button>
       <button>CE</button>
