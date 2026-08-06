@@ -1,4 +1,3 @@
-document.getElementById("app").innerHTML = `
-  <h1>TEFAQ Master</h1>
-  <p>Project started successfully.</p>
-`;
+import { App } from "./App.js";
+
+document.getElementById("app").innerHTML = App();
