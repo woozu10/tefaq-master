@@ -1,12 +1,17 @@
+import { getQuestion } from "../services/tefaqService.js";
+
 export function Content() {
+
+  const sample = getQuestion("B2");
+
   return `
     <main class="content">
 
       <h2>Dashboard</h2>
 
       <div class="card">
-        <h3>Compréhension Orale (CO)</h3>
-        <p>Practice Listening</p>
+        <h3>${sample.title}</h3>
+        <p>${sample.question}</p>
       </div>
 
       <div class="card">
