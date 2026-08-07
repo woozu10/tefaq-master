@@ -149,6 +149,7 @@ window.checkAnswer = function(index) {
   const mode = getMode();
 
   selectedAnswer = index;
+  q.userAnswer = index;
 
   if (index === q.answer) {
 
