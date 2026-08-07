@@ -1,39 +1,43 @@
-import { getWrongQuestions } from "../services/wrongNoteService.js";
+export function saveWrongQuestion(question) {
 
-export function WrongNotes() {
+  const wrongNotes =
+    JSON.parse(localStorage.getItem("wrongNotes")) || [];
 
-  const questions = getWrongQuestions();
+  if (!wrongNotes.find(q => q.id === question.id)) {
 
-  if (questions.length === 0) {
-
-    return `
-      <main class="content">
-
-        <h2>❌ Wrong Notes</h2>
-
-        <p>No wrong questions.</p>
-
-      </main>
-    `;
+    wrongNotes.push(question);
 
   }
 
-  return `
-    <main class="content">
+  localStorage.setItem(
+    "wrongNotes",
+    JSON.stringify(wrongNotes)
+  );
 
-      <h2>❌ Wrong Notes</h2>
+}
 
-      ${questions.map(q => `
-        <div class="card">
+export function getWrongQuestions() {
 
-          <h3>${q.question}</h3>
+  return JSON.parse(
+    localStorage.getItem("wrongNotes")
+  ) || [];
 
-          <p>${q.category || ""}</p>
+}
 
-        </div>
-      `).join("")}
+export function removeWrongQuestion(id) {
 
-    </main>
-  `;
+  const wrongNotes = getWrongQuestions()
+    .filter(q => q.id !== id);
+
+  localStorage.setItem(
+    "wrongNotes",
+    JSON.stringify(wrongNotes)
+  );
+
+}
+
+export function clearWrongQuestions() {
+
+  localStorage.removeItem("wrongNotes");
 
 }
