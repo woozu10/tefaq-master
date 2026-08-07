@@ -11,6 +11,7 @@ import {
 import { QuestionCard } from "../components/QuestionCard.js";
 import { coQuestions } from "../data/coQuestions.js";
 import { createExamQuestions } from "../services/examService.js";
+import { shuffleChoices } from "../services/shuffleService.js";
 
 let examQuestions = [];
 
@@ -24,7 +25,9 @@ export function CO() {
 
   if (examQuestions.length === 0) {
 
-    examQuestions = createExamQuestions(coQuestions, 20);
+    examQuestions =
+      createExamQuestions(coQuestions, 20)
+        .map(question => shuffleChoices(question));
 
   }
 
@@ -60,6 +63,10 @@ export function CO() {
     <main class="content">
 
       <h2>Compréhension Orale</h2>
+
+      <p style="font-weight:bold;">
+        Question ${currentQuestion + 1} / ${examQuestions.length}
+      </p>
 
       ${Timer(40)}
 
