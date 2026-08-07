@@ -1,4 +1,5 @@
 import { saveWrongQuestion } from "../services/wrongNoteService.js";
+import { addFavorite } from "../services/favoriteService.js";
 import { App } from "../App.js";
 import { Timer } from "../components/Timer.js";
 import { ProgressBar } from "../components/ProgressBar.js";
@@ -69,6 +70,10 @@ export function CO() {
 
       <hr>
 
+      <button onclick="favoriteQuestion()">
+        ⭐ Favorite
+      </button>
+
       <button
         onclick="nextQuestion()"
         ${answered ? "" : "disabled"}
@@ -95,9 +100,9 @@ window.checkAnswer = function(index) {
 
   } else {
 
-  message = "❌ Incorrect!";
+    message = "❌ Incorrect!";
 
-  saveWrongQuestion(q);
+    saveWrongQuestion(q);
 
   }
 
@@ -127,5 +132,15 @@ window.nextQuestion = function() {
   message = "";
 
   document.getElementById("app").innerHTML = App();
+
+};
+
+window.favoriteQuestion = function () {
+
+  const q = examQuestions[currentQuestion];
+
+  addFavorite(q);
+
+  alert("⭐ Added to Favorites!");
 
 };
