@@ -1,17 +1,43 @@
+let played = false;
+
+export function resetAudio() {
+
+  played = false;
+
+}
+
 export function AudioPlayer(audio) {
 
   return `
-    <div class="audio-player">
 
-      <audio controls preload="none">
+    <button onclick="playAudio('${audio}')">
 
-        <source src="${audio}" type="audio/mpeg">
+      🔊 Play Audio
 
-        Your browser does not support audio.
+    </button>
 
-      </audio>
+    <audio id="exam-audio">
 
-    </div>
+      <source src="${audio}" type="audio/mpeg">
+
+    </audio>
+
   `;
 
 }
+
+window.playAudio = function(audio) {
+
+  if (played) {
+
+    alert("Audio can only be played once.");
+
+    return;
+
+  }
+
+  played = true;
+
+  document.getElementById("exam-audio").play();
+
+};
