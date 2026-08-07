@@ -1,55 +1,60 @@
 import { setCurrentPage } from "../services/router.js";
 
-window.openPractice = function(){
+window.openPractice = function () {
 
-    setCurrentPage("co-practice");
+  setCurrentPage("co-practice");
+  location.reload();
 
-    location.reload();
+};
 
-}
+window.openExam = function () {
 
-window.openExam = function(){
+  setCurrentPage("co-exam");
+  location.reload();
 
-    setCurrentPage("co-exam");
+};
 
-    location.reload();
+window.openFavorites = function () {
 
-}
+  setCurrentPage("favorites");
+  location.reload();
 
-export function COHome(){
+};
 
-    return `
+export function COHome() {
+
+  return `
 
     <main class="content">
 
-        <h2>Compréhension Orale</h2>
+      <h2>Compréhension Orale</h2>
 
-        <div class="card">
+      <div class="card">
 
-            <button onclick="openPractice()">
-                📘 Practice
-            </button>
+        <button onclick="openPractice()">
+          📘 Practice
+        </button>
 
-            <button onclick="openExam()">
-                📝 Exam
-            </button>
+        <button onclick="openExam()">
+          📝 Exam
+        </button>
 
-            <button disabled>
-                ❌ Wrong Notes
-            </button>
+        <button disabled>
+          ❌ Wrong Notes
+        </button>
 
-            <button disabled>
-                ⭐ Favorites
-            </button>
+        <button onclick="openFavorites()">
+          ⭐ Favorites
+        </button>
 
-            <button disabled>
-                📊 Statistics
-            </button>
+        <button disabled>
+          📊 Statistics
+        </button>
 
-        </div>
+      </div>
 
     </main>
 
-    `;
+  `;
 
 }
