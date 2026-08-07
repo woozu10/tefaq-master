@@ -61,59 +61,49 @@ export function Content() {
       <h2>📚 TEFAQ MASTER</h2>
 
       <div class="card">
-
         <h3>📊 Last Score</h3>
-
         <h1>${lastScore}</h1>
-
       </div>
 
       <div class="card">
-
         <h3>🏆 Best Score</h3>
-
         <h1>${bestScore}</h1>
-
       </div>
 
       <div class="card">
-
         <h3>⭐ Favorites</h3>
-
         <h1>${favorites}</h1>
-
       </div>
 
       <div class="card">
-
         <h3>❌ Wrong Notes</h3>
-
         <h1>${wrongs}</h1>
-
       </div>
 
       <div class="card">
+
+        <h3>🚀 Quick Start</h3>
 
         <button onclick="goCO()">
-          🎧 Continue CO
+          🎧 Practice Listening
         </button>
 
         <br><br>
 
         <button onclick="goFavorites()">
-          ⭐ Favorites
+          ⭐ Review Favorites
         </button>
 
         <br><br>
 
         <button onclick="goWrongNotes()">
-          ❌ Wrong Notes
+          ❌ Review Wrong Answers
         </button>
 
         <br><br>
 
         <button onclick="goStatistics()">
-          📊 Statistics
+          📊 View Statistics
         </button>
 
       </div>
