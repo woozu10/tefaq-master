@@ -1,6 +1,9 @@
 import { setCurrentPage } from "../services/router.js";
+import { setMode } from "../services/modeService.js";
 
 window.startExam = function () {
+
+  setMode("exam");
 
   setCurrentPage("co-quiz");
 
@@ -18,11 +21,11 @@ export function COExam() {
       <div class="card">
 
         <p>
-          20 Questions
+          📋 20 Questions
         </p>
 
         <p>
-          Time Limit : 40 Minutes
+          ⏱ Time Limit : 40 Minutes
         </p>
 
         <button onclick="startExam()">
