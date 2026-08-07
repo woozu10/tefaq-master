@@ -322,3 +322,30 @@ transition:.4s;
 
 }
 
+.audio-player{
+
+  margin:20px 0;
+
+}
+
+.audio-player button{
+
+  background:#1976D2;
+
+  color:white;
+
+  border:none;
+
+  padding:12px 18px;
+
+  border-radius:8px;
+
+  font-size:16px;
+
+}
+
+.audio-player button:disabled{
+
+  background:#999;
+
+}
