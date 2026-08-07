@@ -2,6 +2,7 @@ import { App } from "../App.js";
 import { coQuestions } from "../data/coQuestions.js";
 
 let currentQuestion = 0;
+let score = 0;
 
 export function CO() {
 
@@ -11,6 +12,8 @@ export function CO() {
     <main class="content">
 
       <h2>Compréhension Orale</h2>
+
+      <p><strong>Score : ${score} / ${coQuestions.length}</strong></p>
 
       <div class="card">
 
@@ -45,10 +48,17 @@ window.checkAnswer = function(index) {
   const q = coQuestions[currentQuestion];
 
   if (index === q.answer) {
+
+    score++;
     alert("✅ Correct!");
+
   } else {
+
     alert("❌ Incorrect!");
+
   }
+
+  document.getElementById("app").innerHTML = App();
 
 };
 
@@ -57,7 +67,12 @@ window.nextQuestion = function() {
   currentQuestion++;
 
   if (currentQuestion >= coQuestions.length) {
+
+    alert(`Finished!\n\nScore : ${score} / ${coQuestions.length}`);
+
     currentQuestion = 0;
+    score = 0;
+
   }
 
   document.getElementById("app").innerHTML = App();
