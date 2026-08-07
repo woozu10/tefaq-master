@@ -4,12 +4,13 @@ window.restartExam = function () {
 
     localStorage.removeItem("score");
     localStorage.removeItem("total");
+    localStorage.removeItem("coTimerEnd");
 
     setCurrentPage("co");
 
     location.reload();
 
-}
+};
 
 window.goDashboard = function () {
 
@@ -17,11 +18,14 @@ window.goDashboard = function () {
 
     location.reload();
 
-}
+};
 
-export function Result(score,total){
+export function Result(score, total) {
 
-    const percent = Math.round(score/total*100);
+    const percent =
+        total === 0
+            ? 0
+            : Math.round((score / total) * 100);
 
     return `
 
@@ -36,6 +40,10 @@ export function Result(score,total){
             <h1>${score}/${total}</h1>
 
             <h2>${percent}%</h2>
+
+            <p>
+                Accuracy : ${percent}%
+            </p>
 
             <button onclick="restartExam()">
                 Try Again
