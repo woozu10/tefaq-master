@@ -362,3 +362,15 @@ transition:.4s;
     margin-bottom:15px;
 
 }
+
+.audio-player{
+
+    margin:20px 0;
+
+}
+
+.audio-player audio{
+
+    width:100%;
+
+}
