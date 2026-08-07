@@ -119,7 +119,13 @@ window.nextQuestion = function() {
 
   if (currentQuestion >= coQuestions.length) {
 
-    alert(`Finished!\n\nScore : ${score} / ${coQuestions.length}`);
+    localStorage.setItem("score", score);
+
+localStorage.setItem("total", coQuestions.length);
+
+localStorage.setItem("currentPage","result");
+
+location.reload();
 
     currentQuestion = 0;
     score = 0;
