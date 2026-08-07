@@ -4,7 +4,10 @@ import { getMode } from "../services/modeService.js";
 import { App } from "../App.js";
 import { Timer } from "../components/Timer.js";
 import { ProgressBar } from "../components/ProgressBar.js";
-import { AudioPlayer } from "../components/AudioPlayer.js";
+import {
+  AudioPlayer,
+  resetAudio
+} from "../components/AudioPlayer.js";
 import { QuestionCard } from "../components/QuestionCard.js";
 import { coQuestions } from "../data/coQuestions.js";
 import { createExamQuestions } from "../services/examService.js";
@@ -137,11 +140,14 @@ window.nextQuestion = function() {
 
     location.reload();
     return;
+
   }
 
   answered = false;
   selectedAnswer = -1;
   message = "";
+
+  resetAudio();
 
   document.getElementById("app").innerHTML = App();
 
