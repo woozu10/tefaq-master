@@ -53,7 +53,20 @@ export function Result(score, total) {
 
             <h1>${score}/${total}</h1>
 
-            <h2>${percent}%</h2>
+            <h2 style="
+color:
+${
+percent >= 80
+? '#4CAF50'
+: percent >= 60
+? '#FF9800'
+: '#F44336'
+};
+">
+
+${percent}%
+
+</h2>
 
             <p>
                 Accuracy : ${percent}%
