@@ -1,1 +1,36 @@
+[
+{
+  id: 1,
+  category: "Téléphone",
+  level: "B2",
 
+  transcript: `
+Bonjour Madame.
+
+Je suis désolée,
+mais je dois annuler notre rendez-vous de demain.
+
+Pourriez-vous me proposer une autre date ?
+
+Merci beaucoup.
+`,
+
+  question: "Pourquoi Marie téléphone-t-elle ?",
+
+  choices: [
+    "Pour réserver un hôtel",
+    "Pour annuler un rendez-vous",
+    "Pour demander un renseignement"
+  ],
+
+  answer: 1,
+
+  explanation: "Marie téléphone pour annuler son rendez-vous.",
+
+  vocabulary: [
+    "annuler",
+    "rendez-vous",
+    "proposer"
+  ]
+}
+]
