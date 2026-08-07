@@ -1,19 +1,25 @@
-export function QuestionCard(
-  question,
-  choices,
-  renderButton
-) {
+import { AnswerButton } from "./AnswerButton.js";
 
-  return `
+export function QuestionCard(
+    question,
+    choices,
+    renderButton
+){
+
+    return `
+
     <div class="card">
 
-      <h3>${question}</h3>
+        <h3>${question}</h3>
 
-      ${renderButton(0)}
-      ${renderButton(1)}
-      ${renderButton(2)}
+        ${AnswerButton(choices[0],0,renderButton)}
+
+        ${AnswerButton(choices[1],1,renderButton)}
+
+        ${AnswerButton(choices[2],2,renderButton)}
 
     </div>
-  `;
+
+    `;
 
 }
