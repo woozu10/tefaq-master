@@ -1,4 +1,5 @@
 import { setCurrentPage } from "../services/router.js";
+import { setReviewQuestions } from "../services/reviewService.js";
 
 window.restartExam = function () {
 
@@ -15,6 +16,19 @@ window.restartExam = function () {
 window.goDashboard = function () {
 
     setCurrentPage("dashboard");
+
+    location.reload();
+
+};
+
+window.reviewAnswers = function () {
+
+    const questions =
+        JSON.parse(localStorage.getItem("lastExamQuestions")) || [];
+
+    setReviewQuestions(questions);
+
+    setCurrentPage("review");
 
     location.reload();
 
@@ -44,6 +58,12 @@ export function Result(score, total) {
             <p>
                 Accuracy : ${percent}%
             </p>
+
+            <button onclick="reviewAnswers()">
+                📖 Review Answers
+            </button>
+
+            <br><br>
 
             <button onclick="restartExam()">
                 Try Again
