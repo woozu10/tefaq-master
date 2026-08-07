@@ -19,4 +19,105 @@
       "proposer"
     ]
   }
+  ,
+{
+  "id": 2,
+  "category": "Travail",
+  "level": "B2",
+  "duration": 40,
+  "transcript": "Bonjour Monsieur. Je vous appelle pour confirmer votre entretien prévu vendredi à dix heures. N'oubliez pas d'apporter votre CV et une pièce d'identité.",
+  "question": "Pourquoi la personne téléphone-t-elle ?",
+  "choices": [
+    "Pour annuler un entretien",
+    "Pour confirmer un entretien",
+    "Pour demander un nouvel emploi"
+  ],
+  "answer": 1,
+  "explanation": "L'appel sert à confirmer la date de l'entretien.",
+  "vocabulary": [
+    "confirmer",
+    "entretien",
+    "CV"
+  ]
+},
+{
+  "id": 3,
+  "category": "Transport",
+  "level": "B2",
+  "duration": 40,
+  "transcript": "Le train numéro deux cent quarante-huit à destination de Québec partira avec vingt minutes de retard en raison de travaux sur la voie. Merci de votre compréhension.",
+  "question": "Pourquoi le train est-il en retard ?",
+  "choices": [
+    "À cause de travaux",
+    "À cause d'un accident",
+    "À cause de la neige"
+  ],
+  "answer": 0,
+  "explanation": "Le retard est provoqué par des travaux.",
+  "vocabulary": [
+    "retard",
+    "travaux",
+    "voie"
+  ]
+},
+{
+  "id": 4,
+  "category": "Santé",
+  "level": "B2",
+  "duration": 40,
+  "transcript": "Bonjour Madame. Le docteur Martin est absent aujourd'hui. Nous pouvons vous proposer un nouveau rendez-vous lundi prochain à quatorze heures.",
+  "question": "Pourquoi le rendez-vous change-t-il ?",
+  "choices": [
+    "Parce que le médecin est absent",
+    "Parce que la patiente est malade",
+    "Parce que la clinique est fermée"
+  ],
+  "answer": 0,
+  "explanation": "Le médecin est absent aujourd'hui.",
+  "vocabulary": [
+    "absent",
+    "rendez-vous",
+    "proposer"
+  ]
+},
+{
+  "id": 5,
+  "category": "Magasin",
+  "level": "B2",
+  "duration": 40,
+  "transcript": "Madame, votre commande est arrivée ce matin. Vous pouvez venir la récupérer avant dix-huit heures avec votre numéro de commande.",
+  "question": "Que doit faire la cliente ?",
+  "choices": [
+    "Annuler sa commande",
+    "Venir chercher sa commande",
+    "Payer la livraison"
+  ],
+  "answer": 1,
+  "explanation": "La cliente doit récupérer sa commande.",
+  "vocabulary": [
+    "commande",
+    "récupérer",
+    "livraison"
+  ]
+},
+{
+  "id": 6,
+  "category": "Université",
+  "level": "B2",
+  "duration": 40,
+  "transcript": "Les étudiants sont informés que le cours de vendredi sera exceptionnellement donné en ligne. Le lien sera envoyé par courriel demain matin.",
+  "question": "Comment le cours sera-t-il donné ?",
+  "choices": [
+    "En présentiel",
+    "En ligne",
+    "Il est annulé"
+  ],
+  "answer": 1,
+  "explanation": "Le cours aura lieu en ligne.",
+  "vocabulary": [
+    "exceptionnellement",
+    "en ligne",
+    "courriel"
+  ]
+}
 ]
