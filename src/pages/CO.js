@@ -1,7 +1,7 @@
-import { QuestionCard } from "../components/QuestionCard.js";
 import { App } from "../App.js";
 import { ProgressBar } from "../components/ProgressBar.js";
 import { AudioPlayer } from "../components/AudioPlayer.js";
+import { QuestionCard } from "../components/QuestionCard.js";
 import { coQuestions } from "../data/coQuestions.js";
 
 let currentQuestion = 0;
@@ -48,30 +48,26 @@ export function CO() {
 
       <p><strong>Score : ${score}</strong></p>
 
-      <div class="card">
+      ${AudioPlayer(q.audio)}
 
-        <h3>${q.question}</h3>
+      ${QuestionCard(
+        q.question,
+        q.choices,
+        renderButton
+      )}
 
-        ${AudioPlayer(q.audio)}
+      <p style="font-size:20px;font-weight:bold;">
+        ${message}
+      </p>
 
-        ${renderButton(0)}
-        ${renderButton(1)}
-        ${renderButton(2)}
+      <hr>
 
-        <p style="font-size:20px;font-weight:bold;">
-          ${message}
-        </p>
-
-        <hr>
-
-        <button
-          onclick="nextQuestion()"
-          ${answered ? "" : "disabled"}
-        >
-          Next →
-        </button>
-
-      </div>
+      <button
+        onclick="nextQuestion()"
+        ${answered ? "" : "disabled"}
+      >
+        Next →
+      </button>
 
     </main>
   `;
