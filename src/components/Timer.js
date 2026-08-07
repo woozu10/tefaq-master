@@ -54,13 +54,16 @@ function updateTimer() {
 
   timer.innerHTML =
     `⏱ ${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
-
-  if (remaining <= 0) {
+if (remaining <= 0) {
 
     clearInterval(timerInterval);
 
     localStorage.removeItem("coTimerEnd");
 
-    timer.innerHTML = "⏱ 00:00";
-  }
+    localStorage.setItem("currentPage", "result");
+
+    location.reload();
+
+}
+ 
 }
