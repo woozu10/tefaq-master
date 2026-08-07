@@ -3,7 +3,7 @@ export const coQuestions = [
   {
     id: 1,
     level: "B2",
-    audio: "/public/audio/001.mp3",
+    audio: "./public/audio/001.mp3",
     question: "Pourquoi Marie téléphone-t-elle ?",
     choices: [
       "Pour réserver un hôtel",
@@ -17,7 +17,7 @@ export const coQuestions = [
   {
     id: 2,
     level: "B2",
-    audio: "/public/audio/002.mp3",
+    audio: "./public/audio/002.mp3",
     question: "Que doit faire le client ?",
     choices: [
       "Signer le contrat",
@@ -31,7 +31,7 @@ export const coQuestions = [
   {
     id: 3,
     level: "B2",
-    audio: "/public/audio/003.mp3",
+    audio: "./public/audio/003.mp3",
     question: "À quelle heure commence la réunion ?",
     choices: [
       "À 8 h",
