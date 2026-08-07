@@ -3,6 +3,10 @@ import { setMode } from "../services/modeService.js";
 
 window.startExam = function () {
 
+  localStorage.removeItem("score");
+  localStorage.removeItem("total");
+  localStorage.removeItem("coTimerEnd");
+
   setMode("exam");
 
   setCurrentPage("co-quiz");
