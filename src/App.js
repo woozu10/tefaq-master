@@ -1,6 +1,7 @@
 import { Dashboard } from "./pages/Dashboard.js";
 import { COHome } from "./pages/COHome.js";
 import { COPractice } from "./pages/COPractice.js";
+import { COExam } from "./pages/COExam.js";
 import { CO } from "./pages/CO.js";
 import { Result } from "./pages/Result.js";
 import { getCurrentPage } from "./services/router.js";
@@ -16,6 +17,9 @@ export function App() {
 
     case "co-practice":
       return COPractice();
+
+    case "co-exam":
+      return COExam();
 
     case "co-quiz":
       return CO();
