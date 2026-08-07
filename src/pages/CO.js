@@ -2,7 +2,10 @@ import {
   saveWrongQuestion,
   removeWrongQuestion
 } from "../services/wrongNoteService.js";
-import { addFavorite } from "../services/favoriteService.js";
+import {
+  addFavorite,
+  isFavorite
+} from "../services/favoriteService.js";
 import { getMode } from "../services/modeService.js";
 import { saveResult } from "../services/statisticsService.js";
 import {
