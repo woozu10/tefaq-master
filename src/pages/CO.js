@@ -1,6 +1,7 @@
 import { saveWrongQuestion } from "../services/wrongNoteService.js";
 import { addFavorite } from "../services/favoriteService.js";
 import { getMode } from "../services/modeService.js";
+import { saveResult } from "../services/statisticsService.js";
 import { App } from "../App.js";
 import { Timer } from "../components/Timer.js";
 import { ProgressBar } from "../components/ProgressBar.js";
@@ -94,11 +95,8 @@ export function CO() {
         answered && mode === "practice"
           ? `
           <div class="card">
-
             <h3>📖 Explanation</h3>
-
             <p>${q.explanation || "No explanation available."}</p>
-
           </div>
           `
           : ""
@@ -159,6 +157,8 @@ window.nextQuestion = function() {
   currentQuestion++;
 
   if (currentQuestion >= examQuestions.length) {
+
+    saveResult(score, examQuestions.length);
 
     localStorage.setItem("score", score);
     localStorage.setItem("total", examQuestions.length);
