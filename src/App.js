@@ -4,6 +4,7 @@ import { COPractice } from "./pages/COPractice.js";
 import { COExam } from "./pages/COExam.js";
 import { CO } from "./pages/CO.js";
 import { Favorites } from "./pages/Favorites.js";
+import { WrongNotes } from "./pages/WrongNotes.js";
 import { Result } from "./pages/Result.js";
 import { getCurrentPage } from "./services/router.js";
 
@@ -28,12 +29,16 @@ export function App() {
     case "favorites":
       return Favorites();
 
+    case "wrong-notes":
+      return WrongNotes();
+
     case "result": {
 
       const score = Number(localStorage.getItem("score"));
       const total = Number(localStorage.getItem("total"));
 
       return Result(score, total);
+
     }
 
     default:
