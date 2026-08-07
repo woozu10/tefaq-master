@@ -218,6 +218,6 @@ window.favoriteQuestion = function () {
 
   addFavorite(q);
 
-  alert("⭐ Added to Favorites!");
+  document.getElementById("app").innerHTML = App();
 
 };
