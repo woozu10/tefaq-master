@@ -4,6 +4,9 @@ import { ProgressBar } from "../components/ProgressBar.js";
 import { AudioPlayer } from "../components/AudioPlayer.js";
 import { QuestionCard } from "../components/QuestionCard.js";
 import { coQuestions } from "../data/coQuestions.js";
+import { createExamQuestions } from "../services/examService.js";
+
+const examQuestions = createExamQuestions(coQuestions, 20);
 
 let currentQuestion = 0;
 let score = 0;
@@ -13,7 +16,7 @@ let selectedAnswer = -1;
 
 export function CO() {
 
-  const q = coQuestions[currentQuestion];
+  const q = examQuestions[currentQuestion];
 
   const renderButton = (index) => {
 
@@ -47,7 +50,7 @@ export function CO() {
 
       ${Timer(40)}
 
-      ${ProgressBar(currentQuestion + 1, coQuestions.length)}
+      ${ProgressBar(currentQuestion + 1, examQuestions.length)}
 
       <p><strong>Score : ${score}</strong></p>
 
@@ -80,7 +83,7 @@ window.checkAnswer = function(index) {
 
   if (answered) return;
 
-  const q = coQuestions[currentQuestion];
+  const q = examQuestions[currentQuestion];
 
   selectedAnswer = index;
 
@@ -105,10 +108,10 @@ window.nextQuestion = function() {
 
   currentQuestion++;
 
-  if (currentQuestion >= coQuestions.length) {
+  if (currentQuestion >= examQuestions.length) {
 
     localStorage.setItem("score", score);
-    localStorage.setItem("total", coQuestions.length);
+    localStorage.setItem("total", examQuestions.length);
     localStorage.setItem("currentPage", "result");
     localStorage.removeItem("coTimerEnd");
 
