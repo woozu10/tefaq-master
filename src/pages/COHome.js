@@ -14,6 +14,13 @@ window.openExam = function () {
 
 };
 
+window.openWrongNotes = function () {
+
+  setCurrentPage("wrong-notes");
+  location.reload();
+
+};
+
 window.openFavorites = function () {
 
   setCurrentPage("favorites");
@@ -39,7 +46,7 @@ export function COHome() {
           📝 Exam
         </button>
 
-        <button disabled>
+        <button onclick="openWrongNotes()">
           ❌ Wrong Notes
         </button>
 
