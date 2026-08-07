@@ -2017,4 +2017,105 @@
     "porte"
   ]
 }
+  ,
+{
+  "id": 101,
+  "category": "Travail",
+  "level": "B2",
+  "duration": 45,
+  "transcript": "— Tu as terminé la présentation ? — Presque. Il me reste seulement les graphiques à mettre à jour. Si tout va bien, je l'enverrai au directeur avant la fin de la journée.",
+  "question": "Que manque-t-il à la présentation ?",
+  "choices": [
+    "Les graphiques",
+    "Les conclusions",
+    "Les photos"
+  ],
+  "answer": 0,
+  "explanation": "La présentation est presque terminée, seuls les graphiques restent à mettre à jour.",
+  "vocabulary": [
+    "graphique",
+    "mettre à jour",
+    "présentation"
+  ]
+},
+{
+  "id": 102,
+  "category": "Transport",
+  "level": "B2",
+  "duration": 45,
+  "transcript": "La société de transport informe les usagers que plusieurs lignes d'autobus seront déviées dimanche en raison du marathon de Montréal. Consultez notre site Internet avant de partir.",
+  "question": "Pourquoi certaines lignes changent-elles de trajet ?",
+  "choices": [
+    "À cause du marathon",
+    "À cause de travaux",
+    "À cause de la neige"
+  ],
+  "answer": 0,
+  "explanation": "Les lignes sont modifiées à cause du marathon.",
+  "vocabulary": [
+    "dévier",
+    "usager",
+    "marathon"
+  ]
+},
+{
+  "id": 103,
+  "category": "Santé",
+  "level": "B2",
+  "duration": 45,
+  "transcript": "Bonjour Monsieur. Votre rendez-vous de contrôle est confirmé pour mardi prochain. Merci d'apporter la liste complète des médicaments que vous prenez actuellement.",
+  "question": "Que doit apporter le patient ?",
+  "choices": [
+    "Ses résultats d'analyse",
+    "La liste de ses médicaments",
+    "Sa carte bancaire"
+  ],
+  "answer": 1,
+  "explanation": "Le médecin demande la liste des médicaments.",
+  "vocabulary": [
+    "contrôle",
+    "médicament",
+    "actuellement"
+  ]
+},
+{
+  "id": 104,
+  "category": "Université",
+  "level": "B2",
+  "duration": 45,
+  "transcript": "Le professeur rappelle que les étudiants devront former des équipes de trois personnes pour le projet final. Les groupes devront être communiqués avant vendredi.",
+  "question": "Que doivent faire les étudiants ?",
+  "choices": [
+    "Former des équipes de trois",
+    "Travailler seuls",
+    "Choisir un nouveau professeur"
+  ],
+  "answer": 0,
+  "explanation": "Le projet final se réalise en équipe de trois.",
+  "vocabulary": [
+    "équipe",
+    "projet final",
+    "groupe"
+  ]
+},
+{
+  "id": 105,
+  "category": "Commerce",
+  "level": "B2",
+  "duration": 45,
+  "transcript": "Nous vous remercions de votre fidélité. Jusqu'à dimanche, tous les membres de notre programme bénéficieront d'une réduction supplémentaire de quinze pour cent sur les articles déjà soldés.",
+  "question": "Qui profite de cette offre ?",
+  "choices": [
+    "Tous les clients",
+    "Les membres du programme",
+    "Les nouveaux clients uniquement"
+  ],
+  "answer": 1,
+  "explanation": "L'offre est réservée aux membres du programme.",
+  "vocabulary": [
+    "fidélité",
+    "réduction",
+    "article soldé"
+  ]
+}
 ]
