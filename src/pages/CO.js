@@ -1,3 +1,4 @@
+import { saveWrongQuestion } from "../services/wrongNoteService.js";
 import { App } from "../App.js";
 import { Timer } from "../components/Timer.js";
 import { ProgressBar } from "../components/ProgressBar.js";
@@ -94,7 +95,9 @@ window.checkAnswer = function(index) {
 
   } else {
 
-    message = "❌ Incorrect!";
+  message = "❌ Incorrect!";
+
+  saveWrongQuestion(q);
 
   }
 
