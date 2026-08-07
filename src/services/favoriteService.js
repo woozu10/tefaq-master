@@ -1,10 +1,12 @@
-export function addFavorite(question){
+export function addFavorite(question) {
 
   const favorites =
     JSON.parse(localStorage.getItem("favorites")) || [];
 
-  if(!favorites.find(q => q.id === question.id)){
+  if (!favorites.find(q => q.id === question.id)) {
+
     favorites.push(question);
+
   }
 
   localStorage.setItem(
@@ -14,7 +16,7 @@ export function addFavorite(question){
 
 }
 
-export function getFavorites(){
+export function getFavorites() {
 
   return JSON.parse(
     localStorage.getItem("favorites")
@@ -22,14 +24,20 @@ export function getFavorites(){
 
 }
 
-export function removeFavorite(id){
+export function removeFavorite(id) {
 
-  const favorites = getFavorites()
-    .filter(q => q.id !== id);
+  const favorites =
+    getFavorites().filter(q => q.id !== id);
 
   localStorage.setItem(
     "favorites",
     JSON.stringify(favorites)
   );
+
+}
+
+export function clearFavorites() {
+
+  localStorage.removeItem("favorites");
 
 }
