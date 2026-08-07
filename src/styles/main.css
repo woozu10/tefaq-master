@@ -248,3 +248,77 @@ transition:.4s;
   margin-bottom:20px;
 
 }
+
+.header{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  padding:20px;
+
+  background:#2E7D32;
+
+  color:white;
+
+}
+
+.header h1{
+
+  margin:0;
+
+  font-size:28px;
+
+}
+
+.nav{
+
+  display:flex;
+
+  gap:10px;
+
+}
+
+.nav button{
+
+  background:white;
+
+  color:#2E7D32;
+
+  border:none;
+
+  padding:10px 18px;
+
+  border-radius:8px;
+
+  cursor:pointer;
+
+  font-weight:bold;
+
+}
+
+.nav button:hover{
+
+  background:#E8F5E9;
+
+}
+.layout{
+
+  display:grid;
+
+  grid-template-columns:220px 1fr;
+
+  min-height:100vh;
+
+}
+
+.content{
+
+  padding:30px;
+
+  background:#F5F5F5;
+
+}
+
