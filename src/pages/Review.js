@@ -5,6 +5,11 @@ import {
 
 import { setCurrentPage } from "../services/router.js";
 
+import {
+  AudioPlayer,
+  resetAudio
+} from "../components/AudioPlayer.js";
+
 let current = 0;
 
 window.nextReview = function () {
@@ -12,6 +17,8 @@ window.nextReview = function () {
   if (current < getReviewQuestions().length - 1) {
 
     current++;
+
+    resetAudio();
 
     document.getElementById("app").innerHTML = Review();
 
@@ -25,6 +32,8 @@ window.previousReview = function () {
 
     current--;
 
+    resetAudio();
+
     document.getElementById("app").innerHTML = Review();
 
   }
@@ -34,6 +43,8 @@ window.previousReview = function () {
 window.finishReview = function () {
 
   clearReviewQuestions();
+
+  current = 0;
 
   setCurrentPage("co");
 
@@ -67,55 +78,41 @@ export function Review() {
 
       <h3>
 
-        Question ${current + 1}
-
-        /
-
-        ${questions.length}
+        Question ${current + 1} / ${questions.length}
 
       </h3>
+
+      ${AudioPlayer(q.audio)}
 
       <div class="card">
 
         <h3>${q.question}</h3>
 
-        <div class="card">
+        <hr>
 
-<h3>Your Answer</h3>
+        <h3>Your Answer</h3>
 
-<p>
+        <p>
 
-${
-q.userAnswer === q.answer
-? "✅ "
-: "❌ "
-}
+          ${
+            q.userAnswer === q.answer
+              ? "✅"
+              : "❌"
+          }
 
-${q.choices[q.userAnswer]}
+          ${q.choices[q.userAnswer]}
 
-</p>
+        </p>
 
-<hr>
+        <hr>
 
-<h3>Correct Answer</h3>
+        <h3>Correct Answer</h3>
 
-<p>
+        <p>
 
-✅ ${q.choices[q.answer]}
+          ✅ ${q.choices[q.answer]}
 
-</p>
-
-<hr>
-
-<h3>Explanation</h3>
-
-<p>
-
-${q.explanation || "No explanation."}
-
-</p>
-
-</div>
+        </p>
 
         <hr>
 
