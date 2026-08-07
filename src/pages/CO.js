@@ -12,7 +12,7 @@ import { QuestionCard } from "../components/QuestionCard.js";
 import { coQuestions } from "../data/coQuestions.js";
 import { createExamQuestions } from "../services/examService.js";
 
-const examQuestions = createExamQuestions(coQuestions, 20);
+let examQuestions = [];
 
 let currentQuestion = 0;
 let score = 0;
@@ -21,6 +21,12 @@ let answered = false;
 let selectedAnswer = -1;
 
 export function CO() {
+
+  if (examQuestions.length === 0) {
+
+    examQuestions = createExamQuestions(coQuestions, 20);
+
+  }
 
   const q = examQuestions[currentQuestion];
   const mode = getMode();
@@ -138,7 +144,16 @@ window.nextQuestion = function() {
     localStorage.setItem("currentPage", "result");
     localStorage.removeItem("coTimerEnd");
 
+    examQuestions = [];
+
+    currentQuestion = 0;
+    score = 0;
+    answered = false;
+    selectedAnswer = -1;
+    message = "";
+
     location.reload();
+
     return;
 
   }
