@@ -422,3 +422,10 @@ transition:.4s;
     transition:.3s;
 
 }
+button:disabled {
+
+    opacity: 1;
+
+    cursor: default;
+
+}
