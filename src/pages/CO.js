@@ -5,6 +5,10 @@ import {
 import { addFavorite } from "../services/favoriteService.js";
 import { getMode } from "../services/modeService.js";
 import { saveResult } from "../services/statisticsService.js";
+import {
+  getQuizQuestions,
+  clearQuizQuestions
+} from "../services/quizService.js";
 import { App } from "../App.js";
 import { Timer } from "../components/Timer.js";
 import { ProgressBar } from "../components/ProgressBar.js";
@@ -29,9 +33,23 @@ export function CO() {
 
   if (examQuestions.length === 0) {
 
-    examQuestions =
-      createExamQuestions(coQuestions, 20)
-        .map(question => shuffleChoices(question));
+    const customQuiz = getQuizQuestions();
+
+    if (customQuiz.length > 0) {
+
+      examQuestions = customQuiz.map(question =>
+        shuffleChoices(question)
+      );
+
+      clearQuizQuestions();
+
+    } else {
+
+      examQuestions =
+        createExamQuestions(coQuestions, 20)
+          .map(question => shuffleChoices(question));
+
+    }
 
   }
 
