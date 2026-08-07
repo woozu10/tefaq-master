@@ -1,5 +1,6 @@
 import { App } from "../App.js";
 import { ProgressBar } from "../components/ProgressBar.js";
+import { AudioPlayer } from "../components/AudioPlayer.js";
 import { coQuestions } from "../data/coQuestions.js";
 
 let currentQuestion = 0;
@@ -49,6 +50,8 @@ export function CO() {
       <div class="card">
 
         <h3>${q.question}</h3>
+
+        ${AudioPlayer(q.audio)}
 
         ${renderButton(0)}
         ${renderButton(1)}
