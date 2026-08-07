@@ -158,3 +158,34 @@ background:#4CAF50;
 transition:.4s;
 
 }
+
+.progress{
+
+  width:100%;
+  height:14px;
+
+  background:#ddd;
+
+  border-radius:20px;
+
+  overflow:hidden;
+
+  margin:15px 0;
+
+}
+
+.progress-fill{
+
+  height:100%;
+
+  background:#4CAF50;
+
+  transition:.3s;
+
+}
+
+.progress p{
+
+  text-align:center;
+
+}
