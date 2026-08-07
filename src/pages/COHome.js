@@ -28,6 +28,13 @@ window.openFavorites = function () {
 
 };
 
+window.openStatistics = function () {
+
+  setCurrentPage("statistics");
+  location.reload();
+
+};
+
 export function COHome() {
 
   return `
@@ -54,7 +61,7 @@ export function COHome() {
           ⭐ Favorites
         </button>
 
-        <button disabled>
+        <button onclick="openStatistics()">
           📊 Statistics
         </button>
 
