@@ -1,4 +1,7 @@
-import { saveWrongQuestion } from "../services/wrongNoteService.js";
+import {
+  saveWrongQuestion,
+  removeWrongQuestion
+} from "../services/wrongNoteService.js";
 import { addFavorite } from "../services/favoriteService.js";
 import { getMode } from "../services/modeService.js";
 import { saveResult } from "../services/statisticsService.js";
@@ -132,17 +135,19 @@ window.checkAnswer = function(index) {
 
     score++;
 
+    removeWrongQuestion(q.id);
+
     if (mode === "practice") {
       message = "✅ Correct!";
     }
 
   } else {
 
+    saveWrongQuestion(q);
+
     if (mode === "practice") {
       message = "❌ Incorrect!";
     }
-
-    saveWrongQuestion(q);
 
   }
 
