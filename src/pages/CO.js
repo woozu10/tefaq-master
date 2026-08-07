@@ -1,3 +1,4 @@
+import { Timer } from "../components/Timer.js";
 import { App } from "../App.js";
 import { ProgressBar } from "../components/ProgressBar.js";
 import { AudioPlayer } from "../components/AudioPlayer.js";
@@ -43,7 +44,7 @@ export function CO() {
     <main class="content">
 
       <h2>Compréhension Orale</h2>
-
+${Timer()}
       ${ProgressBar(currentQuestion + 1, coQuestions.length)}
 
       <p><strong>Score : ${score}</strong></p>
