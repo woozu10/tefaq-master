@@ -5,35 +5,55 @@ let currentQuestion = 0;
 let score = 0;
 let message = "";
 let answered = false;
+let selectedAnswer = -1;
 
 export function CO() {
 
   const q = coQuestions[currentQuestion];
+
+  const renderButton = (index) => {
+
+    let style = "";
+
+    if (answered) {
+
+      if (index === q.answer) {
+        style = "background:#4CAF50;color:white;";
+      } else if (index === selectedAnswer) {
+        style = "background:#F44336;color:white;";
+      }
+
+    }
+
+    return `
+      <button
+        style="${style}"
+        onclick="checkAnswer(${index})"
+        ${answered ? "disabled" : ""}
+      >
+        ${q.choices[index]}
+      </button>
+    `;
+  };
 
   return `
     <main class="content">
 
       <h2>Compréhension Orale</h2>
 
-      <p><strong>Score : ${score} / ${coQuestions.length}</strong></p>
+      <p><strong>Question ${currentQuestion + 1} / ${coQuestions.length}</strong></p>
+
+      <p><strong>Score : ${score}</strong></p>
 
       <div class="card">
 
         <h3>${q.question}</h3>
 
-        <button onclick="checkAnswer(0)">
-          ${q.choices[0]}
-        </button>
+        ${renderButton(0)}
+        ${renderButton(1)}
+        ${renderButton(2)}
 
-        <button onclick="checkAnswer(1)">
-          ${q.choices[1]}
-        </button>
-
-        <button onclick="checkAnswer(2)">
-          ${q.choices[2]}
-        </button>
-
-        <p style="font-weight:bold;font-size:18px;">
+        <p style="font-size:20px;font-weight:bold;">
           ${message}
         </p>
 
@@ -57,6 +77,8 @@ window.checkAnswer = function(index) {
   if (answered) return;
 
   const q = coQuestions[currentQuestion];
+
+  selectedAnswer = index;
 
   if (index === q.answer) {
 
@@ -89,6 +111,7 @@ window.nextQuestion = function() {
   }
 
   answered = false;
+  selectedAnswer = -1;
   message = "";
 
   document.getElementById("app").innerHTML = App();
