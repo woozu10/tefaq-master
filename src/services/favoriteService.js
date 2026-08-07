@@ -41,3 +41,10 @@ export function clearFavorites() {
   localStorage.removeItem("favorites");
 
 }
+export function isFavorite(id) {
+
+  const favorites = getFavorites();
+
+  return favorites.some(q => q.id === id);
+
+}
