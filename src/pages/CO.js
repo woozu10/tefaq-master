@@ -130,8 +130,14 @@ export function CO() {
       <hr>
 
       <button onclick="favoriteQuestion()">
-        ⭐ Favorite
-      </button>
+
+  ${
+    isFavorite(q.id)
+      ? "⭐ Added"
+      : "☆ Favorite"
+  }
+
+</button>
 
       <button
         onclick="nextQuestion()"
