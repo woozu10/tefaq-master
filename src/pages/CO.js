@@ -3,6 +3,7 @@ import { coQuestions } from "../data/coQuestions.js";
 
 let currentQuestion = 0;
 let score = 0;
+let message = "";
 
 export function CO() {
 
@@ -31,6 +32,8 @@ export function CO() {
           ${q.choices[2]}
         </button>
 
+        <p>${message}</p>
+
         <hr>
 
         <button onclick="nextQuestion()">
@@ -49,14 +52,16 @@ window.checkAnswer = function(index) {
 
   if (index === q.answer) {
 
-    score++;
-    alert("✅ Correct!");
+  score++;
+  message = "✅ Correct!";
 
-  } else {
+} else {
 
-    alert("❌ Incorrect!");
+  message = "❌ Incorrect!";
 
-  }
+}
+
+document.getElementById("app").innerHTML = App();
 
   document.getElementById("app").innerHTML = App();
 
