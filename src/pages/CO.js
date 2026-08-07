@@ -1,52 +1,65 @@
-let selected = -1;
+import { App } from "../App.js";
 import { coQuestions } from "../data/coQuestions.js";
 
-export function CO(){
+let currentQuestion = 0;
 
-    const q=coQuestions[0];
+export function CO() {
 
-    return `
+  const q = coQuestions[currentQuestion];
 
+  return `
     <main class="content">
 
-        <h2>Compréhension Orale</h2>
+      <h2>Compréhension Orale</h2>
 
-        <div class="card">
+      <div class="card">
 
-            <h3>${q.question}</h3>
+        <h3>${q.question}</h3>
 
-<button onclick="checkAnswer(1)">
-${q.choices[1]}
-</button>
+        <button onclick="checkAnswer(0)">
+          ${q.choices[0]}
+        </button>
 
-<button onclick="checkAnswer(2)">
-${q.choices[2]}
-</button>
+        <button onclick="checkAnswer(1)">
+          ${q.choices[1]}
+        </button>
 
-<button onclick="checkAnswer(3)">
-${q.choices[3]}
-</button>
+        <button onclick="checkAnswer(2)">
+          ${q.choices[2]}
+        </button>
 
-        </div>
+        <hr>
+
+        <button onclick="nextQuestion()">
+          Next →
+        </button>
+
+      </div>
 
     </main>
-
-    `;
-
+  `;
 }
 
-window.checkAnswer = function(index){
+window.checkAnswer = function(index) {
 
-    const q = coQuestions[0];
+  const q = coQuestions[currentQuestion];
 
-    if(index===q.answer){
+  if (index === q.answer) {
+    alert("✅ Correct!");
+  } else {
+    alert("❌ Incorrect!");
+  }
 
-        alert("✅ Correct!");
+};
 
-    }else{
+window.nextQuestion = function() {
 
-        alert("❌ Incorrect");
+  currentQuestion++;
 
-    }
+  if (currentQuestion >= coQuestions.length) {
+    currentQuestion = 0;
+  }
 
-}
+  document.getElementById("app").innerHTML = App();
+
+};
