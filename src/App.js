@@ -3,6 +3,7 @@ import { COHome } from "./pages/COHome.js";
 import { COPractice } from "./pages/COPractice.js";
 import { COExam } from "./pages/COExam.js";
 import { CO } from "./pages/CO.js";
+import { Favorites } from "./pages/Favorites.js";
 import { Result } from "./pages/Result.js";
 import { getCurrentPage } from "./services/router.js";
 
@@ -23,6 +24,9 @@ export function App() {
 
     case "co-quiz":
       return CO();
+
+    case "favorites":
+      return Favorites();
 
     case "result": {
 
