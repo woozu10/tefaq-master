@@ -1,3 +1,4 @@
+import { QuestionCard } from "../components/QuestionCard.js";
 import { App } from "../App.js";
 import { ProgressBar } from "../components/ProgressBar.js";
 import { AudioPlayer } from "../components/AudioPlayer.js";
