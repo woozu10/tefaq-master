@@ -3,7 +3,11 @@ export function saveWrongQuestion(question) {
   const wrongNotes =
     JSON.parse(localStorage.getItem("wrongNotes")) || [];
 
-  wrongNotes.push(question);
+  if (!wrongNotes.find(q => q.id === question.id)) {
+
+    wrongNotes.push(question);
+
+  }
 
   localStorage.setItem(
     "wrongNotes",
@@ -17,6 +21,18 @@ export function getWrongQuestions() {
   return JSON.parse(
     localStorage.getItem("wrongNotes")
   ) || [];
+
+}
+
+export function removeWrongQuestion(id) {
+
+  const wrongNotes = getWrongQuestions()
+    .filter(q => q.id !== id);
+
+  localStorage.setItem(
+    "wrongNotes",
+    JSON.stringify(wrongNotes)
+  );
 
 }
 
