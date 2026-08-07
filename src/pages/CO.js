@@ -4,6 +4,7 @@ import { coQuestions } from "../data/coQuestions.js";
 let currentQuestion = 0;
 let score = 0;
 let message = "";
+let answered = false;
 
 export function CO() {
 
@@ -32,11 +33,16 @@ export function CO() {
           ${q.choices[2]}
         </button>
 
-        <p>${message}</p>
+        <p style="font-weight:bold;font-size:18px;">
+          ${message}
+        </p>
 
         <hr>
 
-        <button onclick="nextQuestion()">
+        <button
+          onclick="nextQuestion()"
+          ${answered ? "" : "disabled"}
+        >
           Next →
         </button>
 
@@ -48,20 +54,22 @@ export function CO() {
 
 window.checkAnswer = function(index) {
 
+  if (answered) return;
+
   const q = coQuestions[currentQuestion];
 
   if (index === q.answer) {
 
-  score++;
-  message = "✅ Correct!";
+    score++;
+    message = "✅ Correct!";
 
-} else {
+  } else {
 
-  message = "❌ Incorrect!";
+    message = "❌ Incorrect!";
 
-}
+  }
 
-document.getElementById("app").innerHTML = App();
+  answered = true;
 
   document.getElementById("app").innerHTML = App();
 
@@ -79,6 +87,9 @@ window.nextQuestion = function() {
     score = 0;
 
   }
+
+  answered = false;
+  message = "";
 
   document.getElementById("app").innerHTML = App();
 
