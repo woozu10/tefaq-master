@@ -1,4 +1,7 @@
 import {
+  getCategory
+} from "../services/categoryService.js";
+import {
   saveWrongQuestion,
   removeWrongQuestion
 } from "../services/wrongNoteService.js";
@@ -49,9 +52,18 @@ export function CO() {
 
     } else {
 
-      examQuestions =
-        createExamQuestions(coQuestions, 20)
-          .map(question => shuffleChoices(question));
+      const category = getCategory();
+
+const questions =
+  category === "ALL"
+    ? coQuestions
+    : coQuestions.filter(
+        q => q.category === category
+      );
+
+examQuestions =
+  createExamQuestions(questions, 20)
+    .map(question => shuffleChoices(question));
 
     }
 
