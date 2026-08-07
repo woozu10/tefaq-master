@@ -3,5 +3,5 @@ export function setCurrentPage(page) {
 }
 
 export function getCurrentPage() {
-  return localStorage.getItem("currentPage") || "dashboard";
+  return localStorage.getItem("currentPage") || "home";
 }
