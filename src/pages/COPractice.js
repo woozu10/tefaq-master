@@ -3,6 +3,10 @@ import { setMode } from "../services/modeService.js";
 
 window.startB2 = function () {
 
+  localStorage.removeItem("score");
+  localStorage.removeItem("total");
+  localStorage.removeItem("coTimerEnd");
+
   setMode("practice");
 
   setCurrentPage("co-quiz");
@@ -10,7 +14,6 @@ window.startB2 = function () {
   location.reload();
 
 };
-
 export function COPractice() {
 
   return `
