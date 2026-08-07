@@ -1,20 +1,19 @@
-export function ProgressBar(current, total){
+export function ProgressBar(current, total) {
 
-    const percent=Math.round((current/total)*100);
+  const percent = Math.round((current / total) * 100);
 
-    return `
-
+  return `
     <div class="progress">
 
-        <div
-            class="progress-fill"
-            style="width:${percent}%"
-        ></div>
+      <div
+        class="progress-fill"
+        style="width:${percent}%">
+      </div>
 
     </div>
 
-    <p>${current} / ${total}</p>
-
-    `;
-
+    <p>
+      Question ${current} / ${total}
+    </p>
+  `;
 }
