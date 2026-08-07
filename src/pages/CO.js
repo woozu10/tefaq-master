@@ -9,6 +9,7 @@ import {
   getQuizQuestions,
   clearQuizQuestions
 } from "../services/quizService.js";
+import { setReviewQuestions } from "../services/reviewService.js";
 import { App } from "../App.js";
 import { Timer } from "../components/Timer.js";
 import { ProgressBar } from "../components/ProgressBar.js";
@@ -180,6 +181,13 @@ window.nextQuestion = function() {
   currentQuestion++;
 
   if (currentQuestion >= examQuestions.length) {
+
+    setReviewQuestions(examQuestions);
+
+    localStorage.setItem(
+      "lastExamQuestions",
+      JSON.stringify(examQuestions)
+    );
 
     saveResult(score, examQuestions.length);
 
