@@ -1,9 +1,17 @@
+import { setCurrentPage } from "../services/router.js";
+import { setQuizQuestions } from "../services/quizService.js";
 import {
   getWrongQuestions,
   clearWrongQuestions
 } from "../services/wrongNoteService.js";
-import { setQuizQuestions } from "../services/quizService.js";
-import { setCurrentPage } from "../services/router.js";
+
+window.goCOHome = function () {
+
+  setCurrentPage("co");
+
+  location.reload();
+
+};
 
 window.retryWrongQuestions = function () {
 
@@ -47,17 +55,25 @@ export function WrongNotes() {
 
     <main class="content">
 
+      <div style="display:flex;gap:10px;margin-bottom:20px;">
+
+        <button onclick="goCOHome()">
+          ← CO
+        </button>
+
+        <button onclick="retryWrongQuestions()">
+          🔁 Retry Wrong Questions
+        </button>
+
+        <button onclick="clearWrongNotes()">
+          🗑 Clear All
+        </button>
+
+      </div>
+
       <h2>❌ Wrong Notes</h2>
 
       <p>Total : ${wrongQuestions.length}</p>
-
-      <button onclick="retryWrongQuestions()">
-        🔁 Retry Wrong Questions
-      </button>
-
-      <button onclick="clearWrongNotes()">
-        🗑 Clear All
-      </button>
 
       <hr>
 
