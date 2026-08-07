@@ -5,6 +5,7 @@ import { COExam } from "./pages/COExam.js";
 import { CO } from "./pages/CO.js";
 import { Favorites } from "./pages/Favorites.js";
 import { WrongNotes } from "./pages/WrongNotes.js";
+import { Statistics } from "./pages/Statistics.js";
 import { Result } from "./pages/Result.js";
 import { getCurrentPage } from "./services/router.js";
 
@@ -31,6 +32,9 @@ export function App() {
 
     case "wrong-notes":
       return WrongNotes();
+
+    case "statistics":
+      return Statistics();
 
     case "result": {
 
