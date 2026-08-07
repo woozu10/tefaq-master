@@ -1,19 +1,17 @@
 export function AudioPlayer(audio) {
 
   return `
-    <div class="card">
-
-      <button onclick="playAudio()">
-        🔊 Play Audio
-      </button>
-
-    </div>
+    <button onclick="playAudio('${audio}')">
+      🔊 Play Audio
+    </button>
   `;
 
 }
 
-window.playAudio = function() {
+window.playAudio = function(audio){
 
-  alert("MP3 will be played here.");
+  const player = new Audio(audio);
+
+  player.play();
 
 }
