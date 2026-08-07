@@ -124,5 +124,109 @@ si cela est toujours possible.
     "visite",
     "samedi matin"
   ]
+},
+  {
+  id: 7,
+  category: "Travail",
+  level: "B2",
+  audio: "/tefaq-master/public/audio/007.mp3",
+  duration: 18,
+  transcript: `
+Bonjour Madame.
+Votre entretien est confirmé pour mardi à 14 heures.
+Merci d'apporter votre CV ainsi qu'une pièce d'identité.
+À bientôt.
+`,
+  question: "Pourquoi cette personne appelle-t-elle ?",
+  choices: [
+    "Pour confirmer un entretien",
+    "Pour annuler une réunion",
+    "Pour proposer un emploi"
+  ],
+  answer: 0,
+  explanation: "L'entretien est confirmé pour mardi.",
+  vocabulary: [
+    "entretien",
+    "confirmer",
+    "CV",
+    "pièce d'identité"
+  ]
+},
+  {
+  id: 8,
+  category: "Travail",
+  level: "B2",
+  audio: "/tefaq-master/public/audio/008.mp3",
+  duration: 16,
+  transcript: `
+Bonjour.
+Je serai en retard d'une quinzaine de minutes
+à cause de la circulation.
+Merci de votre compréhension.
+`,
+  question: "Pourquoi la personne téléphone-t-elle ?",
+  choices: [
+    "Pour signaler un retard",
+    "Pour demander un congé",
+    "Pour démissionner"
+  ],
+  answer: 0,
+  explanation: "La personne prévient qu'elle arrivera en retard.",
+  vocabulary: [
+    "retard",
+    "circulation",
+    "prévenir"
+  ]
+},
+  {
+  id: 9,
+  category: "Travail",
+  level: "B2",
+  audio: "/tefaq-master/public/audio/009.mp3",
+  duration: 20,
+  transcript: `
+Nous vous rappelons que la réunion débutera
+à 9 heures précises.
+Merci d'arriver quelques minutes à l'avance.
+`,
+  question: "Que doivent faire les employés ?",
+  choices: [
+    "Arriver un peu avant la réunion",
+    "Reporter la réunion",
+    "Travailler à domicile"
+  ],
+  answer: 0,
+  explanation: "Les employés doivent arriver avant 9 heures.",
+  vocabulary: [
+    "réunion",
+    "débuter",
+    "à l'avance"
+  ]
+},
+  {
+  id: 10,
+  category: "Travail",
+  level: "B2",
+  audio: "/tefaq-master/public/audio/010.mp3",
+  duration: 18,
+  transcript: `
+Votre période d'essai est terminée.
+Nous sommes heureux de confirmer votre embauche.
+Bienvenue dans notre équipe.
+`,
+  question: "Quelle est la bonne nouvelle ?",
+  choices: [
+    "La personne est embauchée",
+    "La personne change de poste",
+    "La personne prend sa retraite"
+  ],
+  answer: 0,
+  explanation: "L'entreprise confirme son embauche.",
+  vocabulary: [
+    "embauche",
+    "équipe",
+    "période d'essai"
+  ]
 }
+  
 ];
