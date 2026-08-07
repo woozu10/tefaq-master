@@ -1,3 +1,4 @@
+import { ProgressBar } from "../components/ProgressBar.js";
 import { App } from "../App.js";
 import { coQuestions } from "../data/coQuestions.js";
 
@@ -39,9 +40,12 @@ export function CO() {
   return `
     <main class="content">
 
-      <h2>Compréhension Orale</h2>
+      
+<h2>Compréhension Orale</h2>
 
-      <p><strong>Question ${currentQuestion + 1} / ${coQuestions.length}</strong></p>
+${ProgressBar(currentQuestion + 1, coQuestions.length)}
+
+<p><strong>Score : ${score}</strong></p>
 <div style="
     width:100%;
     height:12px;
