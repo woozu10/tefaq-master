@@ -349,3 +349,16 @@ transition:.4s;
   background:#999;
 
 }
+.timer{
+
+    font-size:28px;
+
+    font-weight:bold;
+
+    text-align:right;
+
+    color:#d32f2f;
+
+    margin-bottom:15px;
+
+}
