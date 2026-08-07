@@ -64,9 +64,9 @@ export function CO() {
 
       <h2>Compréhension Orale</h2>
 
-      <p style="font-weight:bold;">
+      <h3>
         Question ${currentQuestion + 1} / ${examQuestions.length}
-      </p>
+      </h3>
 
       ${Timer(40)}
 
@@ -89,6 +89,20 @@ export function CO() {
       <p style="font-size:20px;font-weight:bold;">
         ${message}
       </p>
+
+      ${
+        answered && mode === "practice"
+          ? `
+          <div class="card">
+
+            <h3>📖 Explanation</h3>
+
+            <p>${q.explanation || "No explanation available."}</p>
+
+          </div>
+          `
+          : ""
+      }
 
       <hr>
 
