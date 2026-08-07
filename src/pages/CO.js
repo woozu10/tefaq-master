@@ -42,6 +42,22 @@ export function CO() {
       <h2>Compréhension Orale</h2>
 
       <p><strong>Question ${currentQuestion + 1} / ${coQuestions.length}</strong></p>
+<div style="
+    width:100%;
+    height:12px;
+    background:#444;
+    border-radius:10px;
+    margin:15px 0;
+">
+    <div style="
+        width:${((currentQuestion+1)/coQuestions.length)*100}%;
+        height:12px;
+        background:#4CAF50;
+        border-radius:10px;
+        transition:0.3s;
+    ">
+    </div>
+</div>
 
       <p><strong>Score : ${score}</strong></p>
 
