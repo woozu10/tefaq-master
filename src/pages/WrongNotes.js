@@ -1,43 +1,82 @@
-export function saveWrongQuestion(question) {
+import {
+  getWrongQuestions,
+  clearWrongQuestions
+} from "../services/wrongNoteService.js";
+import { setQuizQuestions } from "../services/quizService.js";
+import { setCurrentPage } from "../services/router.js";
 
-  const wrongNotes =
-    JSON.parse(localStorage.getItem("wrongNotes")) || [];
+window.retryWrongQuestions = function () {
 
-  if (!wrongNotes.find(q => q.id === question.id)) {
+  const questions = getWrongQuestions();
 
-    wrongNotes.push(question);
+  if (questions.length === 0) {
+
+    alert("No wrong questions.");
+
+    return;
 
   }
 
-  localStorage.setItem(
-    "wrongNotes",
-    JSON.stringify(wrongNotes)
-  );
+  setQuizQuestions(questions);
 
-}
+  setCurrentPage("co-quiz");
 
-export function getWrongQuestions() {
+  location.reload();
 
-  return JSON.parse(
-    localStorage.getItem("wrongNotes")
-  ) || [];
+};
 
-}
+window.clearWrongNotes = function () {
 
-export function removeWrongQuestion(id) {
+  if (!confirm("Delete all wrong questions?")) {
 
-  const wrongNotes = getWrongQuestions()
-    .filter(q => q.id !== id);
+    return;
 
-  localStorage.setItem(
-    "wrongNotes",
-    JSON.stringify(wrongNotes)
-  );
+  }
 
-}
+  clearWrongQuestions();
 
-export function clearWrongQuestions() {
+  location.reload();
 
-  localStorage.removeItem("wrongNotes");
+};
+
+export function WrongNotes() {
+
+  const wrongQuestions = getWrongQuestions();
+
+  return `
+
+    <main class="content">
+
+      <h2>❌ Wrong Notes</h2>
+
+      <p>Total : ${wrongQuestions.length}</p>
+
+      <button onclick="retryWrongQuestions()">
+        🔁 Retry Wrong Questions
+      </button>
+
+      <button onclick="clearWrongNotes()">
+        🗑 Clear All
+      </button>
+
+      <hr>
+
+      ${
+        wrongQuestions.length === 0
+          ? "<p>No wrong questions.</p>"
+          : wrongQuestions.map(q => `
+              <div class="card">
+
+                <h3>${q.question}</h3>
+
+                <p>Level : ${q.level}</p>
+
+              </div>
+            `).join("")
+      }
+
+    </main>
+
+  `;
 
 }
