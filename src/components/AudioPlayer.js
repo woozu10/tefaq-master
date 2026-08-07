@@ -4,9 +4,13 @@ export function resetAudio() {
 
   played = false;
 
+  speechSynthesis.cancel();
+
 }
 
-export function AudioPlayer(audio) {
+export function AudioPlayer(transcript) {
+
+  window.currentTranscript = transcript;
 
   return `
 
@@ -16,17 +20,11 @@ export function AudioPlayer(audio) {
 
     </button>
 
-    <audio id="exam-audio">
-
-      <source src="${audio}" type="audio/mpeg">
-
-    </audio>
-
   `;
 
 }
 
-window.playAudio = async function () {
+window.playAudio = function () {
 
   if (played) {
 
@@ -36,20 +34,32 @@ window.playAudio = async function () {
 
   }
 
-  const player = document.getElementById("exam-audio");
+  if (!window.currentTranscript) {
 
-  try {
+    alert("No transcript.");
 
-    await player.play();
+    return;
+
+  }
+
+  speechSynthesis.cancel();
+
+  const utterance = new SpeechSynthesisUtterance(
+    window.currentTranscript
+  );
+
+  utterance.lang = "fr-CA";
+
+  utterance.rate = 1.0;
+
+  utterance.pitch = 1.0;
+
+  utterance.onend = function () {
 
     played = true;
 
-  } catch (e) {
+  };
 
-    console.error(e);
-
-    alert("Unable to play audio.");
-
-  }
+  speechSynthesis.speak(utterance);
 
 };
