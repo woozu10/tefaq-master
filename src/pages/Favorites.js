@@ -1,9 +1,17 @@
+import { setCurrentPage } from "../services/router.js";
 import {
   getFavorites,
   clearFavorites
 } from "../services/favoriteService.js";
 import { setQuizQuestions } from "../services/quizService.js";
-import { setCurrentPage } from "../services/router.js";
+
+window.goCOHome = function () {
+
+  setCurrentPage("co");
+
+  location.reload();
+
+};
 
 window.retryFavorites = function () {
 
@@ -47,17 +55,25 @@ export function Favorites() {
 
     <main class="content">
 
+      <div style="display:flex;gap:10px;margin-bottom:20px;">
+
+        <button onclick="goCOHome()">
+          ← CO
+        </button>
+
+        <button onclick="retryFavorites()">
+          ▶ Practice Favorites
+        </button>
+
+        <button onclick="clearAllFavorites()">
+          🗑 Clear All
+        </button>
+
+      </div>
+
       <h2>⭐ Favorites</h2>
 
       <p>Total : ${favorites.length}</p>
-
-      <button onclick="retryFavorites()">
-        ▶ Practice Favorites
-      </button>
-
-      <button onclick="clearAllFavorites()">
-        🗑 Clear All
-      </button>
 
       <hr>
 
