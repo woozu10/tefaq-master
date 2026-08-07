@@ -79,13 +79,43 @@ export function Review() {
 
         <h3>${q.question}</h3>
 
-        <p>
+        <div class="card">
 
-          ✅ Correct Answer :
+<h3>Your Answer</h3>
 
-          ${q.choices[q.answer]}
+<p>
 
-        </p>
+${
+q.userAnswer === q.answer
+? "✅ "
+: "❌ "
+}
+
+${q.choices[q.userAnswer]}
+
+</p>
+
+<hr>
+
+<h3>Correct Answer</h3>
+
+<p>
+
+✅ ${q.choices[q.answer]}
+
+</p>
+
+<hr>
+
+<h3>Explanation</h3>
+
+<p>
+
+${q.explanation || "No explanation."}
+
+</p>
+
+</div>
 
         <hr>
 
