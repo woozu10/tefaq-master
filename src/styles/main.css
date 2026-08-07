@@ -374,3 +374,18 @@ transition:.4s;
     width:100%;
 
 }
+.audio-player{
+
+    margin:20px 0;
+
+}
+
+.audio-player button{
+
+    width:100%;
+
+    padding:15px;
+
+    font-size:18px;
+
+}
