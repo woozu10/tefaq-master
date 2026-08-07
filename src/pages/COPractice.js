@@ -1,6 +1,9 @@
 import { setCurrentPage } from "../services/router.js";
+import { setMode } from "../services/modeService.js";
 
 window.startB2 = function () {
+
+  setMode("practice");
 
   setCurrentPage("co-quiz");
 
