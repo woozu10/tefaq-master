@@ -1,35 +1,55 @@
-export function COHome() {
+import { setCurrentPage } from "../services/router.js";
 
-  return `
+window.openPractice = function(){
+
+    setCurrentPage("co-practice");
+
+    location.reload();
+
+}
+
+window.openExam = function(){
+
+    setCurrentPage("co-exam");
+
+    location.reload();
+
+}
+
+export function COHome(){
+
+    return `
+
     <main class="content">
 
-      <h2>Compréhension Orale</h2>
+        <h2>Compréhension Orale</h2>
 
-      <div class="card">
+        <div class="card">
 
-        <button data-page="co-practice">
-          📘 Practice
-        </button>
+            <button onclick="openPractice()">
+                📘 Practice
+            </button>
 
-        <button data-page="co-exam">
-          📝 Exam
-        </button>
+            <button onclick="openExam()">
+                📝 Exam
+            </button>
 
-        <button data-page="co-wrong">
-          ❌ Wrong Notes
-        </button>
+            <button disabled>
+                ❌ Wrong Notes
+            </button>
 
-        <button data-page="co-favorite">
-          ⭐ Favorites
-        </button>
+            <button disabled>
+                ⭐ Favorites
+            </button>
 
-        <button data-page="co-stat">
-          📊 Statistics
-        </button>
+            <button disabled>
+                📊 Statistics
+            </button>
 
-      </div>
+        </div>
 
     </main>
-  `;
+
+    `;
 
 }
