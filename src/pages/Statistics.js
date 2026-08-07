@@ -3,16 +3,29 @@ import {
   clearHistory
 } from "../services/statisticsService.js";
 
+import { setCurrentPage } from "../services/router.js";
+
+window.goCOHome = function () {
+
+  setCurrentPage("co");
+  location.reload();
+
+};
+
+window.goDashboard = function () {
+
+  setCurrentPage("dashboard");
+  location.reload();
+
+};
+
 window.clearStatistics = function () {
 
   if (!confirm("Delete all statistics?")) {
-
     return;
-
   }
 
   clearHistory();
-
   location.reload();
 
 };
@@ -34,6 +47,18 @@ export function Statistics() {
   return `
 
     <main class="content">
+
+      <div style="display:flex; gap:10px; margin-bottom:20px;">
+
+        <button onclick="goCOHome()">
+          ← CO
+        </button>
+
+        <button onclick="goDashboard()">
+          🏠 Dashboard
+        </button>
+
+      </div>
 
       <h2>📊 Statistics</h2>
 
@@ -58,17 +83,26 @@ export function Statistics() {
       ${
         history.length === 0
           ? "<p>No history.</p>"
-          : history.map(item => `
-            <div class="card">
+          : history
+              .slice()
+              .reverse()
+              .map(item => `
 
-              <h3>${item.percent}%</h3>
+                <div class="card">
 
-              <p>${item.score}/${item.total}</p>
+                  <h3>${item.percent}%</h3>
 
-              <small>${item.date}</small>
+                  <p>
+                    ${item.score} / ${item.total}
+                  </p>
 
-            </div>
-          `).join("")
+                  <small>
+                    ${item.date}
+                  </small>
+
+                </div>
+
+              `).join("")
       }
 
     </main>
