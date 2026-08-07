@@ -120,4 +120,105 @@
     "courriel"
   ]
 }
+  ,
+{
+  "id": 7,
+  "category": "Banque",
+  "level": "B2",
+  "duration": 40,
+  "transcript": "Bonjour Monsieur. Votre nouvelle carte bancaire est disponible. Vous pouvez venir la récupérer à partir de demain avec une pièce d'identité.",
+  "question": "Pourquoi la banque appelle-t-elle ?",
+  "choices": [
+    "Pour bloquer la carte",
+    "Pour informer que la carte est prête",
+    "Pour demander un paiement"
+  ],
+  "answer": 1,
+  "explanation": "La banque informe que la nouvelle carte est disponible.",
+  "vocabulary": [
+    "carte bancaire",
+    "disponible",
+    "pièce d'identité"
+  ]
+},
+{
+  "id": 8,
+  "category": "Loisirs",
+  "level": "B2",
+  "duration": 40,
+  "transcript": "En raison de la pluie, le concert prévu dans le parc aura finalement lieu dans la salle municipale à vingt heures.",
+  "question": "Pourquoi le lieu du concert change-t-il ?",
+  "choices": [
+    "À cause de la pluie",
+    "À cause d'une grève",
+    "À cause d'un problème technique"
+  ],
+  "answer": 0,
+  "explanation": "Le concert est déplacé à cause de la pluie.",
+  "vocabulary": [
+    "pluie",
+    "concert",
+    "salle municipale"
+  ]
+},
+{
+  "id": 9,
+  "category": "Restaurant",
+  "level": "B2",
+  "duration": 40,
+  "transcript": "Bonsoir. Nous vous informons que votre réservation est bien enregistrée pour quatre personnes ce samedi à dix-neuf heures.",
+  "question": "Quel est le but du message ?",
+  "choices": [
+    "Confirmer une réservation",
+    "Annuler une réservation",
+    "Modifier le menu"
+  ],
+  "answer": 0,
+  "explanation": "Le restaurant confirme la réservation.",
+  "vocabulary": [
+    "réservation",
+    "confirmée",
+    "personnes"
+  ]
+},
+{
+  "id": 10,
+  "category": "Travail",
+  "level": "B2",
+  "duration": 40,
+  "transcript": "La réunion de demain commencera exceptionnellement à neuf heures au lieu de dix heures. Merci d'arriver quelques minutes en avance.",
+  "question": "Qu'est-ce qui change ?",
+  "choices": [
+    "Le lieu",
+    "L'heure",
+    "Les participants"
+  ],
+  "answer": 1,
+  "explanation": "La réunion commence une heure plus tôt.",
+  "vocabulary": [
+    "réunion",
+    "exceptionnellement",
+    "avance"
+  ]
+},
+{
+  "id": 11,
+  "category": "École",
+  "level": "B2",
+  "duration": 40,
+  "transcript": "Les parents sont invités à assister à une réunion d'information jeudi prochain à dix-huit heures dans le gymnase de l'école.",
+  "question": "Qui est invité à la réunion ?",
+  "choices": [
+    "Les enseignants",
+    "Les élèves",
+    "Les parents"
+  ],
+  "answer": 2,
+  "explanation": "L'école invite les parents.",
+  "vocabulary": [
+    "parents",
+    "réunion",
+    "gymnase"
+  ]
+}
 ]
