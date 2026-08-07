@@ -1,5 +1,5 @@
-import { ProgressBar } from "../components/ProgressBar.js";
 import { App } from "../App.js";
+import { ProgressBar } from "../components/ProgressBar.js";
 import { coQuestions } from "../data/coQuestions.js";
 
 let currentQuestion = 0;
@@ -40,28 +40,9 @@ export function CO() {
   return `
     <main class="content">
 
-      
-<h2>Compréhension Orale</h2>
+      <h2>Compréhension Orale</h2>
 
-${ProgressBar(currentQuestion + 1, coQuestions.length)}
-
-<p><strong>Score : ${score}</strong></p>
-<div style="
-    width:100%;
-    height:12px;
-    background:#444;
-    border-radius:10px;
-    margin:15px 0;
-">
-    <div style="
-        width:${((currentQuestion+1)/coQuestions.length)*100}%;
-        height:12px;
-        background:#4CAF50;
-        border-radius:10px;
-        transition:0.3s;
-    ">
-    </div>
-</div>
+      ${ProgressBar(currentQuestion + 1, coQuestions.length)}
 
       <p><strong>Score : ${score}</strong></p>
 
@@ -124,16 +105,11 @@ window.nextQuestion = function() {
   if (currentQuestion >= coQuestions.length) {
 
     localStorage.setItem("score", score);
+    localStorage.setItem("total", coQuestions.length);
+    localStorage.setItem("currentPage", "result");
 
-localStorage.setItem("total", coQuestions.length);
-
-localStorage.setItem("currentPage","result");
-
-location.reload();
-
-    currentQuestion = 0;
-    score = 0;
-
+    location.reload();
+    return;
   }
 
   answered = false;
