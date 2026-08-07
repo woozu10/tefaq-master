@@ -10,7 +10,7 @@ export function AudioPlayer(audio) {
 
   return `
 
-    <button onclick="playAudio('${audio}')">
+    <button onclick="playAudio()">
 
       🔊 Play Audio
 
@@ -26,7 +26,7 @@ export function AudioPlayer(audio) {
 
 }
 
-window.playAudio = function(audio) {
+window.playAudio = async function () {
 
   if (played) {
 
@@ -36,8 +36,20 @@ window.playAudio = function(audio) {
 
   }
 
-  played = true;
+  const player = document.getElementById("exam-audio");
 
-  document.getElementById("exam-audio").play();
+  try {
+
+    await player.play();
+
+    played = true;
+
+  } catch (e) {
+
+    console.error(e);
+
+    alert("Unable to play audio.");
+
+  }
 
 };
