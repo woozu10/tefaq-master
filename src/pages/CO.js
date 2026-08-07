@@ -24,11 +24,12 @@ import {
   resetAudio
 } from "../components/AudioPlayer.js";
 import { QuestionCard } from "../components/QuestionCard.js";
-import { coQuestions } from "../data/coQuestions.js";
+import { loadQuestions } from "../services/loadQuestions.js";
 import { createExamQuestions } from "../services/examService.js";
 import { shuffleChoices } from "../services/shuffleService.js";
 
 let examQuestions = [];
+let loaded = false;
 
 let currentQuestion = 0;
 let score = 0;
