@@ -11,3 +11,9 @@ export function getReviewQuestions() {
   return reviewQuestions;
 
 }
+
+export function clearReviewQuestions() {
+
+  reviewQuestions = [];
+
+}
