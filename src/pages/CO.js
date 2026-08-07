@@ -1,5 +1,6 @@
 import { saveWrongQuestion } from "../services/wrongNoteService.js";
 import { addFavorite } from "../services/favoriteService.js";
+import { getMode } from "../services/modeService.js";
 import { App } from "../App.js";
 import { Timer } from "../components/Timer.js";
 import { ProgressBar } from "../components/ProgressBar.js";
@@ -19,12 +20,13 @@ let selectedAnswer = -1;
 export function CO() {
 
   const q = examQuestions[currentQuestion];
+  const mode = getMode();
 
   const renderButton = (index) => {
 
     let style = "";
 
-    if (answered) {
+    if (answered && mode === "practice") {
 
       if (index === q.answer) {
         style = "background:#4CAF50;color:white;";
@@ -54,7 +56,11 @@ export function CO() {
 
       ${ProgressBar(currentQuestion + 1, examQuestions.length)}
 
-      <p><strong>Score : ${score}</strong></p>
+      ${
+        mode === "practice"
+          ? `<p><strong>Score : ${score}</strong></p>`
+          : ""
+      }
 
       ${AudioPlayer(q.audio)}
 
@@ -90,17 +96,23 @@ window.checkAnswer = function(index) {
   if (answered) return;
 
   const q = examQuestions[currentQuestion];
+  const mode = getMode();
 
   selectedAnswer = index;
 
   if (index === q.answer) {
 
     score++;
-    message = "✅ Correct!";
+
+    if (mode === "practice") {
+      message = "✅ Correct!";
+    }
 
   } else {
 
-    message = "❌ Incorrect!";
+    if (mode === "practice") {
+      message = "❌ Incorrect!";
+    }
 
     saveWrongQuestion(q);
 
