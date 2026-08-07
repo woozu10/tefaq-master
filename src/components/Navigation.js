@@ -1,3 +1,4 @@
+import { setCurrentPage } from "../services/router.js";
 export function Navigation() {
   return `
     <nav class="nav">
@@ -20,8 +21,10 @@ document.addEventListener("click", (e) => {
 
   if (e.target.dataset.page) {
 
-    alert("Selected : " + e.target.dataset.page);
+    
+setCurrentPage(e.target.dataset.page);
 
+location.reload();
   }
 
 });
