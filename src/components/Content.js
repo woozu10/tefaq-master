@@ -16,11 +16,26 @@ export function Content() {
       ? "-"
       : history[history.length - 1].percent + "%";
 
+  const bestScore =
+    history.length === 0
+      ? "-"
+      : Math.max(...history.map(h => h.percent)) + "%";
+
   return `
 
     <main class="content">
 
       <h2>📚 TEFAQ MASTER</h2>
+
+      <div class="card">
+        <h3>📊 Last Score</h3>
+        <h1>${lastScore}</h1>
+      </div>
+
+      <div class="card">
+        <h3>🏆 Best Score</h3>
+        <h1>${bestScore}</h1>
+      </div>
 
       <div class="card">
         <h3>⭐ Favorites</h3>
@@ -32,16 +47,16 @@ export function Content() {
         <h1>${wrongs}</h1>
       </div>
 
-      <div class="card">
-        <h3>📊 Last Score</h3>
-        <h1>${lastScore}</h1>
-      </div>
-
       <hr>
 
       <div class="card">
-        <h3>${sample.title}</h3>
-        <p>${sample.question}</p>
+        <h3>${sample.title || "Sample Question"}</h3>
+        <p>${sample.question || ""}</p>
+      </div>
+
+      <div class="card">
+        <h3>📈 Progress</h3>
+        <p>Total Exams : ${history.length}</p>
       </div>
 
     </main>
