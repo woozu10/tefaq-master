@@ -221,4 +221,1800 @@
     "gymnase"
   ]
 }
+  ,
+{
+  "id": 12,
+  "category": "Hôtel",
+  "level": "B2",
+  "duration": 40,
+  "transcript": "Bonjour Madame. Nous vous appelons pour confirmer votre réservation de deux nuits à partir du quinze septembre. Le petit-déjeuner est inclus dans le prix.",
+  "question": "Qu'est-ce qui est inclus ?",
+  "choices": [
+    "Le stationnement",
+    "Le petit-déjeuner",
+    "Le dîner"
+  ],
+  "answer": 1,
+  "explanation": "Le petit-déjeuner est compris dans le prix.",
+  "vocabulary": [
+    "réservation",
+    "petit-déjeuner",
+    "inclus"
+  ]
+},
+{
+  "id": 13,
+  "category": "Ville",
+  "level": "B2",
+  "duration": 40,
+  "transcript": "La mairie informe les habitants que la bibliothèque municipale sera fermée samedi pour des travaux de rénovation. Elle rouvrira lundi matin.",
+  "question": "Pourquoi la bibliothèque est-elle fermée ?",
+  "choices": [
+    "Pour des vacances",
+    "Pour des travaux",
+    "Pour un déménagement"
+  ],
+  "answer": 1,
+  "explanation": "La fermeture est due aux travaux de rénovation.",
+  "vocabulary": [
+    "mairie",
+    "rénovation",
+    "bibliothèque"
+  ]
+},
+{
+  "id": 14,
+  "category": "Voyage",
+  "level": "B2",
+  "duration": 40,
+  "transcript": "Votre vol vers Montréal embarquera à la porte vingt-quatre avec un retard de quinze minutes. Merci de rester près de votre porte d'embarquement.",
+  "question": "Que doivent faire les passagers ?",
+  "choices": [
+    "Changer d'aéroport",
+    "Attendre près de la porte",
+    "Récupérer leurs bagages"
+  ],
+  "answer": 1,
+  "explanation": "Les passagers doivent attendre près de la porte.",
+  "vocabulary": [
+    "embarquement",
+    "porte",
+    "retard"
+  ]
+},
+{
+  "id": 15,
+  "category": "Sport",
+  "level": "B2",
+  "duration": 40,
+  "transcript": "En raison d'un problème technique, la piscine municipale ouvrira exceptionnellement à dix heures demain matin au lieu de huit heures.",
+  "question": "Pourquoi l'ouverture est-elle retardée ?",
+  "choices": [
+    "À cause d'un problème technique",
+    "À cause du mauvais temps",
+    "À cause d'une compétition"
+  ],
+  "answer": 0,
+  "explanation": "L'ouverture est retardée à cause d'un problème technique.",
+  "vocabulary": [
+    "piscine",
+    "problème technique",
+    "ouvrir"
+  ]
+},
+{
+  "id": 16,
+  "category": "Travail",
+  "level": "B2",
+  "duration": 40,
+  "transcript": "Tous les employés doivent suivre une formation obligatoire sur la sécurité mardi prochain de neuf heures à midi.",
+  "question": "Que doivent faire les employés ?",
+  "choices": [
+    "Participer à une formation",
+    "Passer un entretien",
+    "Prendre un congé"
+  ],
+  "answer": 0,
+  "explanation": "Les employés doivent participer à une formation obligatoire.",
+  "vocabulary": [
+    "formation",
+    "obligatoire",
+    "sécurité"
+  ]
+}
+  ,
+{
+  "id": 17,
+  "category": "Poste",
+  "level": "B2",
+  "duration": 40,
+  "transcript": "Bonjour. Votre colis est arrivé au bureau de poste de votre quartier. Vous pourrez le récupérer dès demain matin avec une pièce d'identité.",
+  "question": "Que doit faire le client ?",
+  "choices": [
+    "Attendre une nouvelle livraison",
+    "Aller chercher son colis",
+    "Téléphoner au service client"
+  ],
+  "answer": 1,
+  "explanation": "Le colis est disponible au bureau de poste.",
+  "vocabulary": [
+    "colis",
+    "bureau de poste",
+    "récupérer"
+  ]
+},
+{
+  "id": 18,
+  "category": "Université",
+  "level": "B2",
+  "duration": 40,
+  "transcript": "La conférence prévue cet après-midi est reportée à vendredi prochain en raison de l'absence du conférencier.",
+  "question": "Pourquoi la conférence est-elle reportée ?",
+  "choices": [
+    "À cause d'un problème technique",
+    "Parce que le conférencier est absent",
+    "À cause de la météo"
+  ],
+  "answer": 1,
+  "explanation": "Le conférencier est absent.",
+  "vocabulary": [
+    "conférence",
+    "reportée",
+    "conférencier"
+  ]
+},
+{
+  "id": 19,
+  "category": "Commerce",
+  "level": "B2",
+  "duration": 40,
+  "transcript": "Notre magasin sera exceptionnellement ouvert dimanche de dix heures à seize heures à l'occasion des soldes d'été.",
+  "question": "Pourquoi le magasin ouvre-t-il dimanche ?",
+  "choices": [
+    "Pour les soldes",
+    "Pour un inventaire",
+    "Pour une réunion"
+  ],
+  "answer": 0,
+  "explanation": "Le magasin ouvre pour les soldes d'été.",
+  "vocabulary": [
+    "soldes",
+    "exceptionnellement",
+    "magasin"
+  ]
+},
+{
+  "id": 20,
+  "category": "Transport",
+  "level": "B2",
+  "duration": 40,
+  "transcript": "En raison d'un accident, la ligne de métro numéro deux est interrompue entre les stations Centre et Université. Des autobus de remplacement sont disponibles.",
+  "question": "Que peuvent faire les voyageurs ?",
+  "choices": [
+    "Prendre un autobus de remplacement",
+    "Continuer en métro",
+    "Attendre jusqu'à demain"
+  ],
+  "answer": 0,
+  "explanation": "Des autobus remplacent temporairement le métro.",
+  "vocabulary": [
+    "ligne",
+    "interrompue",
+    "autobus de remplacement"
+  ]
+},
+{
+  "id": 21,
+  "category": "Travail",
+  "level": "B2",
+  "duration": 40,
+  "transcript": "Bonjour Madame. Nous avons bien reçu votre candidature. Nous vous invitons à un entretien mardi prochain à quinze heures dans nos bureaux.",
+  "question": "Pourquoi la personne reçoit-elle cet appel ?",
+  "choices": [
+    "Pour confirmer une embauche",
+    "Pour être invitée à un entretien",
+    "Pour annuler sa candidature"
+  ],
+  "answer": 1,
+  "explanation": "L'entreprise invite la candidate à un entretien.",
+  "vocabulary": [
+    "candidature",
+    "entretien",
+    "bureaux"
+  ]
+}
+  ,
+{
+  "id": 22,
+  "category": "Téléphone",
+  "level": "B2",
+  "duration": 40,
+  "transcript": "Bonjour Madame. Je vous appelle pour vous informer que votre rendez-vous chez le dentiste est avancé à neuf heures demain matin. Merci de confirmer votre présence.",
+  "question": "Pourquoi la secrétaire téléphone-t-elle ?",
+  "choices": [
+    "Pour annuler le rendez-vous",
+    "Pour changer l'heure du rendez-vous",
+    "Pour demander un paiement"
+  ],
+  "answer": 1,
+  "explanation": "La secrétaire informe que le rendez-vous est avancé.",
+  "vocabulary": [
+    "avancer",
+    "dentiste",
+    "confirmer"
+  ]
+},
+{
+  "id": 23,
+  "category": "Aéroport",
+  "level": "B2",
+  "duration": 40,
+  "transcript": "Les passagers du vol AC432 à destination de Toronto sont priés de se présenter immédiatement à la porte B17. L'embarquement va commencer.",
+  "question": "Que doivent faire les passagers ?",
+  "choices": [
+    "Récupérer leurs bagages",
+    "Se rendre à la porte B17",
+    "Attendre une heure"
+  ],
+  "answer": 1,
+  "explanation": "L'embarquement commence à la porte B17.",
+  "vocabulary": [
+    "embarquement",
+    "porte",
+    "passagers"
+  ]
+},
+{
+  "id": 24,
+  "category": "Magasin",
+  "level": "B2",
+  "duration": 40,
+  "transcript": "Cette semaine seulement, tous les vêtements d'hiver bénéficient d'une réduction de trente pour cent. L'offre se termine dimanche soir.",
+  "question": "Quel est l'objectif de cette annonce ?",
+  "choices": [
+    "Présenter une promotion",
+    "Recruter du personnel",
+    "Modifier les horaires"
+  ],
+  "answer": 0,
+  "explanation": "Il s'agit d'une promotion sur les vêtements d'hiver.",
+  "vocabulary": [
+    "réduction",
+    "promotion",
+    "offre"
+  ]
+},
+{
+  "id": 25,
+  "category": "Bibliothèque",
+  "level": "B2",
+  "duration": 40,
+  "transcript": "Nous vous rappelons que les livres empruntés doivent être retournés avant vendredi afin d'éviter des frais de retard.",
+  "question": "Pourquoi ce message est-il envoyé ?",
+  "choices": [
+    "Pour annoncer une fermeture",
+    "Pour rappeler une date de retour",
+    "Pour inviter à une conférence"
+  ],
+  "answer": 1,
+  "explanation": "Le message rappelle la date limite de retour des livres.",
+  "vocabulary": [
+    "emprunter",
+    "retourner",
+    "frais de retard"
+  ]
+},
+{
+  "id": 26,
+  "category": "Travail",
+  "level": "B2",
+  "duration": 40,
+  "transcript": "L'entreprise organise une réunion d'information vendredi à seize heures afin de présenter le nouveau projet à toute l'équipe.",
+  "question": "Pourquoi les employés sont-ils réunis ?",
+  "choices": [
+    "Pour présenter un nouveau projet",
+    "Pour célébrer un anniversaire",
+    "Pour suivre une formation"
+  ],
+  "answer": 0,
+  "explanation": "La réunion sert à présenter le nouveau projet.",
+  "vocabulary": [
+    "réunion",
+    "projet",
+    "équipe"
+  ]
+}
+  ,
+{
+  "id": 27,
+  "category": "Radio",
+  "level": "B2",
+  "duration": 40,
+  "transcript": "Bonjour à tous. En raison des fortes chaleurs prévues cette semaine, la ville ouvre exceptionnellement trois centres climatisés pour accueillir les personnes les plus vulnérables. Ils seront accessibles de neuf heures à vingt et une heures.",
+  "question": "Pourquoi la ville ouvre-t-elle ces centres ?",
+  "choices": [
+    "Pour accueillir les touristes",
+    "Pour protéger les personnes vulnérables de la chaleur",
+    "Pour organiser une activité sportive"
+  ],
+  "answer": 1,
+  "explanation": "Les centres sont ouverts pour aider les personnes vulnérables pendant la canicule.",
+  "vocabulary": [
+    "fortes chaleurs",
+    "vulnérables",
+    "centre climatisé"
+  ]
+},
+{
+  "id": 28,
+  "category": "Train",
+  "level": "B2",
+  "duration": 40,
+  "transcript": "Le train à destination d'Ottawa partira finalement du quai numéro quatre au lieu du quai numéro deux. Les voyageurs sont invités à suivre la signalisation.",
+  "question": "Qu'est-ce qui change ?",
+  "choices": [
+    "L'heure du départ",
+    "Le numéro du quai",
+    "La destination"
+  ],
+  "answer": 1,
+  "explanation": "Le changement concerne le quai de départ.",
+  "vocabulary": [
+    "quai",
+    "signalisation",
+    "voyageurs"
+  ]
+},
+{
+  "id": 29,
+  "category": "Restaurant",
+  "level": "B2",
+  "duration": 40,
+  "transcript": "Bonsoir. Nous sommes désolés de vous informer que le plat du jour est déjà épuisé. Nous pouvons toutefois vous proposer notre menu végétarien.",
+  "question": "Pourquoi le serveur parle-t-il au client ?",
+  "choices": [
+    "Pour annoncer une augmentation des prix",
+    "Pour proposer un autre repas",
+    "Pour demander de quitter le restaurant"
+  ],
+  "answer": 1,
+  "explanation": "Le plat du jour n'est plus disponible, un autre menu est proposé.",
+  "vocabulary": [
+    "plat du jour",
+    "épuisé",
+    "végétarien"
+  ]
+},
+{
+  "id": 30,
+  "category": "Travail",
+  "level": "B2",
+  "duration": 40,
+  "transcript": "À partir du mois prochain, tous les employés devront utiliser le nouveau système informatique pour enregistrer leurs heures de travail. Une courte formation sera organisée la semaine prochaine.",
+  "question": "Pourquoi une formation est-elle organisée ?",
+  "choices": [
+    "Pour apprendre un nouveau logiciel",
+    "Pour présenter les nouveaux employés",
+    "Pour préparer une fête"
+  ],
+  "answer": 0,
+  "explanation": "Les employés doivent apprendre à utiliser le nouveau système.",
+  "vocabulary": [
+    "système informatique",
+    "enregistrer",
+    "formation"
+  ]
+},
+{
+  "id": 31,
+  "category": "Santé",
+  "level": "B2",
+  "duration": 40,
+  "transcript": "La pharmacie sera exceptionnellement fermée demain matin pour inventaire. Elle ouvrira ses portes à treize heures.",
+  "question": "Pourquoi la pharmacie est-elle fermée le matin ?",
+  "choices": [
+    "Pour un inventaire",
+    "Pour des travaux",
+    "Pour une grève"
+  ],
+  "answer": 0,
+  "explanation": "La fermeture est due à l'inventaire.",
+  "vocabulary": [
+    "inventaire",
+    "pharmacie",
+    "exceptionnellement"
+  ]
+}
+  ,
+{
+  "id": 32,
+  "category": "Radio",
+  "level": "B2",
+  "duration": 40,
+  "transcript": "Selon les prévisions météo, de fortes pluies sont attendues dès ce soir. Les automobilistes sont invités à limiter leurs déplacements et à prévoir davantage de temps pour leurs trajets.",
+  "question": "Quel conseil est donné aux automobilistes ?",
+  "choices": [
+    "Éviter les déplacements inutiles",
+    "Prendre le train",
+    "Reporter leur voyage à demain"
+  ],
+  "answer": 0,
+  "explanation": "La radio conseille de limiter les déplacements.",
+  "vocabulary": [
+    "prévisions",
+    "trajets",
+    "limiter"
+  ]
+},
+{
+  "id": 33,
+  "category": "Travail",
+  "level": "B2",
+  "duration": 40,
+  "transcript": "Bonjour Julie. Je voulais te prévenir que la réunion de cet après-midi est déplacée à quinze heures, car le directeur est retenu par un rendez-vous important.",
+  "question": "Pourquoi la réunion est-elle déplacée ?",
+  "choices": [
+    "Parce que le directeur est occupé",
+    "Parce que Julie est absente",
+    "Parce que la salle est fermée"
+  ],
+  "answer": 0,
+  "explanation": "Le directeur est retenu par un autre rendez-vous.",
+  "vocabulary": [
+    "retenu",
+    "déplacer",
+    "directeur"
+  ]
+},
+{
+  "id": 34,
+  "category": "Transport",
+  "level": "B2",
+  "duration": 40,
+  "transcript": "Le terminus de la ligne d'autobus 24 est déplacé temporairement en raison de travaux routiers. Veuillez consulter les affiches aux arrêts.",
+  "question": "Pourquoi le trajet est-il modifié ?",
+  "choices": [
+    "À cause de travaux",
+    "À cause d'un festival",
+    "À cause d'un accident"
+  ],
+  "answer": 0,
+  "explanation": "Les travaux routiers modifient le trajet.",
+  "vocabulary": [
+    "terminus",
+    "travaux routiers",
+    "arrêt"
+  ]
+},
+{
+  "id": 35,
+  "category": "Université",
+  "level": "B2",
+  "duration": 40,
+  "transcript": "Les inscriptions aux cours d'automne ouvriront lundi prochain à huit heures sur le portail étudiant. Les places sont limitées.",
+  "question": "Pourquoi faut-il se connecter rapidement ?",
+  "choices": [
+    "Parce que les places sont limitées",
+    "Parce que le portail ferme à midi",
+    "Parce que les cours commencent demain"
+  ],
+  "answer": 0,
+  "explanation": "Les places disponibles sont limitées.",
+  "vocabulary": [
+    "inscription",
+    "portail",
+    "places limitées"
+  ]
+},
+{
+  "id": 36,
+  "category": "Magasin",
+  "level": "B2",
+  "duration": 40,
+  "transcript": "Les clients ayant acheté un grille-pain de la marque Nova entre janvier et mars sont priés de le rapporter au magasin en raison d'un défaut de fabrication.",
+  "question": "Pourquoi les clients doivent-ils revenir au magasin ?",
+  "choices": [
+    "Pour un rappel de produit",
+    "Pour recevoir un cadeau",
+    "Pour prolonger la garantie"
+  ],
+  "answer": 0,
+  "explanation": "Le produit présente un défaut de fabrication.",
+  "vocabulary": [
+    "défaut",
+    "fabrication",
+    "rapporter"
+  ]
+},
+{
+  "id": 37,
+  "category": "Banque",
+  "level": "B2",
+  "duration": 40,
+  "transcript": "Notre agence sera fermée exceptionnellement vendredi après-midi. Les services en ligne resteront accessibles pendant cette période.",
+  "question": "Que peuvent faire les clients ?",
+  "choices": [
+    "Utiliser les services en ligne",
+    "Se rendre dans cette agence",
+    "Téléphoner au conseiller uniquement"
+  ],
+  "answer": 0,
+  "explanation": "Les services en ligne restent disponibles.",
+  "vocabulary": [
+    "agence",
+    "services en ligne",
+    "accessible"
+  ]
+},
+{
+  "id": 38,
+  "category": "Santé",
+  "level": "B2",
+  "duration": 40,
+  "transcript": "Les patients ayant un rendez-vous demain sont invités à arriver quinze minutes à l'avance afin de compléter les formalités administratives.",
+  "question": "Pourquoi faut-il arriver plus tôt ?",
+  "choices": [
+    "Pour remplir les documents",
+    "Pour rencontrer le médecin",
+    "Pour passer un examen supplémentaire"
+  ],
+  "answer": 0,
+  "explanation": "Le temps supplémentaire est prévu pour les formalités.",
+  "vocabulary": [
+    "formalités",
+    "administratives",
+    "patients"
+  ]
+},
+{
+  "id": 39,
+  "category": "Loisirs",
+  "level": "B2",
+  "duration": 40,
+  "transcript": "Le musée sera gratuit dimanche prochain à l'occasion des Journées du patrimoine. Une réservation en ligne est toutefois recommandée.",
+  "question": "Quel conseil est donné ?",
+  "choices": [
+    "Réserver en ligne",
+    "Venir avant neuf heures",
+    "Acheter un billet papier"
+  ],
+  "answer": 0,
+  "explanation": "La réservation est recommandée malgré la gratuité.",
+  "vocabulary": [
+    "musée",
+    "gratuit",
+    "réservation"
+  ]
+},
+{
+  "id": 40,
+  "category": "Téléphone",
+  "level": "B2",
+  "duration": 40,
+  "transcript": "Bonjour. Nous avons essayé de vous livrer votre colis aujourd'hui, mais vous étiez absent. Merci de choisir une nouvelle date de livraison sur notre site Internet.",
+  "question": "Pourquoi la livraison n'a-t-elle pas eu lieu ?",
+  "choices": [
+    "Le client était absent",
+    "Le colis est perdu",
+    "Le livreur est malade"
+  ],
+  "answer": 0,
+  "explanation": "Le destinataire était absent lors de la livraison.",
+  "vocabulary": [
+    "livraison",
+    "absent",
+    "colis"
+  ]
+},
+{
+  "id": 41,
+  "category": "Travail",
+  "level": "B2",
+  "duration": 40,
+  "transcript": "Tous les employés sont invités à répondre au sondage interne avant vendredi afin d'améliorer les conditions de travail dans l'entreprise.",
+  "question": "Pourquoi les employés doivent-ils répondre au sondage ?",
+  "choices": [
+    "Pour améliorer les conditions de travail",
+    "Pour évaluer leur supérieur",
+    "Pour choisir leurs vacances"
+  ],
+  "answer": 0,
+  "explanation": "Le sondage sert à améliorer les conditions de travail.",
+  "vocabulary": [
+    "sondage",
+    "conditions de travail",
+    "entreprise"
+  ]
+}
+  ,
+{
+  "id": 42,
+  "category": "Mairie",
+  "level": "B2",
+  "duration": 40,
+  "transcript": "La mairie informe les habitants que des coupures d'eau sont prévues mercredi entre neuf heures et quinze heures pour permettre des travaux sur le réseau.",
+  "question": "Pourquoi l'eau sera-t-elle coupée ?",
+  "choices": [
+    "Pour des travaux",
+    "À cause d'une panne",
+    "Pour économiser l'eau"
+  ],
+  "answer": 0,
+  "explanation": "Les coupures sont liées à des travaux sur le réseau.",
+  "vocabulary": [
+    "coupure",
+    "réseau",
+    "travaux"
+  ]
+},
+{
+  "id": 43,
+  "category": "Bibliothèque",
+  "level": "B2",
+  "duration": 40,
+  "transcript": "À partir du mois prochain, la bibliothèque ouvrira également le dimanche matin afin de répondre à la demande des étudiants.",
+  "question": "Pourquoi les horaires changent-ils ?",
+  "choices": [
+    "Pour accueillir davantage d'étudiants",
+    "Pour réduire les dépenses",
+    "Pour effectuer des rénovations"
+  ],
+  "answer": 0,
+  "explanation": "Les nouveaux horaires répondent à la demande des étudiants.",
+  "vocabulary": [
+    "horaires",
+    "demande",
+    "étudiants"
+  ]
+},
+{
+  "id": 44,
+  "category": "Aéroport",
+  "level": "B2",
+  "duration": 40,
+  "transcript": "Les voyageurs sont priés de préparer leur passeport avant d'arriver au contrôle de sécurité afin de faciliter les vérifications.",
+  "question": "Que doivent préparer les voyageurs ?",
+  "choices": [
+    "Leur carte bancaire",
+    "Leur passeport",
+    "Leur billet de train"
+  ],
+  "answer": 1,
+  "explanation": "Le passeport doit être présenté au contrôle.",
+  "vocabulary": [
+    "contrôle",
+    "passeport",
+    "vérification"
+  ]
+},
+{
+  "id": 45,
+  "category": "Commerce",
+  "level": "B2",
+  "duration": 40,
+  "transcript": "En raison de l'inventaire annuel, le magasin ouvrira exceptionnellement à midi vendredi.",
+  "question": "Pourquoi le magasin ouvre-t-il plus tard ?",
+  "choices": [
+    "Pour un inventaire",
+    "Pour une livraison",
+    "Pour une formation"
+  ],
+  "answer": 0,
+  "explanation": "Le magasin effectue son inventaire annuel.",
+  "vocabulary": [
+    "inventaire",
+    "annuel",
+    "ouvrir"
+  ]
+},
+{
+  "id": 46,
+  "category": "Entreprise",
+  "level": "B2",
+  "duration": 40,
+  "transcript": "Les employés qui souhaitent participer à la journée de bénévolat doivent s'inscrire avant le quinze juin auprès des ressources humaines.",
+  "question": "Que doivent faire les employés ?",
+  "choices": [
+    "S'inscrire avant la date limite",
+    "Demander un congé",
+    "Payer des frais"
+  ],
+  "answer": 0,
+  "explanation": "Une inscription est obligatoire.",
+  "vocabulary": [
+    "bénévolat",
+    "ressources humaines",
+    "inscription"
+  ]
+},
+{
+  "id": 47,
+  "category": "Transport",
+  "level": "B2",
+  "duration": 40,
+  "transcript": "Le service de traversier sera suspendu cet après-midi en raison des vents violents. Une reprise est prévue demain matin.",
+  "question": "Pourquoi le traversier est-il suspendu ?",
+  "choices": [
+    "À cause du vent",
+    "À cause d'une grève",
+    "À cause d'une panne"
+  ],
+  "answer": 0,
+  "explanation": "Les vents violents empêchent le service.",
+  "vocabulary": [
+    "traversier",
+    "vents violents",
+    "reprendre"
+  ]
+},
+{
+  "id": 48,
+  "category": "Université",
+  "level": "B2",
+  "duration": 40,
+  "transcript": "Les résultats des examens seront publiés vendredi sur le portail étudiant. Aucun résultat ne sera communiqué par téléphone.",
+  "question": "Comment les étudiants connaîtront-ils leurs résultats ?",
+  "choices": [
+    "Par téléphone",
+    "Sur le portail étudiant",
+    "Par courrier"
+  ],
+  "answer": 1,
+  "explanation": "Les résultats seront publiés sur le portail.",
+  "vocabulary": [
+    "résultats",
+    "portail",
+    "examens"
+  ]
+},
+{
+  "id": 49,
+  "category": "Santé",
+  "level": "B2",
+  "duration": 40,
+  "transcript": "La campagne de vaccination contre la grippe débutera lundi prochain dans toutes les cliniques participantes.",
+  "question": "Que va-t-il commencer lundi ?",
+  "choices": [
+    "Une campagne de vaccination",
+    "Une collecte de sang",
+    "Une consultation gratuite"
+  ],
+  "answer": 0,
+  "explanation": "La campagne de vaccination commence lundi.",
+  "vocabulary": [
+    "vaccination",
+    "grippe",
+    "clinique"
+  ]
+},
+{
+  "id": 50,
+  "category": "Loisirs",
+  "level": "B2",
+  "duration": 40,
+  "transcript": "Le festival de musique débutera à dix-sept heures au lieu de dix-huit heures. Les détenteurs de billets sont invités à arriver plus tôt.",
+  "question": "Qu'est-ce qui change ?",
+  "choices": [
+    "Le prix des billets",
+    "L'heure de début",
+    "Le lieu"
+  ],
+  "answer": 1,
+  "explanation": "Le festival commence une heure plus tôt.",
+  "vocabulary": [
+    "festival",
+    "billets",
+    "début"
+  ]
+},
+{
+  "id": 51,
+  "category": "Téléphone",
+  "level": "B2",
+  "duration": 40,
+  "transcript": "Bonjour. Votre véhicule est prêt. Vous pouvez venir le récupérer aujourd'hui avant dix-sept heures au garage.",
+  "question": "Pourquoi cette personne reçoit-elle un appel ?",
+  "choices": [
+    "Pour récupérer son véhicule",
+    "Pour prendre un rendez-vous",
+    "Pour acheter une voiture"
+  ],
+  "answer": 0,
+  "explanation": "Le garage informe que le véhicule est prêt.",
+  "vocabulary": [
+    "véhicule",
+    "garage",
+    "récupérer"
+  ]
+}
+  ,
+{
+  "id": 52,
+  "category": "Travail",
+  "level": "B2",
+  "duration": 45,
+  "transcript": "— Bonjour Sophie. Tu as vu le message du directeur ?\n— Oui. Finalement, la réunion de lundi est annulée.\n— Ah bon ? Je croyais qu'elle était simplement déplacée.\n— Non, elle sera remplacée par une visioconférence mercredi matin. Nous recevrons le lien demain.",
+  "question": "Que feront les employés mercredi ?",
+  "choices": [
+    "Ils participeront à une visioconférence.",
+    "Ils assisteront à une réunion en personne.",
+    "Ils rencontreront le directeur."
+  ],
+  "answer": 0,
+  "explanation": "La réunion est remplacée par une visioconférence mercredi.",
+  "vocabulary": [
+    "visioconférence",
+    "remplacer",
+    "lien"
+  ]
+},
+{
+  "id": 53,
+  "category": "Transport",
+  "level": "B2",
+  "duration": 45,
+  "transcript": "Attention. En raison d'un incident technique, les ascenseurs de la station Berri-UQAM sont temporairement hors service. Les personnes à mobilité réduite peuvent utiliser le service d'assistance disponible à l'entrée principale.",
+  "question": "Qui est principalement concerné par cette annonce ?",
+  "choices": [
+    "Les touristes.",
+    "Les personnes à mobilité réduite.",
+    "Les employés de la station."
+  ],
+  "answer": 1,
+  "explanation": "L'annonce donne une solution aux personnes à mobilité réduite.",
+  "vocabulary": [
+    "incident technique",
+    "hors service",
+    "mobilité réduite"
+  ]
+},
+{
+  "id": 54,
+  "category": "Santé",
+  "level": "B2",
+  "duration": 45,
+  "transcript": "Bonjour Monsieur. Les résultats de vos analyses sont satisfaisants. Le médecin souhaite toutefois vous revoir dans trois mois pour un contrôle de routine.",
+  "question": "Pourquoi le patient doit-il revenir ?",
+  "choices": [
+    "Pour refaire immédiatement les analyses.",
+    "Pour un contrôle de routine.",
+    "Pour changer de médecin."
+  ],
+  "answer": 1,
+  "explanation": "Les résultats sont bons, mais un suivi est prévu.",
+  "vocabulary": [
+    "analyse",
+    "satisfaisant",
+    "contrôle"
+  ]
+},
+{
+  "id": 55,
+  "category": "Université",
+  "level": "B2",
+  "duration": 45,
+  "transcript": "Les étudiants qui souhaitent participer au programme d'échange international doivent déposer leur dossier avant le trente avril. Les candidatures reçues après cette date ne seront pas étudiées.",
+  "question": "Que doivent faire les étudiants ?",
+  "choices": [
+    "Déposer leur dossier avant la date limite.",
+    "Passer un examen supplémentaire.",
+    "Rencontrer le responsable du programme."
+  ],
+  "answer": 0,
+  "explanation": "Le dépôt du dossier avant le 30 avril est obligatoire.",
+  "vocabulary": [
+    "programme d'échange",
+    "déposer",
+    "candidature"
+  ]
+},
+{
+  "id": 56,
+  "category": "Commerce",
+  "level": "B2",
+  "duration": 45,
+  "transcript": "Madame, l'article que vous avez commandé n'est plus disponible dans la couleur demandée. Nous pouvons toutefois vous proposer le même modèle en bleu avec une réduction de dix pour cent.",
+  "question": "Que propose le magasin ?",
+  "choices": [
+    "Un remboursement immédiat.",
+    "Le même produit dans une autre couleur avec une réduction.",
+    "Une livraison plus rapide."
+  ],
+  "answer": 1,
+  "explanation": "Le magasin propose un autre coloris avec une remise.",
+  "vocabulary": [
+    "article",
+    "réduction",
+    "modèle"
+  ]
+}
+  ,
+{
+  "id": 57,
+  "category": "Logement",
+  "level": "B2",
+  "duration": 45,
+  "transcript": "Bonjour Madame. Nous avons bien reçu votre demande concernant le chauffage. Un technicien passera demain entre neuf heures et midi. Merci de vous assurer qu'une personne sera présente dans l'appartement.",
+  "question": "Pourquoi la personne téléphone-t-elle ?",
+  "choices": [
+    "Pour annoncer la visite d'un technicien",
+    "Pour augmenter le loyer",
+    "Pour proposer un nouvel appartement"
+  ],
+  "answer": 0,
+  "explanation": "L'appel informe de la visite d'un technicien pour le chauffage.",
+  "vocabulary": [
+    "chauffage",
+    "technicien",
+    "appartement"
+  ]
+},
+{
+  "id": 58,
+  "category": "Radio",
+  "level": "B2",
+  "duration": 45,
+  "transcript": "La circulation est particulièrement difficile ce matin sur l'autoroute 40 à la suite d'un véhicule en panne. Les automobilistes sont invités à emprunter des itinéraires alternatifs.",
+  "question": "Quel conseil est donné ?",
+  "choices": [
+    "Reporter tous les déplacements",
+    "Utiliser un autre itinéraire",
+    "Prendre uniquement le métro"
+  ],
+  "answer": 1,
+  "explanation": "La radio conseille d'utiliser un itinéraire alternatif.",
+  "vocabulary": [
+    "circulation",
+    "véhicule en panne",
+    "itinéraire"
+  ]
+},
+{
+  "id": 59,
+  "category": "Travail",
+  "level": "B2",
+  "duration": 45,
+  "transcript": "— Tu viens déjeuner avec nous ?\n— Pas aujourd'hui. Je dois terminer le rapport avant seize heures.\n— D'accord. On ira sans toi alors.",
+  "question": "Pourquoi la personne refuse-t-elle l'invitation ?",
+  "choices": [
+    "Elle est malade.",
+    "Elle doit terminer son travail.",
+    "Elle a déjà déjeuné."
+  ],
+  "answer": 1,
+  "explanation": "Elle doit finir son rapport avant seize heures.",
+  "vocabulary": [
+    "rapport",
+    "terminer",
+    "déjeuner"
+  ]
+},
+{
+  "id": 60,
+  "category": "Université",
+  "level": "B2",
+  "duration": 45,
+  "transcript": "Les étudiants qui n'ont pas encore payé leurs frais d'inscription disposent d'un délai supplémentaire jusqu'au quinze septembre.",
+  "question": "Que décide l'université ?",
+  "choices": [
+    "Supprimer les frais d'inscription",
+    "Accorder un délai supplémentaire",
+    "Annuler les inscriptions"
+  ],
+  "answer": 1,
+  "explanation": "L'université prolonge la date limite de paiement.",
+  "vocabulary": [
+    "frais d'inscription",
+    "délai",
+    "supplémentaire"
+  ]
+},
+{
+  "id": 61,
+  "category": "Santé",
+  "level": "B2",
+  "duration": 45,
+  "transcript": "Nous rappelons à nos patients qu'il est préférable d'annuler un rendez-vous au moins vingt-quatre heures à l'avance afin de permettre à une autre personne d'en bénéficier.",
+  "question": "Pourquoi faut-il prévenir à l'avance ?",
+  "choices": [
+    "Pour éviter des frais de stationnement",
+    "Pour permettre à un autre patient d'obtenir le rendez-vous",
+    "Pour recevoir une réduction"
+  ],
+  "answer": 1,
+  "explanation": "Cela permet d'offrir le créneau à un autre patient.",
+  "vocabulary": [
+    "annuler",
+    "à l'avance",
+    "bénéficier"
+  ]
+}
+  ,
+{
+  "id": 62,
+  "category": "Banque",
+  "level": "B2",
+  "duration": 45,
+  "transcript": "Bonjour Madame. Nous vous informons que notre agence sera fermée exceptionnellement vendredi après-midi pour une mise à jour informatique. Les distributeurs automatiques resteront toutefois accessibles.",
+  "question": "Quel service restera disponible ?",
+  "choices": [
+    "Les rendez-vous avec les conseillers",
+    "Les distributeurs automatiques",
+    "Le service téléphonique"
+  ],
+  "answer": 1,
+  "explanation": "L'agence ferme mais les distributeurs automatiques restent accessibles.",
+  "vocabulary": [
+    "agence",
+    "mise à jour",
+    "distributeur automatique"
+  ]
+},
+{
+  "id": 63,
+  "category": "École",
+  "level": "B2",
+  "duration": 45,
+  "transcript": "Les parents sont invités à consulter régulièrement le portail de l'école afin de suivre les devoirs et les communications des enseignants.",
+  "question": "Pourquoi les parents doivent-ils consulter le portail ?",
+  "choices": [
+    "Pour payer les frais scolaires",
+    "Pour suivre les informations de l'école",
+    "Pour inscrire leurs enfants"
+  ],
+  "answer": 1,
+  "explanation": "Le portail permet de suivre les devoirs et les messages.",
+  "vocabulary": [
+    "portail",
+    "devoirs",
+    "enseignants"
+  ]
+},
+{
+  "id": 64,
+  "category": "Restaurant",
+  "level": "B2",
+  "duration": 45,
+  "transcript": "— Excusez-moi, est-ce qu'il reste une table près de la fenêtre ? — Malheureusement non. En revanche, nous pouvons vous proposer une table en terrasse si cela vous convient.",
+  "question": "Que propose le serveur ?",
+  "choices": [
+    "Une table en terrasse",
+    "Une réservation pour demain",
+    "Une réduction sur le repas"
+  ],
+  "answer": 0,
+  "explanation": "Le serveur propose une table en terrasse.",
+  "vocabulary": [
+    "terrasse",
+    "fenêtre",
+    "convenir"
+  ]
+},
+{
+  "id": 65,
+  "category": "Transport",
+  "level": "B2",
+  "duration": 45,
+  "transcript": "En raison d'importants travaux, la circulation sera interdite dans le centre-ville tout le week-end. Des déviations seront mises en place.",
+  "question": "Que doivent faire les automobilistes ?",
+  "choices": [
+    "Suivre les déviations",
+    "Stationner gratuitement",
+    "Attendre lundi pour circuler"
+  ],
+  "answer": 0,
+  "explanation": "Les automobilistes doivent suivre les déviations.",
+  "vocabulary": [
+    "déviation",
+    "circulation",
+    "centre-ville"
+  ]
+},
+{
+  "id": 66,
+  "category": "Travail",
+  "level": "B2",
+  "duration": 45,
+  "transcript": "Bonjour. Nous avons bien reçu votre candidature. Après étude de votre dossier, nous souhaitons organiser un entretien en visioconférence jeudi à quatorze heures.",
+  "question": "Pourquoi l'entreprise contacte-t-elle la candidate ?",
+  "choices": [
+    "Pour fixer un entretien",
+    "Pour refuser sa candidature",
+    "Pour demander des références"
+  ],
+  "answer": 0,
+  "explanation": "L'entreprise invite la candidate à un entretien.",
+  "vocabulary": [
+    "candidature",
+    "dossier",
+    "visioconférence"
+  ]
+}
+  ,
+{
+  "id": 67,
+  "category": "Loisirs",
+  "level": "B2",
+  "duration": 45,
+  "transcript": "En raison des prévisions météorologiques, la sortie en montagne prévue samedi est reportée au dimanche suivant. Les personnes inscrites recevront un courriel de confirmation dans la journée.",
+  "question": "Pourquoi la sortie est-elle reportée ?",
+  "choices": [
+    "À cause de la météo",
+    "Parce qu'il n'y a pas assez de participants",
+    "À cause d'un problème de transport"
+  ],
+  "answer": 0,
+  "explanation": "La sortie est reportée en raison des mauvaises conditions météorologiques.",
+  "vocabulary": [
+    "prévisions météorologiques",
+    "reporter",
+    "inscrits"
+  ]
+},
+{
+  "id": 68,
+  "category": "Entreprise",
+  "level": "B2",
+  "duration": 45,
+  "transcript": "Tous les employés sont invités à mettre à jour leur mot de passe avant la fin de la semaine afin de renforcer la sécurité informatique de l'entreprise.",
+  "question": "Pourquoi les employés doivent-ils changer leur mot de passe ?",
+  "choices": [
+    "Pour améliorer la sécurité",
+    "Pour installer un nouveau logiciel",
+    "Pour accéder à un nouveau bâtiment"
+  ],
+  "answer": 0,
+  "explanation": "La mesure vise à renforcer la sécurité informatique.",
+  "vocabulary": [
+    "mot de passe",
+    "sécurité informatique",
+    "renforcer"
+  ]
+},
+{
+  "id": 69,
+  "category": "Santé",
+  "level": "B2",
+  "duration": 45,
+  "transcript": "La clinique informe ses patients que le service de radiologie sera fermé jeudi matin pour des travaux de maintenance. Les rendez-vous concernés seront reportés.",
+  "question": "Quel service sera fermé ?",
+  "choices": [
+    "Le laboratoire",
+    "La radiologie",
+    "La pharmacie"
+  ],
+  "answer": 1,
+  "explanation": "Le service de radiologie sera fermé pour maintenance.",
+  "vocabulary": [
+    "radiologie",
+    "maintenance",
+    "reporter"
+  ]
+},
+{
+  "id": 70,
+  "category": "Transport",
+  "level": "B2",
+  "duration": 45,
+  "transcript": "Le stationnement sera interdit sur la rue Saint-Denis entre huit heures et dix-sept heures demain afin de permettre le nettoyage de la chaussée.",
+  "question": "Pourquoi sera-t-il interdit de stationner ?",
+  "choices": [
+    "Pour le nettoyage de la rue",
+    "Pour une parade",
+    "Pour des travaux de construction"
+  ],
+  "answer": 0,
+  "explanation": "Le nettoyage de la chaussée nécessite l'interdiction de stationner.",
+  "vocabulary": [
+    "stationnement",
+    "chaussée",
+    "interdit"
+  ]
+},
+{
+  "id": 71,
+  "category": "Téléphone",
+  "level": "B2",
+  "duration": 45,
+  "transcript": "Bonjour Madame. Nous avons retrouvé le portefeuille que vous avez signalé perdu hier. Vous pouvez venir le récupérer à l'accueil de la mairie avec une pièce d'identité.",
+  "question": "Pourquoi la personne reçoit-elle cet appel ?",
+  "choices": [
+    "Son portefeuille a été retrouvé.",
+    "Elle doit refaire sa carte d'identité.",
+    "Son rendez-vous est confirmé."
+  ],
+  "answer": 0,
+  "explanation": "La mairie informe que le portefeuille a été retrouvé.",
+  "vocabulary": [
+    "portefeuille",
+    "retrouver",
+    "accueil"
+  ]
+}
+  ,
+{
+  "id": 72,
+  "category": "Radio",
+  "level": "B2",
+  "duration": 45,
+  "transcript": "La ville annonce que le feu d'artifice prévu ce soir débutera finalement à vingt-deux heures en raison des conditions météorologiques. Les organisateurs remercient le public de sa compréhension.",
+  "question": "Pourquoi le feu d'artifice commence-t-il plus tard ?",
+  "choices": [
+    "À cause de la météo",
+    "À cause d'un problème technique",
+    "Parce qu'il y a trop de visiteurs"
+  ],
+  "answer": 0,
+  "explanation": "Les conditions météorologiques retardent le début du spectacle.",
+  "vocabulary": [
+    "feu d'artifice",
+    "conditions météorologiques",
+    "organisateurs"
+  ]
+},
+{
+  "id": 73,
+  "category": "Travail",
+  "level": "B2",
+  "duration": 45,
+  "transcript": "— Tu as terminé le dossier pour le client ? — Pas encore. Il me manque les chiffres du service comptable. Je devrais les recevoir cet après-midi.",
+  "question": "Pourquoi le dossier n'est-il pas terminé ?",
+  "choices": [
+    "Le client a annulé sa demande.",
+    "Des informations sont encore attendues.",
+    "L'employé est en congé."
+  ],
+  "answer": 1,
+  "explanation": "L'employé attend les informations du service comptable.",
+  "vocabulary": [
+    "dossier",
+    "service comptable",
+    "chiffres"
+  ]
+},
+{
+  "id": 74,
+  "category": "Université",
+  "level": "B2",
+  "duration": 45,
+  "transcript": "Les étudiants souhaitant obtenir une bourse d'études doivent remettre leur dossier complet avant le trente et un mai. Aucun retard ne sera accepté.",
+  "question": "Que doivent faire les étudiants ?",
+  "choices": [
+    "Déposer leur dossier avant la date limite.",
+    "Téléphoner au secrétariat.",
+    "Payer immédiatement les frais universitaires."
+  ],
+  "answer": 0,
+  "explanation": "Le dossier doit être remis avant la date indiquée.",
+  "vocabulary": [
+    "bourse",
+    "dossier",
+    "date limite"
+  ]
+},
+{
+  "id": 75,
+  "category": "Commerce",
+  "level": "B2",
+  "duration": 45,
+  "transcript": "Madame, nous vous informons que votre commande a quitté notre entrepôt ce matin. Vous devriez la recevoir dans un délai de deux jours ouvrables.",
+  "question": "Que sait la cliente ?",
+  "choices": [
+    "Sa commande est expédiée.",
+    "Sa commande est annulée.",
+    "Sa commande est en préparation."
+  ],
+  "answer": 0,
+  "explanation": "La commande a quitté l'entrepôt et est en cours de livraison.",
+  "vocabulary": [
+    "commande",
+    "entrepôt",
+    "délai"
+  ]
+},
+{
+  "id": 76,
+  "category": "Santé",
+  "level": "B2",
+  "duration": 45,
+  "transcript": "Pour limiter le temps d'attente, les patients sont invités à remplir le formulaire médical en ligne avant leur rendez-vous.",
+  "question": "Pourquoi faut-il remplir le formulaire à l'avance ?",
+  "choices": [
+    "Pour réduire le temps d'attente.",
+    "Pour changer de médecin.",
+    "Pour recevoir une ordonnance."
+  ],
+  "answer": 0,
+  "explanation": "Le formulaire permet de gagner du temps lors de la consultation.",
+  "vocabulary": [
+    "formulaire",
+    "temps d'attente",
+    "consultation"
+  ]
+}
+  ,
+{
+  "id": 77,
+  "category": "Hôtel",
+  "level": "B2",
+  "duration": 45,
+  "transcript": "Bonjour Monsieur. Nous vous rappelons que votre chambre devra être libérée avant onze heures demain matin. Si vous souhaitez prolonger votre séjour, merci de contacter la réception avant dix heures.",
+  "question": "Que doit faire le client s'il veut rester une nuit de plus ?",
+  "choices": [
+    "Contacter la réception avant dix heures",
+    "Payer immédiatement en ligne",
+    "Changer de chambre"
+  ],
+  "answer": 0,
+  "explanation": "Le client doit prévenir la réception avant dix heures pour prolonger son séjour.",
+  "vocabulary": [
+    "libérer",
+    "prolonger",
+    "réception"
+  ]
+},
+{
+  "id": 78,
+  "category": "Travail",
+  "level": "B2",
+  "duration": 45,
+  "transcript": "— Tu peux envoyer le rapport aujourd'hui ? — Pas encore. J'attends la validation du responsable. Dès que je la reçois, je l'envoie au client.",
+  "question": "Pourquoi le rapport n'est-il pas encore envoyé ?",
+  "choices": [
+    "Le client est absent",
+    "Le responsable doit encore le valider",
+    "Le rapport est perdu"
+  ],
+  "answer": 1,
+  "explanation": "L'employé attend la validation de son responsable.",
+  "vocabulary": [
+    "validation",
+    "responsable",
+    "rapport"
+  ]
+},
+{
+  "id": 79,
+  "category": "Ville",
+  "level": "B2",
+  "duration": 45,
+  "transcript": "La mairie informe les résidents que le marché public sera déplacé exceptionnellement sur la place centrale samedi prochain en raison de travaux sur son emplacement habituel.",
+  "question": "Pourquoi le marché change-t-il de place ?",
+  "choices": [
+    "À cause de travaux",
+    "À cause d'un festival",
+    "À cause du mauvais temps"
+  ],
+  "answer": 0,
+  "explanation": "Des travaux empêchent l'utilisation de l'emplacement habituel.",
+  "vocabulary": [
+    "marché",
+    "résidents",
+    "emplacement"
+  ]
+},
+{
+  "id": 80,
+  "category": "Transport",
+  "level": "B2",
+  "duration": 45,
+  "transcript": "Le conducteur vous rappelle qu'il est obligatoire de valider votre titre de transport avant de monter dans l'autobus. Des contrôles auront lieu toute la semaine.",
+  "question": "Pourquoi faut-il valider son titre de transport ?",
+  "choices": [
+    "Parce que des contrôles sont prévus",
+    "Pour obtenir une réduction",
+    "Pour réserver une place"
+  ],
+  "answer": 0,
+  "explanation": "Des contrôles seront effectués durant la semaine.",
+  "vocabulary": [
+    "valider",
+    "titre de transport",
+    "contrôle"
+  ]
+},
+{
+  "id": 81,
+  "category": "Santé",
+  "level": "B2",
+  "duration": 45,
+  "transcript": "Le laboratoire vous informe que vos résultats sont disponibles sur votre espace patient sécurisé. Si vous avez des questions, veuillez contacter votre médecin traitant.",
+  "question": "Où peut-on consulter les résultats ?",
+  "choices": [
+    "Sur l'espace patient sécurisé",
+    "À la pharmacie",
+    "À la réception de l'hôpital"
+  ],
+  "answer": 0,
+  "explanation": "Les résultats sont accessibles sur l'espace patient.",
+  "vocabulary": [
+    "laboratoire",
+    "espace patient",
+    "médecin traitant"
+  ]
+}
+  ,
+{
+  "id": 82,
+  "category": "Bibliothèque",
+  "level": "B2",
+  "duration": 45,
+  "transcript": "La bibliothèque municipale informe ses usagers que les salles de travail en groupe devront désormais être réservées en ligne au moins vingt-quatre heures à l'avance.",
+  "question": "Que doivent faire les usagers ?",
+  "choices": [
+    "Réserver les salles à l'avance",
+    "Payer un abonnement supplémentaire",
+    "Venir uniquement le matin"
+  ],
+  "answer": 0,
+  "explanation": "Les salles doivent être réservées en ligne à l'avance.",
+  "vocabulary": [
+    "usager",
+    "réserver",
+    "salle de travail"
+  ]
+},
+{
+  "id": 83,
+  "category": "Travail",
+  "level": "B2",
+  "duration": 45,
+  "transcript": "— Tu as déjà envoyé les invitations pour la réunion ? — Oui, mais trois personnes n'ont pas encore confirmé leur présence. Je vais leur envoyer un rappel cet après-midi.",
+  "question": "Pourquoi la personne enverra-t-elle un rappel ?",
+  "choices": [
+    "Parce que certaines personnes n'ont pas répondu",
+    "Parce que la réunion est annulée",
+    "Parce que la date change"
+  ],
+  "answer": 0,
+  "explanation": "Certaines personnes n'ont pas encore confirmé leur participation.",
+  "vocabulary": [
+    "invitation",
+    "confirmer",
+    "rappel"
+  ]
+},
+{
+  "id": 84,
+  "category": "Transport",
+  "level": "B2",
+  "duration": 45,
+  "transcript": "La société de transport rappelle que les vélos sont autorisés dans le métro uniquement en dehors des heures de pointe, soit avant sept heures et après dix-huit heures trente.",
+  "question": "Quand peut-on transporter un vélo dans le métro ?",
+  "choices": [
+    "Uniquement en dehors des heures de pointe",
+    "Toute la journée",
+    "Seulement le week-end"
+  ],
+  "answer": 0,
+  "explanation": "Les vélos sont interdits aux heures de pointe.",
+  "vocabulary": [
+    "heures de pointe",
+    "vélo",
+    "autorisé"
+  ]
+},
+{
+  "id": 85,
+  "category": "Commerce",
+  "level": "B2",
+  "duration": 45,
+  "transcript": "Nous vous informons que votre garantie arrive à expiration le mois prochain. Si vous le souhaitez, vous pouvez souscrire une extension de garantie avant cette date.",
+  "question": "Pourquoi le magasin contacte-t-il le client ?",
+  "choices": [
+    "Pour proposer une extension de garantie",
+    "Pour annoncer une réparation",
+    "Pour confirmer une commande"
+  ],
+  "answer": 0,
+  "explanation": "Le magasin propose de prolonger la garantie.",
+  "vocabulary": [
+    "garantie",
+    "expiration",
+    "extension"
+  ]
+},
+{
+  "id": 86,
+  "category": "Université",
+  "level": "B2",
+  "duration": 45,
+  "transcript": "Les étudiants qui souhaitent participer à la cérémonie de remise des diplômes doivent confirmer leur présence avant le vingt mai sur le site de l'université.",
+  "question": "Que doivent faire les étudiants ?",
+  "choices": [
+    "Confirmer leur participation",
+    "Payer les frais de diplôme",
+    "Rencontrer le directeur"
+  ],
+  "answer": 0,
+  "explanation": "Une confirmation est demandée avant la date limite.",
+  "vocabulary": [
+    "remise des diplômes",
+    "présence",
+    "confirmer"
+  ]
+}
+  ,
+{
+  "id": 87,
+  "category": "Hôpital",
+  "level": "B2",
+  "duration": 45,
+  "transcript": "Bonjour Madame. Nous vous rappelons que vous devez être à jeun à partir de minuit avant votre prise de sang de demain matin. Vous pouvez cependant continuer à boire de l'eau.",
+  "question": "Que doit faire la patiente avant l'examen ?",
+  "choices": [
+    "Ne rien manger après minuit",
+    "Prendre un repas léger",
+    "Annuler le rendez-vous"
+  ],
+  "answer": 0,
+  "explanation": "Elle doit rester à jeun avant la prise de sang.",
+  "vocabulary": [
+    "à jeun",
+    "prise de sang",
+    "examen"
+  ]
+},
+{
+  "id": 88,
+  "category": "Entreprise",
+  "level": "B2",
+  "duration": 45,
+  "transcript": "Tous les employés sont invités à participer à une courte séance d'information sur la cybersécurité vendredi à quatorze heures. La présence est obligatoire.",
+  "question": "Pourquoi cette séance est-elle organisée ?",
+  "choices": [
+    "Pour parler de cybersécurité",
+    "Pour présenter les nouveaux employés",
+    "Pour annoncer les vacances"
+  ],
+  "answer": 0,
+  "explanation": "Cette séance concerne la cybersécurité.",
+  "vocabulary": [
+    "cybersécurité",
+    "séance",
+    "obligatoire"
+  ]
+},
+{
+  "id": 89,
+  "category": "Transport",
+  "level": "B2",
+  "duration": 45,
+  "transcript": "Le prochain autobus à destination du centre-ville arrivera avec environ dix minutes de retard en raison d'un important ralentissement de la circulation.",
+  "question": "Pourquoi l'autobus est-il en retard ?",
+  "choices": [
+    "À cause de la circulation",
+    "À cause d'une panne",
+    "À cause du mauvais temps"
+  ],
+  "answer": 0,
+  "explanation": "Le retard est causé par un ralentissement de la circulation.",
+  "vocabulary": [
+    "ralentissement",
+    "circulation",
+    "retard"
+  ]
+},
+{
+  "id": 90,
+  "category": "Université",
+  "level": "B2",
+  "duration": 45,
+  "transcript": "Le professeur informe ses étudiants que le devoir devra être remis en format numérique avant dimanche soir. Les travaux envoyés en retard perdront des points.",
+  "question": "Que risquent les étudiants qui remettent leur travail en retard ?",
+  "choices": [
+    "Ils perdront des points",
+    "Ils devront recommencer",
+    "Ils seront exclus du cours"
+  ],
+  "answer": 0,
+  "explanation": "Un retard entraîne une pénalité.",
+  "vocabulary": [
+    "devoir",
+    "format numérique",
+    "pénalité"
+  ]
+},
+{
+  "id": 91,
+  "category": "Commerce",
+  "level": "B2",
+  "duration": 45,
+  "transcript": "Madame, nous avons bien reçu votre demande d'échange. Le produit de remplacement sera expédié dans un délai de trois jours ouvrables.",
+  "question": "Pourquoi le magasin contacte-t-il la cliente ?",
+  "choices": [
+    "Pour confirmer un échange",
+    "Pour annuler une commande",
+    "Pour proposer une réduction"
+  ],
+  "answer": 0,
+  "explanation": "Le magasin confirme l'envoi d'un produit de remplacement.",
+  "vocabulary": [
+    "échange",
+    "expédier",
+    "remplacement"
+  ]
+}
+  ,
+{
+  "id": 92,
+  "category": "Loisirs",
+  "level": "B2",
+  "duration": 45,
+  "transcript": "Le cinéma informe ses clients que la séance de vingt heures est complète. Des places sont encore disponibles pour la séance de vingt-deux heures.",
+  "question": "Que doivent faire les clients qui souhaitent voir le film aujourd'hui ?",
+  "choices": [
+    "Choisir la séance de vingt-deux heures",
+    "Revenir demain",
+    "Réserver par téléphone"
+  ],
+  "answer": 0,
+  "explanation": "La séance de 20 h est complète.",
+  "vocabulary": [
+    "séance",
+    "complète",
+    "places disponibles"
+  ]
+},
+{
+  "id": 93,
+  "category": "Travail",
+  "level": "B2",
+  "duration": 45,
+  "transcript": "Bonjour. Nous avons bien reçu votre candidature. Le processus de sélection prendra environ deux semaines. Nous vous contacterons dès qu'une décision sera prise.",
+  "question": "Que doit faire le candidat ?",
+  "choices": [
+    "Attendre une réponse",
+    "Envoyer un nouveau CV",
+    "Téléphoner demain"
+  ],
+  "answer": 0,
+  "explanation": "L'entreprise demande simplement d'attendre.",
+  "vocabulary": [
+    "candidature",
+    "processus",
+    "sélection"
+  ]
+},
+{
+  "id": 94,
+  "category": "Ville",
+  "level": "B2",
+  "duration": 45,
+  "transcript": "La collecte des déchets recyclables aura lieu exceptionnellement jeudi au lieu de mercredi cette semaine.",
+  "question": "Qu'est-ce qui change ?",
+  "choices": [
+    "Le jour de la collecte",
+    "L'heure de la collecte",
+    "Le type de déchets"
+  ],
+  "answer": 0,
+  "explanation": "La collecte est déplacée d'un jour.",
+  "vocabulary": [
+    "collecte",
+    "déchets",
+    "recyclables"
+  ]
+},
+{
+  "id": 95,
+  "category": "Santé",
+  "level": "B2",
+  "duration": 45,
+  "transcript": "Le pharmacien rappelle qu'il est conseillé de terminer entièrement le traitement antibiotique, même si les symptômes disparaissent rapidement.",
+  "question": "Quel conseil donne le pharmacien ?",
+  "choices": [
+    "Arrêter le traitement dès que l'on va mieux",
+    "Terminer tout le traitement",
+    "Changer immédiatement de médicament"
+  ],
+  "answer": 1,
+  "explanation": "Le traitement doit être suivi jusqu'à la fin.",
+  "vocabulary": [
+    "traitement",
+    "antibiotique",
+    "symptômes"
+  ]
+},
+{
+  "id": 96,
+  "category": "Transport",
+  "level": "B2",
+  "duration": 45,
+  "transcript": "Les passagers sont informés que le quai de départ du train pour Québec est désormais le quai numéro cinq. Merci de suivre les panneaux.",
+  "question": "Que doivent faire les voyageurs ?",
+  "choices": [
+    "Se rendre au quai numéro cinq",
+    "Attendre un autre train",
+    "Acheter un nouveau billet"
+  ],
+  "answer": 0,
+  "explanation": "Le train part du quai numéro cinq.",
+  "vocabulary": [
+    "quai",
+    "départ",
+    "panneaux"
+  ]
+}
+  ,
+{
+  "id": 97,
+  "category": "Banque",
+  "level": "B2",
+  "duration": 45,
+  "transcript": "Bonjour Madame. Nous vous rappelons que votre carte bancaire expirera à la fin du mois. Votre nouvelle carte est déjà disponible à votre agence.",
+  "question": "Pourquoi la banque contacte-t-elle la cliente ?",
+  "choices": [
+    "Pour signaler que sa nouvelle carte est disponible",
+    "Pour bloquer son compte bancaire",
+    "Pour augmenter les frais bancaires"
+  ],
+  "answer": 0,
+  "explanation": "La banque informe que la nouvelle carte peut être récupérée.",
+  "vocabulary": [
+    "expirer",
+    "carte bancaire",
+    "agence"
+  ]
+},
+{
+  "id": 98,
+  "category": "Entreprise",
+  "level": "B2",
+  "duration": 45,
+  "transcript": "Les employés sont informés que le bâtiment sera fermé vendredi à partir de dix-huit heures pour permettre des travaux d'entretien. Aucun accès ne sera autorisé pendant le week-end.",
+  "question": "Pourquoi le bâtiment sera-t-il fermé ?",
+  "choices": [
+    "Pour des travaux d'entretien",
+    "Pour une réunion du personnel",
+    "Pour un déménagement"
+  ],
+  "answer": 0,
+  "explanation": "La fermeture est prévue afin de réaliser des travaux d'entretien.",
+  "vocabulary": [
+    "bâtiment",
+    "entretien",
+    "accès"
+  ]
+},
+{
+  "id": 99,
+  "category": "Université",
+  "level": "B2",
+  "duration": 45,
+  "transcript": "Les étudiants sont invités à compléter l'évaluation des cours avant dimanche soir. Les résultats permettront d'améliorer les enseignements de la prochaine session.",
+  "question": "Pourquoi les étudiants doivent-ils remplir cette évaluation ?",
+  "choices": [
+    "Pour améliorer les cours",
+    "Pour obtenir leurs résultats",
+    "Pour s'inscrire à un nouvel examen"
+  ],
+  "answer": 0,
+  "explanation": "L'université souhaite améliorer la qualité des enseignements.",
+  "vocabulary": [
+    "évaluation",
+    "enseignement",
+    "session"
+  ]
+},
+{
+  "id": 100,
+  "category": "Voyage",
+  "level": "B2",
+  "duration": 45,
+  "transcript": "Mesdames et Messieurs, le vol à destination de Vancouver commencera son embarquement dans dix minutes à la porte C18. Les passagers des rangées vingt à trente sont priés de se présenter en premier.",
+  "question": "Qui est invité à embarquer en premier ?",
+  "choices": [
+    "Les passagers des rangées 20 à 30",
+    "Tous les passagers",
+    "Les familles avec enfants uniquement"
+  ],
+  "answer": 0,
+  "explanation": "L'embarquement débute par les rangées 20 à 30.",
+  "vocabulary": [
+    "embarquement",
+    "rangée",
+    "porte"
+  ]
+}
 ]
