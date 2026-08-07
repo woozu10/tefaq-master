@@ -1,29 +1,56 @@
-export function Result(score, total) {
+import { setCurrentPage } from "../services/router.js";
 
-  const percent = Math.round(score / total * 100);
+window.restartExam = function () {
 
-  return `
+    localStorage.removeItem("score");
+    localStorage.removeItem("total");
+
+    setCurrentPage("co");
+
+    location.reload();
+
+}
+
+window.goDashboard = function () {
+
+    setCurrentPage("dashboard");
+
+    location.reload();
+
+}
+
+export function Result(score,total){
+
+    const percent = Math.round(score/total*100);
+
+    return `
+
     <main class="content">
 
-      <h2>🎉 Test Finished</h2>
+        <h2>🎉 Test Finished</h2>
 
-      <div class="card">
+        <div class="card">
 
-        <h3>Score</h3>
+            <h3>Final Score</h3>
 
-        <p style="font-size:40px;">
-          ${score} / ${total}
-        </p>
+            <h1>${score}/${total}</h1>
 
-        <h2>${percent}%</h2>
+            <h2>${percent}%</h2>
 
-        <button onclick="location.reload()">
-          Restart
-        </button>
+            <button onclick="restartExam()">
+                Try Again
+            </button>
 
-      </div>
+            <br><br>
+
+            <button onclick="goDashboard()">
+                Dashboard
+            </button>
+
+        </div>
 
     </main>
-  `;
+
+    `;
 
 }
