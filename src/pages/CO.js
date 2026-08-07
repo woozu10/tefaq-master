@@ -1,5 +1,5 @@
-import { Timer } from "../components/Timer.js";
 import { App } from "../App.js";
+import { Timer } from "../components/Timer.js";
 import { ProgressBar } from "../components/ProgressBar.js";
 import { AudioPlayer } from "../components/AudioPlayer.js";
 import { QuestionCard } from "../components/QuestionCard.js";
@@ -44,7 +44,9 @@ export function CO() {
     <main class="content">
 
       <h2>Compréhension Orale</h2>
-${Timer()}
+
+      ${Timer(40)}
+
       ${ProgressBar(currentQuestion + 1, coQuestions.length)}
 
       <p><strong>Score : ${score}</strong></p>
@@ -108,6 +110,7 @@ window.nextQuestion = function() {
     localStorage.setItem("score", score);
     localStorage.setItem("total", coQuestions.length);
     localStorage.setItem("currentPage", "result");
+    localStorage.removeItem("coTimerEnd");
 
     location.reload();
     return;
