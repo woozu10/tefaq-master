@@ -82,11 +82,13 @@ export function Review() {
 
       </h3>
 
-      ${AudioPlayer(q.audio)}
+    
+      ${AudioPlayer(q.transcript)}
 
       <div class="card">
 
         <h3>${q.question}</h3>
+        
 
         <hr>
 
