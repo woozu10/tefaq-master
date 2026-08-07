@@ -1,4 +1,3 @@
-import { Statistics } from "./pages/Statistics.js";
 import { Dashboard } from "./pages/Dashboard.js";
 import { COHome } from "./pages/COHome.js";
 import { COPractice } from "./pages/COPractice.js";
@@ -16,8 +15,7 @@ export function App() {
 
   switch (page) {
 
-      case "statistics":
-  return Statistics();
+  
 
     case "co":
       return COHome();
