@@ -2,6 +2,39 @@ import { getQuestion } from "../services/tefaqService.js";
 import { getFavorites } from "../services/favoriteService.js";
 import { getWrongQuestions } from "../services/wrongNoteService.js";
 import { getHistory } from "../services/statisticsService.js";
+import { setCurrentPage } from "../services/router.js";
+
+window.goCO = function () {
+
+  setCurrentPage("co");
+
+  location.reload();
+
+};
+
+window.goFavorites = function () {
+
+  setCurrentPage("favorites");
+
+  location.reload();
+
+};
+
+window.goWrongNotes = function () {
+
+  setCurrentPage("wrong-notes");
+
+  location.reload();
+
+};
+
+window.goStatistics = function () {
+
+  setCurrentPage("statistics");
+
+  location.reload();
+
+};
 
 export function Content() {
 
@@ -28,35 +61,79 @@ export function Content() {
       <h2>📚 TEFAQ MASTER</h2>
 
       <div class="card">
+
         <h3>📊 Last Score</h3>
+
         <h1>${lastScore}</h1>
+
       </div>
 
       <div class="card">
+
         <h3>🏆 Best Score</h3>
+
         <h1>${bestScore}</h1>
+
       </div>
 
       <div class="card">
+
         <h3>⭐ Favorites</h3>
+
         <h1>${favorites}</h1>
+
       </div>
 
       <div class="card">
+
         <h3>❌ Wrong Notes</h3>
+
         <h1>${wrongs}</h1>
+
+      </div>
+
+      <div class="card">
+
+        <button onclick="goCO()">
+          🎧 Continue CO
+        </button>
+
+        <br><br>
+
+        <button onclick="goFavorites()">
+          ⭐ Favorites
+        </button>
+
+        <br><br>
+
+        <button onclick="goWrongNotes()">
+          ❌ Wrong Notes
+        </button>
+
+        <br><br>
+
+        <button onclick="goStatistics()">
+          📊 Statistics
+        </button>
+
       </div>
 
       <hr>
 
       <div class="card">
+
         <h3>${sample.title || "Sample Question"}</h3>
+
         <p>${sample.question || ""}</p>
+
       </div>
 
       <div class="card">
+
         <h3>📈 Progress</h3>
+
         <p>Total Exams : ${history.length}</p>
+
       </div>
 
     </main>
