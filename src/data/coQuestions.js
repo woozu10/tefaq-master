@@ -10,7 +10,8 @@ export const coQuestions = [
       "Pour annuler un rendez-vous",
       "Pour demander un renseignement"
     ],
-    answer: 1
+    answer: 1,
+    explanation: "Marie téléphone pour annuler son rendez-vous."
   },
 
   {
@@ -23,7 +24,8 @@ export const coQuestions = [
       "Envoyer un courriel",
       "Téléphoner demain"
     ],
-    answer: 0
+    answer: 0,
+    explanation: "Le client doit signer le contrat."
   },
 
   {
@@ -36,7 +38,8 @@ export const coQuestions = [
       "À 9 h",
       "À 10 h"
     ],
-    answer: 2
+    answer: 2,
+    explanation: "La réunion commence à 10 heures."
   }
 
 ];
