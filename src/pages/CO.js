@@ -104,7 +104,8 @@ export function CO() {
           : ""
       }
 
-      ${AudioPlayer(q.audio)}
+    
+      ${AudioPlayer(q.transcript)}
 
       ${QuestionCard(
         q.question,
