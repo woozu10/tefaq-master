@@ -17,9 +17,7 @@ let timeLeft = 30 * 60;
 function startTimer() {
 
   if (timer) {
-
     clearInterval(timer);
-
   }
 
   timer = setInterval(() => {
@@ -48,10 +46,7 @@ function startTimer() {
       document.getElementById("timer");
 
     if (el) {
-
-      el.innerHTML =
-        `${min}:${sec}`;
-
+      el.innerHTML = `${min}:${sec}`;
     }
 
   }, 1000);
@@ -113,7 +108,6 @@ function updateCounter() {
   }
 
 }
-
 /* =========================================
    AUTO SAVE
 ========================================= */
@@ -154,11 +148,42 @@ window.clearEssay = function () {
 
   }
 
-  localStorage.removeItem("eeDraft");
+  localStorage.removeItem(
+    "eeDraft"
+  );
 
   location.reload();
 
-};/* =========================================
+};
+
+/* =========================================
+   SUBMIT
+========================================= */
+
+window.submitEssay = function () {
+
+  autoSave();
+
+  localStorage.setItem(
+    "eeAnswer",
+    document.getElementById("essay").value
+  );
+
+  localStorage.setItem(
+    "eeTopic",
+    JSON.stringify(topic)
+  );
+
+  localStorage.setItem(
+    "currentPage",
+    "ee-result"
+  );
+
+  location.reload();
+
+};
+
+/* =========================================
    NEXT TOPIC
 ========================================= */
 
@@ -197,7 +222,6 @@ function renderEE() {
   }
 
 }
-
 /* =========================================
    PAGE
 ========================================= */
@@ -283,7 +307,8 @@ export function EE() {
         >${draft}</textarea>
 
         <hr>
-                <p>
+
+        <p>
 
           Words :
           <b id="wordCount">0</b>
@@ -319,8 +344,7 @@ export function EE() {
         </p>
 
         <br>
-
-        <button onclick="saveDraft()">
+                <button onclick="saveDraft()">
 
           💾 Save Draft
 
@@ -331,6 +355,24 @@ export function EE() {
         <button onclick="clearEssay()">
 
           🗑 Clear
+
+        </button>
+
+        &nbsp;
+
+        <button
+
+          onclick="submitEssay()"
+
+          style="
+            background:#4CAF50;
+            color:white;
+            font-weight:bold;
+          "
+
+        >
+
+          ✅ Submit
 
         </button>
 
