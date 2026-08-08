@@ -28,6 +28,8 @@ function startTimer() {
 
       clearInterval(timer);
 
+      autoSave();
+
       alert("Time is over!");
 
       return;
@@ -79,6 +81,37 @@ function updateCounter() {
   document.getElementById("charCount").innerHTML =
     chars;
 
+  const status =
+    document.getElementById("wordStatus");
+
+  if (!status) return;
+
+  if (words < 150) {
+
+    status.innerHTML =
+      "🔴 Too short";
+
+    status.style.color =
+      "#F44336";
+
+  } else if (words <= 200) {
+
+    status.innerHTML =
+      "🟢 Perfect";
+
+    status.style.color =
+      "#4CAF50";
+
+  } else {
+
+    status.innerHTML =
+      "🟠 Too long";
+
+    status.style.color =
+      "#FF9800";
+
+  }
+
 }
 
 /* =========================================
@@ -125,9 +158,7 @@ window.clearEssay = function () {
 
   location.reload();
 
-};
-
-/* =========================================
+};/* =========================================
    NEXT TOPIC
 ========================================= */
 
@@ -138,9 +169,12 @@ window.nextTopic = function () {
 
   draft = "";
 
-  localStorage.removeItem("eeDraft");
+  timeLeft =
+    30 * 60;
 
-  timeLeft = 30 * 60;
+  localStorage.removeItem(
+    "eeDraft"
+  );
 
   renderEE();
 
@@ -182,7 +216,11 @@ export function EE() {
 
     <main class="content">
 
-      <h2>📝 Expression Écrite</h2>
+      <h2>
+
+        📝 Expression Écrite
+
+      </h2>
 
       <div class="card">
 
@@ -240,13 +278,12 @@ export function EE() {
 
           style="width:100%;"
 
-          oninput="updateCounter();autoSave();"
+          oninput="updateCounter(); autoSave();"
 
         >${draft}</textarea>
 
         <hr>
-
-        <p>
+                <p>
 
           Words :
           <b id="wordCount">0</b>
@@ -255,6 +292,29 @@ export function EE() {
 
           Characters :
           <b id="charCount">0</b>
+
+        </p>
+
+        <p>
+
+          Target :
+          <b>
+
+            150 ~ 200 words
+
+          </b>
+
+        </p>
+
+        <p>
+
+          Status :
+
+          <b id="wordStatus">
+
+            🔴 Too short
+
+          </b>
 
         </p>
 
