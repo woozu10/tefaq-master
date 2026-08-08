@@ -1,3 +1,5 @@
+import { getRandomTopic } from "../services/eeService.js";
+
 let draft =
   localStorage.getItem("eeDraft") || "";
 
@@ -76,6 +78,9 @@ window.clearEssay = function () {
 
 export function EE() {
 
+  const topic =
+    getRandomTopic();
+
   return `
 
     <main class="content">
@@ -95,15 +100,11 @@ export function EE() {
           30:00
         </div>
 
-        <h3>Today's Task</h3>
+        <h3>${topic.title}</h3>
 
         <p>
 
-          Vous avez reçu un colis en retard.
-
-          Écrivez un courriel de réclamation.
-
-          (150 à 200 mots)
+          ${topic.instruction}
 
         </p>
 
