@@ -40,6 +40,16 @@ window.previousReview = function () {
 
 };
 
+window.goReviewQuestion = function (index) {
+
+  current = index;
+
+  resetAudio();
+
+  document.getElementById("app").innerHTML = Review();
+
+};
+
 window.finishReview = function () {
 
   clearReviewQuestions();
@@ -80,6 +90,51 @@ export function Review() {
         Question ${current + 1} / ${questions.length}
       </h3>
 
+      <div
+        style="
+          display:flex;
+          flex-wrap:wrap;
+          gap:6px;
+          justify-content:center;
+          margin-bottom:20px;
+        "
+      >
+
+      ${questions.map((question,index)=>`
+
+        <button
+
+          onclick="goReviewQuestion(${index})"
+
+          style="
+            width:36px;
+            height:36px;
+            border-radius:50%;
+            border:none;
+            cursor:pointer;
+            font-weight:bold;
+            color:white;
+
+            background:
+
+            ${
+              question.userAnswer === question.answer
+                ? "#4CAF50"
+                : "#F44336"
+            };
+
+          "
+
+        >
+
+          ${index+1}
+
+        </button>
+
+      `).join("")}
+
+      </div>
+
       ${AudioPlayer(q.transcript)}
 
       <div class="card">
@@ -90,10 +145,16 @@ export function Review() {
 
         <h3>Your Answer</h3>
 
-        <p style="
-          color:${q.userAnswer === q.answer ? "#4CAF50" : "#F44336"};
-          font-weight:bold;
-        ">
+        <p
+          style="
+            color:${
+              q.userAnswer === q.answer
+                ? "#4CAF50"
+                : "#F44336"
+            };
+            font-weight:bold;
+          "
+        >
 
           ${
             q.userAnswer === q.answer
@@ -113,10 +174,12 @@ export function Review() {
 
         <h3>Correct Answer</h3>
 
-        <p style="
-          color:#4CAF50;
-          font-weight:bold;
-        ">
+        <p
+          style="
+            color:#4CAF50;
+            font-weight:bold;
+          "
+        >
 
           ✅ ${q.choices[q.answer]}
 
