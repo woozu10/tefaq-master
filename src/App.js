@@ -1,3 +1,4 @@
+import { EO } from "./pages/EO.js";
 import { EEResult } from "./pages/EEResult.js";
 import { EE } from "./pages/EE.js";
 import { Review } from "./pages/Review.js";
@@ -97,6 +98,8 @@ export function App() {
     return EE();
       case "ee-result":
     return EEResult();
+      case "eo":
+    return EO();
 
     default:
       return Dashboard();
