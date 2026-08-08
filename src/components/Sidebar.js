@@ -32,7 +32,7 @@ export function Sidebar() {
     <aside class="sidebar">
 
       <button onclick="goDashboard()">
-        🏠 Dashboard
+        🏠 Dashboard 123
       </button>
 
       <button onclick="goCO()">
