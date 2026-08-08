@@ -1,4 +1,5 @@
 import { getRandomTopic } from "../services/eeService.js";
+import { correctEssay } from "../services/eeCorrection.js";
 
 let draft =
   localStorage.getItem("eeDraft") || "";
@@ -46,7 +47,10 @@ function startTimer() {
       document.getElementById("timer");
 
     if (el) {
-      el.innerHTML = `${min}:${sec}`;
+
+      el.innerHTML =
+        `${min}:${sec}`;
+
     }
 
   }, 1000);
@@ -143,9 +147,7 @@ window.saveDraft = function () {
 window.clearEssay = function () {
 
   if (!confirm("Delete draft?")) {
-
     return;
-
   }
 
   localStorage.removeItem(
@@ -180,6 +182,46 @@ window.submitEssay = function () {
   );
 
   location.reload();
+
+};
+
+/* =========================================
+   AI CORRECTION
+========================================= */
+
+window.aiCorrection = async function () {
+
+  const text =
+    document.getElementById("essay").value;
+
+  if (text.trim() === "") {
+
+    alert(
+      "Please write something first."
+    );
+
+    return;
+
+  }
+
+  const result =
+    await correctEssay(text);
+
+  alert(
+
+`Grammar : ${result.grammar}
+
+Vocabulary : ${result.vocabulary}
+
+Structure : ${result.structure}
+
+Estimated Score : ${result.score}
+
+Feedback
+
+- ${result.feedback.join("\n- ")}`
+
+  );
 
 };
 
@@ -221,7 +263,7 @@ function renderEE() {
 
   }
 
-}
+  }
 /* =========================================
    PAGE
 ========================================= */
@@ -373,6 +415,24 @@ export function EE() {
         >
 
           ✅ Submit
+
+        </button>
+
+        <br><br>
+
+        <button
+
+          onclick="aiCorrection()"
+
+          style="
+            background:#673AB7;
+            color:white;
+            font-weight:bold;
+          "
+
+        >
+
+          🤖 AI Correction
 
         </button>
 
