@@ -2118,4 +2118,105 @@
     "article soldé"
   ]
 }
+  ,
+{
+  "id": 106,
+  "category": "Travail",
+  "level": "B2",
+  "duration": 55,
+  "transcript": "— Bonjour Julie. Tu as reçu le message de notre client ? Il souhaite avancer la réunion de vendredi à jeudi matin. Le problème, c'est que Marc est en déplacement toute la journée. Si on ne trouve pas un autre créneau, il faudra probablement organiser une visioconférence. — D'accord. Je vais vérifier les disponibilités de chacun et je te rappelle avant midi.",
+  "question": "Que va faire Julie ?",
+  "choices": [
+    "Organiser immédiatement une visioconférence.",
+    "Vérifier les disponibilités de l'équipe.",
+    "Annuler la réunion avec le client."
+  ],
+  "answer": 1,
+  "explanation": "Julie ne prend pas de décision immédiatement. Elle vérifie d'abord les disponibilités.",
+  "vocabulary": [
+    "créneau",
+    "déplacement",
+    "disponibilité"
+  ]
+},
+{
+  "id": 107,
+  "category": "Logement",
+  "level": "B2",
+  "duration": 55,
+  "transcript": "— Bonjour. Je vous appelle au sujet de votre demande concernant le chauffage. Le technicien est passé ce matin, mais il n'a trouvé personne à votre domicile. Il pourra revenir jeudi entre quatorze heures et seize heures. Est-ce que cela vous convient ?",
+  "question": "Pourquoi le problème n'a-t-il pas été résolu ?",
+  "choices": [
+    "Le technicien était en retard.",
+    "Personne n'était présent à l'appartement.",
+    "La pièce de rechange n'était pas disponible."
+  ],
+  "answer": 1,
+  "explanation": "Le technicien n'a trouvé personne sur place.",
+  "vocabulary": [
+    "chauffage",
+    "technicien",
+    "domicile"
+  ]
+},
+{
+  "id": 108,
+  "category": "Transport",
+  "level": "B2",
+  "duration": 55,
+  "transcript": "Mesdames et Messieurs, en raison d'un incident survenu près de la station Lionel-Groulx, la ligne verte circule avec un ralentissement important. Si votre destination le permet, nous vous recommandons d'utiliser la ligne orange.",
+  "question": "Quel conseil est donné aux voyageurs ?",
+  "choices": [
+    "Attendre la reprise normale du service.",
+    "Utiliser une autre ligne de métro.",
+    "Demander un remboursement."
+  ],
+  "answer": 1,
+  "explanation": "Les voyageurs sont invités à emprunter la ligne orange.",
+  "vocabulary": [
+    "ralentissement",
+    "incident",
+    "destination"
+  ]
+},
+{
+  "id": 109,
+  "category": "Santé",
+  "level": "B2",
+  "duration": 55,
+  "transcript": "Bonjour Madame. Le médecin a pris un peu de retard ce matin en raison d'une urgence. Votre rendez-vous est maintenu, mais il débutera avec environ trente minutes de retard. Nous vous remercions de votre compréhension.",
+  "question": "Pourquoi le rendez-vous est-il retardé ?",
+  "choices": [
+    "Le médecin est en urgence.",
+    "Le patient est arrivé en retard.",
+    "Le cabinet est fermé."
+  ],
+  "answer": 0,
+  "explanation": "Le retard est causé par une urgence médicale.",
+  "vocabulary": [
+    "urgence",
+    "maintenu",
+    "compréhension"
+  ]
+},
+{
+  "id": 110,
+  "category": "Banque",
+  "level": "B2",
+  "duration": 55,
+  "transcript": "Bonjour Monsieur. Nous avons remarqué une activité inhabituelle sur votre carte bancaire. Par mesure de sécurité, celle-ci a été temporairement bloquée. Merci de contacter notre service clientèle afin de confirmer les dernières opérations.",
+  "question": "Pourquoi la banque appelle-t-elle le client ?",
+  "choices": [
+    "Pour proposer une nouvelle carte.",
+    "Pour vérifier des opérations inhabituelles.",
+    "Pour annoncer une augmentation des frais."
+  ],
+  "answer": 1,
+  "explanation": "La banque souhaite vérifier des transactions inhabituelles avant de réactiver la carte.",
+  "vocabulary": [
+    "activité inhabituelle",
+    "bloquer",
+    "opération bancaire"
+  ]
+}
 ]
