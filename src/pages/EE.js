@@ -3,6 +3,59 @@ import { getRandomTopic } from "../services/eeService.js";
 let draft =
   localStorage.getItem("eeDraft") || "";
 
+let topic =
+  getRandomTopic();
+
+let timer = null;
+
+let timeLeft = 30 * 60;
+
+/* =========================================
+   TIMER
+========================================= */
+
+function startTimer() {
+
+  if (timer) {
+
+    clearInterval(timer);
+
+  }
+
+  timer = setInterval(() => {
+
+    if (timeLeft <= 0) {
+
+      clearInterval(timer);
+
+      alert("Time is over!");
+
+      return;
+
+    }
+
+    timeLeft--;
+
+    const min =
+      String(Math.floor(timeLeft / 60)).padStart(2, "0");
+
+    const sec =
+      String(timeLeft % 60).padStart(2, "0");
+
+    const el =
+      document.getElementById("timer");
+
+    if (el) {
+
+      el.innerHTML =
+        `${min}:${sec}`;
+
+    }
+
+  }, 1000);
+
+}
+
 /* =========================================
    WORD / CHARACTER COUNTER
 ========================================= */
@@ -45,7 +98,7 @@ window.autoSave = function () {
 };
 
 /* =========================================
-   SAVE BUTTON
+   SAVE
 ========================================= */
 
 window.saveDraft = function () {
@@ -63,7 +116,9 @@ window.saveDraft = function () {
 window.clearEssay = function () {
 
   if (!confirm("Delete draft?")) {
+
     return;
+
   }
 
   localStorage.removeItem("eeDraft");
@@ -73,13 +128,55 @@ window.clearEssay = function () {
 };
 
 /* =========================================
+   NEXT TOPIC
+========================================= */
+
+window.nextTopic = function () {
+
+  topic =
+    getRandomTopic();
+
+  draft = "";
+
+  localStorage.removeItem("eeDraft");
+
+  timeLeft = 30 * 60;
+
+  renderEE();
+
+};
+
+/* =========================================
+   RENDER
+========================================= */
+
+function renderEE() {
+
+  const app =
+    document.getElementById("app");
+
+  if (app) {
+
+    app.innerHTML =
+      EE();
+
+  }
+
+}
+
+/* =========================================
    PAGE
 ========================================= */
 
 export function EE() {
 
-  const topic =
-    getRandomTopic();
+  setTimeout(() => {
+
+    updateCounter();
+
+    startTimer();
+
+  }, 100);
 
   return `
 
@@ -90,23 +187,46 @@ export function EE() {
       <div class="card">
 
         <div
+
           id="timer"
+
           style="
-            font-size:28px;
+
+            font-size:34px;
+
             font-weight:bold;
+
+            color:#1976D2;
+
+            text-align:center;
+
             margin-bottom:20px;
+
           "
+
         >
+
           30:00
+
         </div>
 
-        <h3>${topic.title}</h3>
+        <h3>
+
+          ${topic.title}
+
+        </h3>
 
         <p>
 
           ${topic.instruction}
 
         </p>
+
+        <button onclick="nextTopic()">
+
+          🎲 Next Topic
+
+        </button>
 
       </div>
 
@@ -120,10 +240,7 @@ export function EE() {
 
           style="width:100%;"
 
-          oninput="
-            updateCounter();
-            autoSave();
-          "
+          oninput="updateCounter();autoSave();"
 
         >${draft}</textarea>
 
