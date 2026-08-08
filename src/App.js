@@ -1,4 +1,3 @@
-import { CE } from "./pages/CE.js";
 import { Review } from "./pages/Review.js";
 import { Dashboard } from "./pages/Dashboard.js";
 
@@ -92,8 +91,6 @@ export function App() {
       return Result(score, total);
 
     }
-      case "ce":
-    return CE();
 
     default:
       return Dashboard();
