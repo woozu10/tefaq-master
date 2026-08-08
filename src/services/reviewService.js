@@ -1,19 +1,22 @@
-let reviewQuestions = [];
-
 export function setReviewQuestions(questions) {
 
-  reviewQuestions = questions;
+  localStorage.setItem(
+    "reviewQuestions",
+    JSON.stringify(questions)
+  );
 
 }
 
 export function getReviewQuestions() {
 
-  return reviewQuestions;
+  return JSON.parse(
+    localStorage.getItem("reviewQuestions")
+  ) || [];
 
 }
 
 export function clearReviewQuestions() {
 
-  reviewQuestions = [];
+  localStorage.removeItem("reviewQuestions");
 
 }
