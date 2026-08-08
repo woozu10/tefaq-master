@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "section": "A",
+    "title": "Location d’un appartement",
+    "prompt": "Vous téléphonez à une agence immobilière. Posez des questions sur le loyer, les charges, le quartier, le transport et la date d’entrée.",
+    "targetMinutes": 3
+  },
+  {
+    "id": 2,
+    "section": "A",
+    "title": "Cours de français",
+    "prompt": "Vous appelez une école de langues. Demandez des renseignements sur les horaires, les niveaux, les frais, les examens et les modalités d’inscription.",
+    "targetMinutes": 3
+  },
+  {
+    "id": 3,
+    "section": "A",
+    "title": "Activité sportive",
+    "prompt": "Vous contactez un centre sportif. Renseignez-vous sur les cours, les horaires, le matériel, les tarifs et les conditions d’annulation.",
+    "targetMinutes": 3
+  },
+  {
+    "id": 4,
+    "section": "A",
+    "title": "Service de garde",
+    "prompt": "Vous téléphonez à un service de garde. Posez des questions sur les horaires, les repas, les activités, les tarifs et les places disponibles.",
+    "targetMinutes": 3
+  },
+  {
+    "id": 5,
+    "section": "A",
+    "title": "Voyage organisé",
+    "prompt": "Vous appelez une agence de voyages. Demandez des détails sur l’itinéraire, l’hébergement, les repas, le prix et les conditions de remboursement.",
+    "targetMinutes": 3
+  },
+  {
+    "id": 6,
+    "section": "B",
+    "title": "Télétravail",
+    "prompt": "Votre ami hésite à accepter un emploi principalement en télétravail. Convainquez-le en donnant des arguments et en répondant à ses objections.",
+    "targetMinutes": 5
+  },
+  {
+    "id": 7,
+    "section": "B",
+    "title": "Transport en commun",
+    "prompt": "Votre collègue veut acheter une deuxième voiture. Essayez de le convaincre d’utiliser davantage les transports en commun.",
+    "targetMinutes": 5
+  },
+  {
+    "id": 8,
+    "section": "B",
+    "title": "Activité communautaire",
+    "prompt": "Convainquez un ami de participer avec vous à une activité de bénévolat dans votre quartier.",
+    "targetMinutes": 5
+  },
+  {
+    "id": 9,
+    "section": "B",
+    "title": "Cours du soir",
+    "prompt": "Convainquez un ami de suivre un cours du soir pour améliorer ses compétences professionnelles.",
+    "targetMinutes": 5
+  },
+  {
+    "id": 10,
+    "section": "B",
+    "title": "Vacances locales",
+    "prompt": "Votre ami veut voyager très loin. Convainquez-le de passer ses prochaines vacances dans votre région.",
+    "targetMinutes": 5
+  }
+]
