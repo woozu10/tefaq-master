@@ -1,3 +1,4 @@
+import { Settings } from "./pages/Settings.js";
 import { Review } from "./pages/Review.js";
 import { Dashboard } from "./pages/Dashboard.js";
 import { COHome } from "./pages/COHome.js";
@@ -48,6 +49,9 @@ export function App() {
       return Result(score, total);
 
     }
+      case "settings":
+
+    return Settings();
 
     default:
       return Dashboard();
