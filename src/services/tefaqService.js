@@ -1,8 +1,14 @@
-import B2 from "../../public/data/co/B2.json";
+import coB2 from "../../public/data/co/B2.json";
 
-export function getQuestion(level = "B2") {
+const DATA = {
+  CO: {
+    B2: coB2
+  }
+};
 
-  const questions = B2;
+export function getQuestion(level = "B2", module = "CO") {
+
+  const questions = DATA[module][level];
 
   const index = Math.floor(Math.random() * questions.length);
 
@@ -10,8 +16,8 @@ export function getQuestion(level = "B2") {
 
 }
 
-export function getQuestions(level = "B2") {
+export function getQuestions(level = "B2", module = "CO") {
 
-  return B2;
+  return DATA[module][level];
 
 }
