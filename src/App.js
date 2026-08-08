@@ -6,6 +6,11 @@ import { COPractice } from "./pages/COPractice.js";
 import { COExam } from "./pages/COExam.js";
 import { CO } from "./pages/CO.js";
 
+import { CEHome } from "./pages/CEHome.js";
+import { CEPractice } from "./pages/CEPractice.js";
+import { CEExam } from "./pages/CEExam.js";
+import { CE } from "./pages/CE.js";
+
 import { Favorites } from "./pages/Favorites.js";
 import { WrongNotes } from "./pages/WrongNotes.js";
 import { Statistics } from "./pages/Statistics.js";
@@ -13,17 +18,7 @@ import { Result } from "./pages/Result.js";
 import { Settings } from "./pages/Settings.js";
 import { Admin } from "./pages/Admin.js";
 
-/* 새 페이지 */
-import { Speaking } from "./pages/Speaking.js";
-import { Writing } from "./pages/Writing.js";
-import { ObjectiveHome } from "./pages/ObjectiveHome.js";
-import { ObjectiveQuiz } from "./pages/ObjectiveQuiz.js";
-import { Search } from "./pages/Search.js";
-import { Library } from "./pages/Library.js";
-
-import {
-  getCurrentPage
-} from "./services/router.js";
+import { getCurrentPage } from "./services/router.js";
 
 export function App() {
 
@@ -33,6 +28,10 @@ export function App() {
 
     case "review":
       return Review();
+
+    // ======================
+    // CO
+    // ======================
 
     case "co":
       return COHome();
@@ -46,6 +45,26 @@ export function App() {
     case "co-quiz":
       return CO();
 
+    // ======================
+    // CE
+    // ======================
+
+    case "ce":
+      return CEHome();
+
+    case "ce-practice":
+      return CEPractice();
+
+    case "ce-exam":
+      return CEExam();
+
+    case "ce-quiz":
+      return CE();
+
+    // ======================
+    // Common
+    // ======================
+
     case "favorites":
       return Favorites();
 
@@ -55,24 +74,6 @@ export function App() {
     case "statistics":
       return Statistics();
 
-    case "speaking":
-      return Speaking();
-
-    case "writing":
-      return Writing();
-
-    case "objective":
-      return ObjectiveHome();
-
-    case "objective-quiz":
-      return ObjectiveQuiz();
-
-    case "search":
-      return Search();
-
-    case "library":
-      return Library();
-
     case "settings":
       return Settings();
 
@@ -81,19 +82,19 @@ export function App() {
 
     case "result": {
 
-      const score = Number(
-        localStorage.getItem("score")
-      );
+      const score =
+        Number(localStorage.getItem("score"));
 
-      const total = Number(
-        localStorage.getItem("total")
-      );
+      const total =
+        Number(localStorage.getItem("total"));
 
       return Result(score, total);
+
     }
 
     default:
       return Dashboard();
+
   }
 
 }
