@@ -1,29 +1,37 @@
-export async function correctEssay(text) {
+import { askAI } from "./aiService.js";
 
-  return {
+export async function correctEssay(
+  text,
+  topic
+) {
 
-    grammar:
-      "Good",
+  const prompt = `
+너는 TEFAQ EE 시험관이다.
 
-    vocabulary:
-      "B2",
+주제
+${topic.title}
 
-    structure:
-      "Well organized",
+문제
+${topic.instruction}
 
-    score:
-      "380 / 450",
+답안
+${text}
 
-    feedback: [
+다음을 작성하라.
 
-      "Use more connectors.",
+1. 예상 점수
 
-      "Add more detailed examples.",
+2. 문법
 
-      "Avoid repeating the same words."
+3. 어휘
 
-    ]
+4. 자연스러운 표현
 
-  };
+5. 개선점
+
+6. 모범답안
+`;
+
+  return await askAI(prompt);
 
 }
