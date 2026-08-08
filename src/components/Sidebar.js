@@ -10,6 +10,11 @@ window.goCO = function () {
   location.reload();
 };
 
+window.goCE = function () {
+  setCurrentPage("ce");
+  location.reload();
+};
+
 window.goFavorites = function () {
   setCurrentPage("favorites");
   location.reload();
@@ -36,7 +41,11 @@ export function Sidebar() {
       </button>
 
       <button onclick="goCO()">
-        🎧 Listening
+        🎧 Listening (CO)
+      </button>
+
+      <button onclick="goCE()">
+        📖 Reading (CE)
       </button>
 
       <button onclick="goFavorites()">
