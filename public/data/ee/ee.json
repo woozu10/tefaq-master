@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "section": "A",
+    "title": "Courriel à un propriétaire",
+    "prompt": "Vous avez un problème de chauffage dans votre appartement. Écrivez à votre propriétaire pour expliquer la situation et demander une intervention rapide.",
+    "minWords": 80,
+    "maxWords": 120
+  },
+  {
+    "id": 2,
+    "section": "A",
+    "title": "Demande de renseignements",
+    "prompt": "Vous souhaitez suivre un cours de français. Écrivez à l’école pour demander des informations sur les horaires, les tarifs et les niveaux.",
+    "minWords": 80,
+    "maxWords": 120
+  },
+  {
+    "id": 3,
+    "section": "A",
+    "title": "Réclamation",
+    "prompt": "Vous avez reçu un produit endommagé après un achat en ligne. Écrivez au service à la clientèle pour demander une solution.",
+    "minWords": 80,
+    "maxWords": 120
+  },
+  {
+    "id": 4,
+    "section": "A",
+    "title": "Invitation",
+    "prompt": "Écrivez à un ami pour l’inviter à une activité culturelle dans votre ville. Donnez les détails pratiques et expliquez pourquoi vous aimeriez qu’il vienne.",
+    "minWords": 80,
+    "maxWords": 120
+  },
+  {
+    "id": 5,
+    "section": "A",
+    "title": "Absence au travail",
+    "prompt": "Écrivez à votre responsable pour expliquer une absence imprévue et proposer une solution pour rattraper votre travail.",
+    "minWords": 80,
+    "maxWords": 120
+  },
+  {
+    "id": 6,
+    "section": "B",
+    "title": "Le télétravail",
+    "prompt": "Selon vous, le télétravail améliore-t-il réellement la qualité de vie ? Présentez votre opinion avec des arguments et des exemples.",
+    "minWords": 180,
+    "maxWords": 250
+  },
+  {
+    "id": 7,
+    "section": "B",
+    "title": "Les transports publics",
+    "prompt": "Les villes devraient-elles investir davantage dans les transports en commun que dans les routes ? Défendez votre point de vue.",
+    "minWords": 180,
+    "maxWords": 250
+  },
+  {
+    "id": 8,
+    "section": "B",
+    "title": "Les réseaux sociaux",
+    "prompt": "Les réseaux sociaux rapprochent-ils les gens ou les isolent-ils ? Développez votre opinion.",
+    "minWords": 180,
+    "maxWords": 250
+  },
+  {
+    "id": 9,
+    "section": "B",
+    "title": "L’apprentissage en ligne",
+    "prompt": "Les cours en ligne peuvent-ils remplacer les cours en présentiel ? Argumentez votre réponse.",
+    "minWords": 180,
+    "maxWords": 250
+  },
+  {
+    "id": 10,
+    "section": "B",
+    "title": "La vie en ville",
+    "prompt": "Préférez-vous vivre dans une grande ville ou dans une petite ville ? Justifiez votre choix avec plusieurs arguments.",
+    "minWords": 180,
+    "maxWords": 250
+  }
+]
