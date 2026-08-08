@@ -15,6 +15,16 @@ window.goCE = function () {
   location.reload();
 };
 
+window.goEE = function () {
+  setCurrentPage("ee-quiz");
+  location.reload();
+};
+
+window.goEO = function () {
+  setCurrentPage("eo");
+  location.reload();
+};
+
 window.goFavorites = function () {
   setCurrentPage("favorites");
   location.reload();
@@ -46,6 +56,14 @@ export function Sidebar() {
 
       <button onclick="goCE()">
         📖 Reading (CE)
+      </button>
+
+      <button onclick="goEE()">
+        ✍️ Writing (EE)
+      </button>
+
+      <button onclick="goEO()">
+        🎤 Speaking (EO)
       </button>
 
       <button onclick="goFavorites()">
