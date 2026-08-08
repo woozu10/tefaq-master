@@ -44,6 +44,14 @@ window.goSettings = function () {
 
 };
 
+window.goAdmin = function () {
+
+  setCurrentPage("admin");
+
+  location.reload();
+
+};
+
 export function Content() {
 
   const sample = getQuestion("B2");
@@ -119,41 +127,37 @@ export function Content() {
         <h3>🚀 Quick Start</h3>
 
         <button onclick="goCO()">
-
           🎧 Practice Listening
-
         </button>
 
         <br><br>
 
         <button onclick="goFavorites()">
-
           ⭐ Favorites
-
         </button>
 
         <br><br>
 
         <button onclick="goWrongNotes()">
-
           ❌ Wrong Notes
-
         </button>
 
         <br><br>
 
         <button onclick="goStatistics()">
-
           📊 Statistics
-
         </button>
 
         <br><br>
 
         <button onclick="goSettings()">
-
           ⚙ Settings
+        </button>
 
+        <br><br>
+
+        <button onclick="goAdmin()">
+          🛠 Admin CMS
         </button>
 
       </div>
