@@ -1,3 +1,5 @@
+import { ScoreGraph }
+from "../components/ScoreGraph.js";
 import {
 
   getHistory,
@@ -176,7 +178,8 @@ export function Statistics() {
         </p>
 
       </div>
-
+      
+${ScoreGraph(history)}
       <button onclick="clearStatistics()">
 
         🗑 Clear History
