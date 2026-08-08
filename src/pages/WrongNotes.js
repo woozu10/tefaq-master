@@ -1,9 +1,9 @@
 import { setCurrentPage } from "../services/router.js";
-import { setQuizQuestions } from "../services/quizService.js";
 import {
   getWrongQuestions,
   clearWrongQuestions
 } from "../services/wrongNoteService.js";
+import { setQuizQuestions } from "../services/quizService.js";
 
 window.goCOHome = function () {
 
@@ -13,7 +13,7 @@ window.goCOHome = function () {
 
 };
 
-window.retryWrongQuestions = function () {
+window.retryWrongNotes = function () {
 
   const questions = getWrongQuestions();
 
@@ -33,7 +33,7 @@ window.retryWrongQuestions = function () {
 
 };
 
-window.clearWrongNotes = function () {
+window.clearAllWrongNotes = function () {
 
   if (!confirm("Delete all wrong questions?")) {
 
@@ -49,46 +49,87 @@ window.clearWrongNotes = function () {
 
 export function WrongNotes() {
 
-  const wrongQuestions = getWrongQuestions();
+  const wrongs = getWrongQuestions();
 
   return `
 
     <main class="content">
 
-      <div style="display:flex;gap:10px;margin-bottom:20px;">
+      <h2>❌ Wrong Notes</h2>
+
+      <div class="card">
+
+        <h3>Total Wrong Questions</h3>
+
+        <h1>${wrongs.length}</h1>
+
+      </div>
+
+      <div
+      style="
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:center;
+      margin-bottom:20px;
+      ">
 
         <button onclick="goCOHome()">
-          ← CO
+          ← CO Home
         </button>
 
-        <button onclick="retryWrongQuestions()">
-          🔁 Retry Wrong Questions
+        <button onclick="retryWrongNotes()">
+          ▶ Start Wrong Quiz
         </button>
 
-        <button onclick="clearWrongNotes()">
+        <button onclick="clearAllWrongNotes()">
           🗑 Clear All
         </button>
 
       </div>
 
-      <h2>❌ Wrong Notes</h2>
-
-      <p>Total : ${wrongQuestions.length}</p>
-
-      <hr>
-
       ${
-        wrongQuestions.length === 0
-          ? "<p>No wrong questions.</p>"
-          : wrongQuestions.map(q => `
-              <div class="card">
+        wrongs.length === 0
+          ? `
+          <div class="card">
 
-                <h3>${q.question}</h3>
+            <h3>No Wrong Questions</h3>
 
-                <p>Level : ${q.level}</p>
+            <p>
+              Great job! You have no wrong questions.
+            </p>
 
-              </div>
-            `).join("")
+          </div>
+          `
+          : wrongs.map((q,index)=>`
+
+            <div class="card">
+
+              <h3>#${index+1}</h3>
+
+              <p>${q.question}</p>
+
+              <hr>
+
+              <p>
+
+                <strong>Category :</strong>
+
+                ${q.category || "-"}
+
+              </p>
+
+              <p>
+
+                <strong>Level :</strong>
+
+                ${q.level || "-"}
+
+              </p>
+
+            </div>
+
+          `).join("")
       }
 
     </main>
