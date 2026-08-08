@@ -1,3 +1,4 @@
+import "./styles/theme.css";
 import { App } from "./App.js";
 import { getCurrentPage } from "./services/router.js";
 
