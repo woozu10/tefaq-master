@@ -1,3 +1,6 @@
+import {
+  getQuestionCount
+} from "../services/settingsService.js";
 import { QuestionPalette } from "../components/QuestionPalette.js";
 import {
   getCategory
@@ -360,10 +363,10 @@ function createCOExam() {
 
 
   examQuestions =
-    createExamQuestions(
-      questions,
-      40
-    ).map(question =>
+   createExamQuestions(
+    questions,
+    getQuestionCount()
+).map(question =>
       shuffleChoices(question)
     );
 
