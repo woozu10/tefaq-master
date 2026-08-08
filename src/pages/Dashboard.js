@@ -13,11 +13,11 @@ window.openCE = function () {
   location.reload();
 };
 
+
 window.openEE = function () {
-  setCurrentPage("ee");
+  setCurrentPage("ee-quiz");
   location.reload();
 };
-
 window.openEO = function () {
   setCurrentPage("eo");
   location.reload();
