@@ -431,7 +431,7 @@ questions.length === 0
 ) {
 
 console.warn(
-No CE questions found for category: ${category}. Using ALL.
+  `No CE questions found for category: ${category}. Using ALL.`
 );
 
 questions =
