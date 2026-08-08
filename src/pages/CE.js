@@ -1,73 +1,73 @@
 import {
-getQuestionCount
+  getQuestionCount
 } from "../services/settingsService.js";
 
 import {
-QuestionPalette
+  QuestionPalette
 } from "../components/QuestionPalette.js";
 
 import {
-getCategory
+  getCategory
 } from "../services/categoryService.js";
 
 import {
-saveWrongQuestion,
-removeWrongQuestion
+  saveWrongQuestion,
+  removeWrongQuestion
 } from "../services/wrongNoteService.js";
 
 import {
-addFavorite,
-isFavorite
+  addFavorite,
+  isFavorite
 } from "../services/favoriteService.js";
 
 import {
-getMode
+  getMode
 } from "../services/modeService.js";
 
 import {
-saveResult
+  saveResult
 } from "../services/statisticsService.js";
 
 import {
-getQuizQuestions,
-clearQuizQuestions
+  getQuizQuestions,
+  clearQuizQuestions
 } from "../services/quizService.js";
 
 import {
-setReviewQuestions
+  setReviewQuestions
 } from "../services/reviewService.js";
 
 import {
-App
+  App
 } from "../App.js";
 
 import {
-Timer
+  Timer
 } from "../components/Timer.js";
 
 import {
-ProgressBar
+  ProgressBar
 } from "../components/ProgressBar.js";
 
 import {
-QuestionCard
+  QuestionCard
 } from "../components/QuestionCard.js";
 
 import {
-loadQuestions
+  loadQuestions
 } from "../services/loadQuestions.js";
 
 import {
-createExamQuestions
+  createExamQuestions
 } from "../services/examService.js";
 
 import {
-shuffleChoices
+  shuffleChoices
 } from "../services/shuffleService.js";
 
 
 /* =========================================================
-CE STATE
+   CE STATE
 ========================================================= */
 
 let questionBank = [];
@@ -86,7 +86,7 @@ let selectedAnswer = -1;
 
 
 /* =========================================================
-JSON LOADING STATE
+   JSON LOADING STATE
 ========================================================= */
 
 let loaded = false;
@@ -97,994 +97,994 @@ let loadError = "";
 
 
 /* =========================================================
-RENDER
+   RENDER
 ========================================================= */
 
 function renderCE() {
 
-const app =
-document.getElementById("app");
+  const app =
+    document.getElementById("app");
 
-if (app) {
+  if (app) {
 
-app.innerHTML =
-App();
+    app.innerHTML =
+      App();
 
-}
+  }
 
 }
 
 
 /* =========================================================
-SAVE EXAM PROGRESS
+   SAVE EXAM PROGRESS
 ========================================================= */
 
 function saveExamProgress() {
 
-if (
-!Array.isArray(examQuestions) ||
-examQuestions.length === 0
-) {
+  if (
+    !Array.isArray(examQuestions) ||
+    examQuestions.length === 0
+  ) {
 
-return;
+    return;
 
-}
+  }
 
-localStorage.setItem(
-"ceSavedExamQuestions",
-JSON.stringify(examQuestions)
-);
+  localStorage.setItem(
+    "ceSavedExamQuestions",
+    JSON.stringify(examQuestions)
+  );
 
-localStorage.setItem(
-"ceSavedCurrentQuestion",
-String(currentQuestion)
-);
+  localStorage.setItem(
+    "ceSavedCurrentQuestion",
+    String(currentQuestion)
+  );
 
-localStorage.setItem(
-"ceSavedScore",
-String(score)
-);
+  localStorage.setItem(
+    "ceSavedScore",
+    String(score)
+  );
 
-localStorage.setItem(
-"ceSavedAnswered",
-String(answered)
-);
+  localStorage.setItem(
+    "ceSavedAnswered",
+    String(answered)
+  );
 
-localStorage.setItem(
-"ceSavedSelectedAnswer",
-String(selectedAnswer)
-);
+  localStorage.setItem(
+    "ceSavedSelectedAnswer",
+    String(selectedAnswer)
+  );
 
-localStorage.setItem(
-"ceSavedMessage",
-message
-);
+  localStorage.setItem(
+    "ceSavedMessage",
+    message
+  );
 
 }
 
 
 /* =========================================================
-LOAD SAVED EXAM PROGRESS
+   LOAD SAVED EXAM PROGRESS
 ========================================================= */
 
 function restoreExamProgress() {
 
-const savedQuestions =
-localStorage.getItem(
-"ceSavedExamQuestions"
-);
+  const savedQuestions =
+    localStorage.getItem(
+      "ceSavedExamQuestions"
+    );
 
-if (!savedQuestions) {
+  if (!savedQuestions) {
 
-return false;
+    return false;
 
-}
+  }
 
-try {
+  try {
 
-const parsed =
-JSON.parse(savedQuestions);
+    const parsed =
+      JSON.parse(savedQuestions);
 
-if (
-!Array.isArray(parsed) ||
-parsed.length === 0
-) {
+    if (
+      !Array.isArray(parsed) ||
+      parsed.length === 0
+    ) {
 
-return false;
+      return false;
 
-}
+    }
 
-examQuestions =
-parsed;
+    examQuestions =
+      parsed;
 
-currentQuestion =
-Number(
-localStorage.getItem(
-"ceSavedCurrentQuestion"
-) || 0
-);
+    currentQuestion =
+      Number(
+        localStorage.getItem(
+          "ceSavedCurrentQuestion"
+        ) || 0
+      );
 
-score =
-Number(
-localStorage.getItem(
-"ceSavedScore"
-) || 0
-);
+    score =
+      Number(
+        localStorage.getItem(
+          "ceSavedScore"
+        ) || 0
+      );
 
-answered =
-localStorage.getItem(
-"ceSavedAnswered"
-) === "true";
+    answered =
+      localStorage.getItem(
+        "ceSavedAnswered"
+      ) === "true";
 
-selectedAnswer =
-Number(
-localStorage.getItem(
-"ceSavedSelectedAnswer"
-) || -1
-);
+    selectedAnswer =
+      Number(
+        localStorage.getItem(
+          "ceSavedSelectedAnswer"
+        ) || -1
+      );
 
-message =
-localStorage.getItem(
-"ceSavedMessage"
-) || "";
+    message =
+      localStorage.getItem(
+        "ceSavedMessage"
+      ) || "";
 
-if (
-currentQuestion < 0 ||
-currentQuestion >=
-examQuestions.length
-) {
+    if (
+      currentQuestion < 0 ||
+      currentQuestion >=
+        examQuestions.length
+    ) {
 
-currentQuestion = 0;
+      currentQuestion = 0;
 
-}
+    }
 
-return true;
+    return true;
 
-} catch (error) {
+  } catch (error) {
 
-console.error(
-"Cannot restore saved CE exam:",
-error
-);
+    console.error(
+      "Cannot restore saved CE exam:",
+      error
+    );
 
-clearSavedExam();
+    clearSavedExam();
 
-return false;
+    return false;
 
-}
+  }
 
 }
 
 
 /* =========================================================
-CLEAR SAVED EXAM
+   CLEAR SAVED EXAM
 ========================================================= */
 
 function clearSavedExam() {
 
-localStorage.removeItem(
-"ceSavedExamQuestions"
-);
+  localStorage.removeItem(
+    "ceSavedExamQuestions"
+  );
 
-localStorage.removeItem(
-"ceSavedCurrentQuestion"
-);
+  localStorage.removeItem(
+    "ceSavedCurrentQuestion"
+  );
 
-localStorage.removeItem(
-"ceSavedScore"
-);
+  localStorage.removeItem(
+    "ceSavedScore"
+  );
 
-localStorage.removeItem(
-"ceSavedAnswered"
-);
+  localStorage.removeItem(
+    "ceSavedAnswered"
+  );
 
-localStorage.removeItem(
-"ceSavedSelectedAnswer"
-);
+  localStorage.removeItem(
+    "ceSavedSelectedAnswer"
+  );
 
-localStorage.removeItem(
-"ceSavedMessage"
-);
+  localStorage.removeItem(
+    "ceSavedMessage"
+  );
 
 }
 
 
 /* =========================================================
-LOAD CE B2 JSON
+   LOAD CE B2 JSON
 ========================================================= */
 
 async function loadQuestionBank() {
 
-if (
-loaded ||
-loading
-) {
+  if (
+    loaded ||
+    loading
+  ) {
 
-return;
+    return;
 
-}
+  }
 
-loading = true;
+  loading = true;
 
-loadError = "";
+  loadError = "";
 
-try {
+  try {
 
-const data =
-await loadQuestions(
-"ce",
-"B2"
-);
+    const data =
+      await loadQuestions(
+        "ce",
+        "B2"
+      );
 
-if (
-!Array.isArray(data)
-) {
+    if (
+      !Array.isArray(data)
+    ) {
 
-throw new Error(
-"B2.json must contain a JSON array."
-);
+      throw new Error(
+        "B2.json must contain a JSON array."
+      );
 
-}
+    }
 
-if (
-data.length === 0
-) {
+    if (
+      data.length === 0
+    ) {
 
-throw new Error(
-"B2.json contains no questions."
-);
+      throw new Error(
+        "B2.json contains no questions."
+      );
 
-}
+    }
 
-questionBank =
-data;
+    questionBank =
+      data;
 
-loaded =
-true;
+    loaded =
+      true;
 
-} catch (error) {
+  } catch (error) {
 
-console.error(
-"CE question loading error:",
-error
-);
+    console.error(
+      "CE question loading error:",
+      error
+    );
 
-loadError =
-error?.message ||
-"Unable to load CE B2 questions.";
+    loadError =
+      error?.message ||
+      "Unable to load CE B2 questions.";
 
-} finally {
+  } finally {
 
-loading =
-false;
+    loading =
+      false;
 
-renderCE();
+    renderCE();
 
-}
+  }
 
 }
 
 
 /* =========================================================
-CREATE CE EXAM
+   CREATE CE EXAM
 ========================================================= */
 
 function createCEExam() {
 
-const customQuiz =
-getQuizQuestions();
+  const customQuiz =
+    getQuizQuestions();
 
-if (
-Array.isArray(customQuiz) &&
-customQuiz.length > 0
-) {
+  if (
+    Array.isArray(customQuiz) &&
+    customQuiz.length > 0
+  ) {
 
-examQuestions =
-customQuiz.map(
-question =>
-shuffleChoices(question)
-);
+    examQuestions =
+      customQuiz.map(
+        question =>
+          shuffleChoices(question)
+      );
 
-clearQuizQuestions();
+    clearQuizQuestions();
 
-currentQuestion = 0;
+    currentQuestion = 0;
 
-score = 0;
+    score = 0;
 
-message = "";
+    message = "";
 
-answered = false;
+    answered = false;
 
-selectedAnswer = -1;
+    selectedAnswer = -1;
 
-saveExamProgress();
+    saveExamProgress();
 
-return;
+    return;
 
-}
-
-
-const category =
-getCategory();
-
-let questions =
-[...questionBank];
+  }
 
 
-if (
-category &&
-category !== "ALL"
-) {
+  const category =
+    getCategory();
 
-questions =
-questions.filter(
-question =>
-question.category ===
-category
-);
-
-}
+  let questions =
+    [...questionBank];
 
 
-if (
-questions.length === 0
-) {
+  if (
+    category &&
+    category !== "ALL"
+  ) {
 
-console.warn(
-  `No CE questions found for category: ${category}. Using ALL.`
-);
+    questions =
+      questions.filter(
+        question =>
+          question.category ===
+          category
+      );
 
-questions =
-[...questionBank];
-
-}
-
-
-examQuestions =
-createExamQuestions(
-questions,
-getQuestionCount()
-).map(
-question =>
-shuffleChoices(question)
-);
+  }
 
 
-currentQuestion = 0;
+  if (
+    questions.length === 0
+  ) {
 
-score = 0;
+    console.warn(
+      `No CE questions found for category: ${category}. Using ALL.`
+    );
 
-message = "";
+    questions =
+      [...questionBank];
 
-answered = false;
+  }
 
-selectedAnswer = -1;
 
-saveExamProgress();
+  examQuestions =
+    createExamQuestions(
+      questions,
+      getQuestionCount()
+    ).map(
+      question =>
+        shuffleChoices(question)
+    );
+
+
+  currentQuestion = 0;
+
+  score = 0;
+
+  message = "";
+
+  answered = false;
+
+  selectedAnswer = -1;
+
+  saveExamProgress();
 
 }
 
 
 /* =========================================================
-RESET CURRENT EXAM
+   RESET CURRENT EXAM
 ========================================================= */
 
 function resetExamState() {
 
-examQuestions = [];
+  examQuestions = [];
 
-currentQuestion = 0;
+  currentQuestion = 0;
 
-score = 0;
+  score = 0;
 
-message = "";
+  message = "";
 
-answered = false;
+  answered = false;
 
-selectedAnswer = -1;
+  selectedAnswer = -1;
 
 }
 /* =========================================================
-CE PAGE
+   CE PAGE
 ========================================================= */
 
 export function CE() {
 
-if (!loaded) {
+  if (!loaded) {
 
-if (
-!loading &&
-!loadError
-) {
+    if (
+      !loading &&
+      !loadError
+    ) {
 
-loadQuestionBank();
+      loadQuestionBank();
 
-}
+    }
 
-if (loadError) {
+    if (loadError) {
 
-return `
-<main class="content">
+      return `
+        <main class="content">
 
-<h2>
-Compréhension Écrite
-</h2>
+          <h2>
+            Compréhension Écrite
+          </h2>
 
-<div class="card">
+          <div class="card">
 
-<h3>
-❌ Question Loading Error
-</h3>
+            <h3>
+              ❌ Question Loading Error
+            </h3>
 
-<p>
-$`{loadError}
-</p>
+            <p>
+              ${loadError}
+            </p>
 
-<br>
+            <br>
 
-<p>
+            <p>
 
-Check:
-<strong>
+              Check:
+              <strong>
 
-public/data/ce/B2.json
+                public/data/ce/B2.json
 
-</strong>
+              </strong>
 
-</p>
+            </p>
 
-<br>
+            <br>
 
-<button
-onclick="retryCELoad()"
->
+            <button
+              onclick="retryCELoad()"
+            >
 
-Retry
+              Retry
 
-</button>
+            </button>
 
-</div>
+          </div>
 
-</main>
-`;
+        </main>
+      `;
 
-}
+    }
 
-return `
+    return `
 
-<main class="content">
+      <main class="content">
 
-<h2>
+        <h2>
 
-Compréhension Écrite
+          Compréhension Écrite
 
-</h2>
+        </h2>
 
-<div class="card">
+        <div class="card">
 
-<h3>
+          <h3>
 
-Loading Questions...
+            Loading Questions...
 
-</h3>
+          </h3>
 
-<p>
+          <p>
 
-B2 question bank is loading.
+            B2 question bank is loading.
 
-</p>
+          </p>
 
-</div>
+        </div>
 
-</main>
+      </main>
 
-`;
+    `;
 
-}
+  }
 
-if (
-examQuestions.length === 0
-) {
+  if (
+    examQuestions.length === 0
+  ) {
 
-const restored =
-restoreExamProgress();
+    const restored =
+      restoreExamProgress();
 
-if (!restored) {
+    if (!restored) {
 
-createCEExam();
+      createCEExam();
 
-}
+    }
 
-}
+  }
 
-if (
-examQuestions.length === 0
-) {
+  if (
+    examQuestions.length === 0
+  ) {
 
-return `
+    return `
 
-<main class="content">
+      <main class="content">
 
-<h2>
+        <h2>
 
-Compréhension Écrite
+          Compréhension Écrite
 
-</h2>
+        </h2>
 
-<div class="card">
+        <div class="card">
 
-<h3>
+          <h3>
 
-No Questions
+            No Questions
 
-</h3>
+          </h3>
 
-<p>
+          <p>
 
-No CE questions are available.
+            No CE questions are available.
 
-</p>
+          </p>
 
-</div>
+        </div>
 
-</main>
+      </main>
 
-`;
+    `;
 
-}
+  }
 
-const q =
-examQuestions[currentQuestion];
+  const q =
+    examQuestions[currentQuestion];
 
-const mode =
-getMode();
+  const mode =
+    getMode();
 
-const renderButton = (index) => {
+  const renderButton = (index) => {
 
-let style = "";
+    let style = "";
 
-if (
-answered &&
-mode === "practice"
-) {
+    if (
+      answered &&
+      mode === "practice"
+    ) {
 
-if (
-index === q.answer
-) {
+      if (
+        index === q.answer
+      ) {
 
-style =
-"background:#4CAF50;color:white;";
+        style =
+          "background:#4CAF50;color:white;";
 
-} else if (
-index === selectedAnswer
-) {
+      } else if (
+        index === selectedAnswer
+      ) {
 
-style =
-"background:#F44336;color:white;";
+        style =
+          "background:#F44336;color:white;";
 
-}
+      }
 
-}
+    }
 
-return `
+    return `
 
-<button
+      <button
 
-style="`${style}"
+        style="${style}"
 
-onclick="checkCEAnswer($`{index})"
+        onclick="checkCEAnswer(${index})"
 
-`${answered ? "disabled" : ""}
+        ${answered ? "disabled" : ""}
 
->
+      >
 
-$`{q.choices[index]}
+        ${q.choices[index]}
 
-</button>
+      </button>
 
-`;
+    `;
 
-};
+  };
 
-return `
+  return `
 
-<main class="content">
+    <main class="content">
 
-<h2>
+      <h2>
 
-Compréhension Écrite
+        Compréhension Écrite
 
-</h2>
+      </h2>
 
-<h3>
+      <h3>
 
-Question
+        Question
 
-`${currentQuestion + 1}
+        ${currentQuestion + 1}
 
-/
+        /
 
-$`{examQuestions.length}
+        ${examQuestions.length}
 
-</h3>
+      </h3>
 
-`${QuestionPalette(
+      ${QuestionPalette(
 
-examQuestions,
+        examQuestions,
 
-currentQuestion
+        currentQuestion
 
-)}
+      )}
 
-$`{Timer(60)}
+      ${Timer(60)}
 
-`${ProgressBar(
+      ${ProgressBar(
 
-currentQuestion + 1,
+        currentQuestion + 1,
 
-examQuestions.length
+        examQuestions.length
 
-)}
+      )}
 
-$`{
+      ${
 
-mode === "practice"
+        mode === "practice"
 
-? `
+          ? `
 
-<p>
+            <p>
 
-<strong>
+              <strong>
 
-Score : `${score}
+                Score : ${score}
 
-</strong>
+              </strong>
 
-</p>
+            </p>
 
-`
+          `
 
-: ""
+          : ""
 
-}
+      }
 
-<div
+      <div
 
-style="
+        style="
 
-display:flex;
+          display:flex;
 
-gap:10px;
+          gap:10px;
 
-flex-wrap:wrap;
+          flex-wrap:wrap;
 
-margin-bottom:15px;
+          margin-bottom:15px;
 
-"
+        "
 
->
+      >
 
-<button onclick="pauseCEExam()">
+        <button onclick="pauseCEExam()">
 
-⏸ Pause
+          ⏸ Pause
 
-</button>
+        </button>
 
-<button onclick="startNewCEExam()">
+        <button onclick="startNewCEExam()">
 
-🔄 New Exam
+          🔄 New Exam
 
-</button>
+        </button>
 
-</div>
+      </div>
 
-<div class="card">
+      <div class="card">
 
-<h3>
+        <h3>
 
-📖 Reading
+          📖 Reading
 
-</h3>
+        </h3>
 
-<p style="line-height:1.8">
+        <p style="line-height:1.8">
 
-$`{q.text}
+          ${q.text}
 
-</p>
+        </p>
 
-</div>
+      </div>
 
-`${QuestionCard(
+      ${QuestionCard(
 
-q.question,
+        q.question,
 
-q.choices,
+        q.choices,
 
-renderButton
+        renderButton
 
-)}
+      )}
 
-<p
+      <p
 
-style="
+        style="
 
-font-size:20px;
+          font-size:20px;
 
-font-weight:bold;
+          font-weight:bold;
 
-"
+        "
 
->
+      >
 
-${message}
+        ${message}
 
-</p>
-$`{
+      </p>
+            ${
 
-answered &&
-mode === "practice"
+        answered &&
+        mode === "practice"
 
-? `
+          ? `
 
-<div class="card">
+            <div class="card">
 
-<h3>
+              <h3>
 
-📖 Explanation
+                📖 Explanation
 
-</h3>
+              </h3>
 
-<p>
+              <p>
 
-`${
+                ${
 
-q.explanation ||
+                  q.explanation ||
 
-"No explanation available."
+                  "No explanation available."
 
-}
+                }
 
-</p>
+              </p>
 
-$`{
+              ${
 
-Array.isArray(q.vocabulary) &&
+                Array.isArray(q.vocabulary) &&
 
-q.vocabulary.length > 0
+                q.vocabulary.length > 0
 
-? `
+                  ? `
 
-<hr>
+                    <hr>
 
-<h4>
+                    <h4>
 
-Vocabulary
+                      Vocabulary
 
-</h4>
+                    </h4>
 
-<p>
+                    <p>
 
-`${q.vocabulary.join(" · ")}
+                      ${q.vocabulary.join(" · ")}
 
-</p>
+                    </p>
 
-`
+                  `
 
-: ""
+                  : ""
 
-}
+              }
 
-</div>
+            </div>
 
-`
+          `
 
-: ""
+          : ""
 
-}
+      }
 
-<hr>
+      <hr>
 
-<button onclick="favoriteCEQuestion()">
+      <button onclick="favoriteCEQuestion()">
 
-$`{
+        ${
 
-isFavorite(q.id)
+          isFavorite(q.id)
 
-? "⭐ Added"
+            ? "⭐ Added"
 
-: "☆ Favorite"
+            : "☆ Favorite"
 
-}
+        }
 
-</button>
+      </button>
 
-<button
+      <button
 
-onclick="nextCEQuestion()"
+        onclick="nextCEQuestion()"
 
-`${answered ? "" : "disabled"}
+        ${answered ? "" : "disabled"}
 
->
+      >
 
-Next →
+        Next →
 
-</button>
+      </button>
 
-</main>
+    </main>
 
-`;
+  `;
 
 }
 
 
 /* =========================================================
-CHECK ANSWER
+   CHECK ANSWER
 ========================================================= */
 
 window.checkCEAnswer = function(index){
 
-if(answered) return;
+  if(answered) return;
 
-const q = examQuestions[currentQuestion];
+  const q = examQuestions[currentQuestion];
 
-selectedAnswer = index;
+  selectedAnswer = index;
 
-q.userAnswer = index;
+  q.userAnswer = index;
 
-if(index===q.answer){
+  if(index===q.answer){
 
-score++;
+      score++;
 
-removeWrongQuestion(q.id);
+      removeWrongQuestion(q.id);
 
-message="✅ Correct!";
+      message="✅ Correct!";
 
-}else{
+  }else{
 
-saveWrongQuestion(q);
+      saveWrongQuestion(q);
 
-message="❌ Incorrect!";
+      message="❌ Incorrect!";
 
-}
+  }
 
-answered=true;
+  answered=true;
 
-saveExamProgress();
+  saveExamProgress();
 
-document.getElementById("app").innerHTML=App();
+  document.getElementById("app").innerHTML=App();
 
 };
 
 
 /* =========================================================
-NEXT QUESTION
+   NEXT QUESTION
 ========================================================= */
 
 window.nextCEQuestion=function(){
 
-currentQuestion++;
+  currentQuestion++;
 
-if(currentQuestion>=examQuestions.length){
+  if(currentQuestion>=examQuestions.length){
 
-setReviewQuestions(examQuestions);
+      setReviewQuestions(examQuestions);
 
-localStorage.setItem(
+      localStorage.setItem(
 
-"lastExamQuestions",
+          "lastExamQuestions",
 
-JSON.stringify(examQuestions)
+          JSON.stringify(examQuestions)
 
-);
+      );
 
-saveResult(
+      saveResult(
 
-score,
+          score,
 
-examQuestions.length
+          examQuestions.length
 
-);
+      );
 
-localStorage.setItem("score",score);
+      localStorage.setItem("score",score);
 
-localStorage.setItem("total",examQuestions.length);
+      localStorage.setItem("total",examQuestions.length);
 
-localStorage.setItem("currentPage","result");
+      localStorage.setItem("currentPage","result");
 
-clearSavedExam();
+      clearSavedExam();
 
-resetExamState();
+      resetExamState();
 
-location.reload();
+      location.reload();
 
-return;
+      return;
 
-}
+  }
 
-answered=false;
+  answered=false;
 
-selectedAnswer=-1;
+  selectedAnswer=-1;
 
-message="";
+  message="";
 
-saveExamProgress();
+  saveExamProgress();
 
-document.getElementById("app").innerHTML=App();
+  document.getElementById("app").innerHTML=App();
 
 };
 
 
 /* =========================================================
-PAUSE
+   PAUSE
 ========================================================= */
 
 window.pauseCEExam=function(){
 
-saveExamProgress();
+    saveExamProgress();
 
-localStorage.setItem("currentPage","ce");
+    localStorage.setItem("currentPage","ce");
 
-alert("Progress saved.");
+    alert("Progress saved.");
 
 };
 
 
 /* =========================================================
-NEW EXAM
+   NEW EXAM
 ========================================================= */
 
 window.startNewCEExam=function(){
 
-clearSavedExam();
+    clearSavedExam();
 
-resetExamState();
+    resetExamState();
 
-document.getElementById("app").innerHTML=App();
+    document.getElementById("app").innerHTML=App();
 
 };
 
 
 /* =========================================================
-FAVORITE
+   FAVORITE
 ========================================================= */
 
 window.favoriteCEQuestion=function(){
 
-addFavorite(examQuestions[currentQuestion]);
+    addFavorite(examQuestions[currentQuestion]);
 
-saveExamProgress();
+    saveExamProgress();
 
-document.getElementById("app").innerHTML=App();
+    document.getElementById("app").innerHTML=App();
 
 };
 
 
 /* =========================================================
-RETRY
+   RETRY
 ========================================================= */
 
 window.retryCELoad=function(){
 
-loadError="";
+    loadError="";
 
-loaded=false;
+    loaded=false;
 
-loading=false;
+    loading=false;
 
-questionBank=[];
+    questionBank=[];
 
-loadQuestionBank();
+    loadQuestionBank();
 
 };
 
 
 /* =========================================================
-PALETTE
+   PALETTE
 ========================================================= */
 
 window.goQuestion=function(index){
 
-currentQuestion=index;
+    currentQuestion=index;
 
-document.getElementById("app").innerHTML=App();
+    document.getElementById("app").innerHTML=App();
 
 };
