@@ -74,6 +74,165 @@ let loadError = "";
 
 
 /* =========================================================
+   SAVE EXAM PROGRESS
+========================================================= */
+
+function saveExamProgress() {
+
+  if (!Array.isArray(examQuestions) || examQuestions.length === 0) {
+    return;
+  }
+
+  localStorage.setItem(
+    "coSavedExamQuestions",
+    JSON.stringify(examQuestions)
+  );
+
+  localStorage.setItem(
+    "coSavedCurrentQuestion",
+    String(currentQuestion)
+  );
+
+  localStorage.setItem(
+    "coSavedScore",
+    String(score)
+  );
+
+  localStorage.setItem(
+    "coSavedAnswered",
+    String(answered)
+  );
+
+  localStorage.setItem(
+    "coSavedSelectedAnswer",
+    String(selectedAnswer)
+  );
+
+  localStorage.setItem(
+    "coSavedMessage",
+    message
+  );
+
+}
+
+
+/* =========================================================
+   LOAD SAVED EXAM PROGRESS
+========================================================= */
+
+function restoreExamProgress() {
+
+  const savedQuestions =
+    localStorage.getItem("coSavedExamQuestions");
+
+  if (!savedQuestions) {
+    return false;
+  }
+
+  try {
+
+    const parsed =
+      JSON.parse(savedQuestions);
+
+    if (
+      !Array.isArray(parsed) ||
+      parsed.length === 0
+    ) {
+      return false;
+    }
+
+    examQuestions = parsed;
+
+    currentQuestion =
+      Number(
+        localStorage.getItem(
+          "coSavedCurrentQuestion"
+        ) || 0
+      );
+
+    score =
+      Number(
+        localStorage.getItem(
+          "coSavedScore"
+        ) || 0
+      );
+
+    answered =
+      localStorage.getItem(
+        "coSavedAnswered"
+      ) === "true";
+
+    selectedAnswer =
+      Number(
+        localStorage.getItem(
+          "coSavedSelectedAnswer"
+        ) || -1
+      );
+
+    message =
+      localStorage.getItem(
+        "coSavedMessage"
+      ) || "";
+
+    if (
+      currentQuestion < 0 ||
+      currentQuestion >= examQuestions.length
+    ) {
+      currentQuestion = 0;
+    }
+
+    return true;
+
+  } catch (error) {
+
+    console.error(
+      "Cannot restore saved CO exam:",
+      error
+    );
+
+    clearSavedExam();
+
+    return false;
+
+  }
+
+}
+
+
+/* =========================================================
+   CLEAR SAVED EXAM
+========================================================= */
+
+function clearSavedExam() {
+
+  localStorage.removeItem(
+    "coSavedExamQuestions"
+  );
+
+  localStorage.removeItem(
+    "coSavedCurrentQuestion"
+  );
+
+  localStorage.removeItem(
+    "coSavedScore"
+  );
+
+  localStorage.removeItem(
+    "coSavedAnswered"
+  );
+
+  localStorage.removeItem(
+    "coSavedSelectedAnswer"
+  );
+
+  localStorage.removeItem(
+    "coSavedMessage"
+  );
+
+}
+
+
+/* =========================================================
    LOAD JSON QUESTION BANK
 ========================================================= */
 
@@ -91,11 +250,15 @@ async function loadQuestionBank() {
     const data = await loadQuestions("B2");
 
     if (!Array.isArray(data)) {
-      throw new Error("B2.json must contain a JSON array.");
+      throw new Error(
+        "B2.json must contain a JSON array."
+      );
     }
 
     if (data.length === 0) {
-      throw new Error("B2.json contains no questions.");
+      throw new Error(
+        "B2.json contains no questions."
+      );
     }
 
     questionBank = data;
@@ -104,7 +267,10 @@ async function loadQuestionBank() {
 
   } catch (error) {
 
-    console.error("CO question loading error:", error);
+    console.error(
+      "CO question loading error:",
+      error
+    );
 
     loadError =
       error?.message ||
@@ -114,7 +280,8 @@ async function loadQuestionBank() {
 
     loading = false;
 
-    const app = document.getElementById("app");
+    const app =
+      document.getElementById("app");
 
     if (app) {
       app.innerHTML = App();
@@ -131,58 +298,53 @@ async function loadQuestionBank() {
 
 function createCOExam() {
 
-  /*
-   * First priority:
-   * custom quiz created from Favorites / Wrong Notes etc.
-   */
-
-  const customQuiz = getQuizQuestions();
+  const customQuiz =
+    getQuizQuestions();
 
   if (
     Array.isArray(customQuiz) &&
     customQuiz.length > 0
   ) {
 
-    examQuestions = customQuiz.map(question =>
-      shuffleChoices(question)
-    );
+    examQuestions =
+      customQuiz.map(question =>
+        shuffleChoices(question)
+      );
 
     clearQuizQuestions();
+
+    currentQuestion = 0;
+    score = 0;
+    message = "";
+    answered = false;
+    selectedAnswer = -1;
+
+    saveExamProgress();
 
     return;
   }
 
 
-  /*
-   * Normal CO exam
-   */
+  const category =
+    getCategory();
 
-  const category = getCategory();
+  let questions =
+    [...questionBank];
 
-  let questions = [...questionBank];
-
-
-  /*
-   * Category filtering
-   */
 
   if (
     category &&
     category !== "ALL"
   ) {
 
-    questions = questions.filter(
-      question =>
-        question.category === category
-    );
+    questions =
+      questions.filter(
+        question =>
+          question.category === category
+      );
 
   }
 
-
-  /*
-   * If selected category has no questions,
-   * use all questions instead.
-   */
 
   if (questions.length === 0) {
 
@@ -190,23 +352,28 @@ function createCOExam() {
       `No questions found for category: ${category}. Using ALL.`
     );
 
-    questions = [...questionBank];
+    questions =
+      [...questionBank];
 
   }
 
 
-  /*
-   * Random 40 questions.
-   *
-   * createExamQuestions already handles
-   * banks smaller than requested count.
-   */
-
   examQuestions =
-    createExamQuestions(questions, 40)
-      .map(question =>
-        shuffleChoices(question)
-      );
+    createExamQuestions(
+      questions,
+      40
+    ).map(question =>
+      shuffleChoices(question)
+    );
+
+
+  currentQuestion = 0;
+  score = 0;
+  message = "";
+  answered = false;
+  selectedAnswer = -1;
+
+  saveExamProgress();
 
 }
 
@@ -238,13 +405,12 @@ function resetExamState() {
 
 export function CO() {
 
-  /*
-   * JSON not loaded yet
-   */
-
   if (!loaded) {
 
-    if (!loading && !loadError) {
+    if (
+      !loading &&
+      !loadError
+    ) {
 
       loadQuestionBank();
 
@@ -256,11 +422,15 @@ export function CO() {
       return `
         <main class="content">
 
-          <h2>Compréhension Orale</h2>
+          <h2>
+            Compréhension Orale
+          </h2>
 
           <div class="card">
 
-            <h3>❌ Question Loading Error</h3>
+            <h3>
+              ❌ Question Loading Error
+            </h3>
 
             <p>
               ${loadError}
@@ -270,12 +440,16 @@ export function CO() {
 
             <p>
               Check:
-              <strong>public/data/co/B2.json</strong>
+              <strong>
+                public/data/co/B2.json
+              </strong>
             </p>
 
             <br>
 
-            <button onclick="retryCOLoad()">
+            <button
+              onclick="retryCOLoad()"
+            >
               Retry
             </button>
 
@@ -290,11 +464,15 @@ export function CO() {
     return `
       <main class="content">
 
-        <h2>Compréhension Orale</h2>
+        <h2>
+          Compréhension Orale
+        </h2>
 
         <div class="card">
 
-          <h3>Loading Questions...</h3>
+          <h3>
+            Loading Questions...
+          </h3>
 
           <p>
             B2 question bank is loading.
@@ -308,31 +486,38 @@ export function CO() {
   }
 
 
-  /*
-   * Create exam only once
-   */
+  if (
+    examQuestions.length === 0
+  ) {
 
-  if (examQuestions.length === 0) {
+    const restored =
+      restoreExamProgress();
 
-    createCOExam();
+    if (!restored) {
+
+      createCOExam();
+
+    }
 
   }
 
 
-  /*
-   * Safety check
-   */
-
-  if (examQuestions.length === 0) {
+  if (
+    examQuestions.length === 0
+  ) {
 
     return `
       <main class="content">
 
-        <h2>Compréhension Orale</h2>
+        <h2>
+          Compréhension Orale
+        </h2>
 
         <div class="card">
 
-          <h3>No Questions</h3>
+          <h3>
+            No Questions
+          </h3>
 
           <p>
             No CO questions are available.
@@ -346,14 +531,12 @@ export function CO() {
   }
 
 
-  const q = examQuestions[currentQuestion];
+  const q =
+    examQuestions[currentQuestion];
 
-  const mode = getMode();
+  const mode =
+    getMode();
 
-
-  /* =======================================================
-     ANSWER BUTTON
-  ======================================================= */
 
   const renderButton = (index) => {
 
@@ -364,7 +547,9 @@ export function CO() {
       mode === "practice"
     ) {
 
-      if (index === q.answer) {
+      if (
+        index === q.answer
+      ) {
 
         style =
           "background:#4CAF50;color:white;";
@@ -393,10 +578,6 @@ export function CO() {
 
   };
 
-
-  /* =======================================================
-     PAGE HTML
-  ======================================================= */
 
   return `
     <main class="content">
@@ -434,6 +615,30 @@ export function CO() {
           `
           : ""
       }
+
+
+      <div
+        style="
+          display:flex;
+          gap:10px;
+          flex-wrap:wrap;
+          margin-bottom:15px;
+        "
+      >
+
+        <button
+          onclick="pauseCOExam()"
+        >
+          ⏸ Pause
+        </button>
+
+        <button
+          onclick="startNewCOExam()"
+        >
+          🔄 New Exam
+        </button>
+
+      </div>
 
 
       ${AudioPlayer(
@@ -545,32 +750,46 @@ window.checkAnswer = function(index) {
     getMode();
 
 
-  selectedAnswer = index;
+  selectedAnswer =
+    index;
 
-  q.userAnswer = index;
+  q.userAnswer =
+    index;
 
 
-  if (index === q.answer) {
+  if (
+    index === q.answer
+  ) {
 
     score++;
 
-    removeWrongQuestion(q.id);
+    removeWrongQuestion(
+      q.id
+    );
 
 
-    if (mode === "practice") {
+    if (
+      mode === "practice"
+    ) {
 
-      message = "✅ Correct!";
+      message =
+        "✅ Correct!";
 
     }
 
   } else {
 
-    saveWrongQuestion(q);
+    saveWrongQuestion(
+      q
+    );
 
 
-    if (mode === "practice") {
+    if (
+      mode === "practice"
+    ) {
 
-      message = "❌ Incorrect!";
+      message =
+        "❌ Incorrect!";
 
     }
 
@@ -579,13 +798,16 @@ window.checkAnswer = function(index) {
 
   answered = true;
 
+  saveExamProgress();
+
 
   const app =
     document.getElementById("app");
 
   if (app) {
 
-    app.innerHTML = App();
+    app.innerHTML =
+      App();
 
   }
 
@@ -600,10 +822,6 @@ window.nextQuestion = function() {
 
   currentQuestion++;
 
-
-  /*
-   * Exam completed
-   */
 
   if (
     currentQuestion >=
@@ -652,10 +870,11 @@ window.nextQuestion = function() {
     );
 
 
+    clearSavedExam();
+
     resetAudio();
 
     resetExamState();
-
 
     location.reload();
 
@@ -664,18 +883,19 @@ window.nextQuestion = function() {
   }
 
 
-  /*
-   * Next question
-   */
+  answered =
+    false;
 
-  answered = false;
+  selectedAnswer =
+    -1;
 
-  selectedAnswer = -1;
-
-  message = "";
+  message =
+    "";
 
 
   resetAudio();
+
+  saveExamProgress();
 
 
   const app =
@@ -683,9 +903,66 @@ window.nextQuestion = function() {
 
   if (app) {
 
-    app.innerHTML = App();
+    app.innerHTML =
+      App();
 
   }
+
+};
+
+
+/* =========================================================
+   PAUSE EXAM
+========================================================= */
+
+window.pauseCOExam = function() {
+
+  saveExamProgress();
+
+  resetAudio();
+
+  localStorage.setItem(
+    "currentPage",
+    "co"
+  );
+
+  alert(
+    `Progress saved.\n\nYou can continue later from Question ${currentQuestion + 1}.`
+  );
+
+};
+
+
+/* =========================================================
+   START NEW EXAM
+========================================================= */
+
+window.startNewCOExam = function() {
+
+  const confirmed =
+    confirm(
+      "Start a new exam?\n\nCurrent progress will be deleted."
+    );
+
+  if (!confirmed) {
+    return;
+  }
+
+
+  clearSavedExam();
+
+  localStorage.removeItem(
+    "coTimerEnd"
+  );
+
+  resetAudio();
+
+  resetExamState();
+
+  document.getElementById(
+    "app"
+  ).innerHTML =
+    App();
 
 };
 
@@ -707,13 +984,16 @@ window.favoriteQuestion = function() {
 
   addFavorite(q);
 
+  saveExamProgress();
+
 
   const app =
     document.getElementById("app");
 
   if (app) {
 
-    app.innerHTML = App();
+    app.innerHTML =
+      App();
 
   }
 
@@ -726,13 +1006,17 @@ window.favoriteQuestion = function() {
 
 window.retryCOLoad = function() {
 
-  loadError = "";
+  loadError =
+    "";
 
-  loaded = false;
+  loaded =
+    false;
 
-  loading = false;
+  loading =
+    false;
 
-  questionBank = [];
+  questionBank =
+    [];
 
 
   loadQuestionBank();
