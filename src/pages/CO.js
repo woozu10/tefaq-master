@@ -1,3 +1,4 @@
+import { QuestionPalette } from "../components/QuestionPalette.js";
 import {
   getCategory
 } from "../services/categoryService.js";
@@ -593,7 +594,10 @@ export function CO() {
         /
         ${examQuestions.length}
       </h3>
-
+${QuestionPalette(
+    examQuestions,
+    currentQuestion
+)}
 
       ${Timer(40)}
 
@@ -1020,5 +1024,14 @@ window.retryCOLoad = function() {
 
 
   loadQuestionBank();
+
+};
+window.goQuestion=function(index){
+
+    currentQuestion=index;
+
+    resetAudio();
+
+    document.getElementById("app").innerHTML=App();
 
 };
