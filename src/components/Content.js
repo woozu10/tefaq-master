@@ -5,51 +5,38 @@ import { getHistory } from "../services/statisticsService.js";
 import { setCurrentPage } from "../services/router.js";
 
 window.goCO = function () {
-
   setCurrentPage("co");
-
   location.reload();
+};
 
+window.goCE = function () {
+  setCurrentPage("ce");
+  location.reload();
 };
 
 window.goFavorites = function () {
-
   setCurrentPage("favorites");
-
   location.reload();
-
 };
 
 window.goWrongNotes = function () {
-
   setCurrentPage("wrong-notes");
-
   location.reload();
-
 };
 
 window.goStatistics = function () {
-
   setCurrentPage("statistics");
-
   location.reload();
-
 };
 
 window.goSettings = function () {
-
   setCurrentPage("settings");
-
   location.reload();
-
 };
 
 window.goAdmin = function () {
-
   setCurrentPage("admin");
-
   location.reload();
-
 };
 
 export function Content() {
@@ -83,9 +70,13 @@ export function Content() {
         <h3>🎯 Continue Learning</h3>
 
         <button onclick="goCO()">
+          🎧 Continue Listening
+        </button>
 
-          ▶ Continue Practice
+        <br><br>
 
+        <button onclick="goCE()">
+          📖 Start Reading
         </button>
 
       </div>
@@ -127,7 +118,13 @@ export function Content() {
         <h3>🚀 Quick Start</h3>
 
         <button onclick="goCO()">
-          🎧 Practice Listening
+          🎧 Listening (CO)
+        </button>
+
+        <br><br>
+
+        <button onclick="goCE()">
+          📖 Reading (CE)
         </button>
 
         <br><br>
