@@ -537,3 +537,28 @@ button:active{
     transform:scale(.98);
 
 }
+.sidebar button{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    justify-content:flex-start;
+
+    color:#222;
+
+    font-weight:600;
+
+    background:white;
+
+    border:2px solid #dcdcdc;
+
+}
+
+.sidebar button:hover{
+
+    border-color:#4CAF50;
+
+}
