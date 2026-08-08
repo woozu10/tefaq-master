@@ -100,6 +100,8 @@ export function App() {
     return EEResult();
       case "eo":
     return EO();
+      case "dashboard":
+    return Dashboard();
 
     default:
       return Dashboard();
