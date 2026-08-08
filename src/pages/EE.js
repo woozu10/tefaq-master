@@ -1,15 +1,78 @@
-let draft = localStorage.getItem("eeDraft") || "";
+let draft =
+  localStorage.getItem("eeDraft") || "";
 
-window.saveDraft = function () {
+/* =========================================
+   WORD / CHARACTER COUNTER
+========================================= */
+
+function updateCounter() {
 
   const text =
     document.getElementById("essay").value;
 
-  localStorage.setItem("eeDraft", text);
+  const words =
+    text.trim() === ""
+      ? 0
+      : text.trim().split(/\s+/).length;
+
+  const chars =
+    text.length;
+
+  document.getElementById("wordCount").innerHTML =
+    words;
+
+  document.getElementById("charCount").innerHTML =
+    chars;
+
+}
+
+/* =========================================
+   AUTO SAVE
+========================================= */
+
+window.autoSave = function () {
+
+  const text =
+    document.getElementById("essay").value;
+
+  localStorage.setItem(
+    "eeDraft",
+    text
+  );
+
+};
+
+/* =========================================
+   SAVE BUTTON
+========================================= */
+
+window.saveDraft = function () {
+
+  autoSave();
 
   alert("Draft saved.");
 
 };
+
+/* =========================================
+   CLEAR
+========================================= */
+
+window.clearEssay = function () {
+
+  if (!confirm("Delete draft?")) {
+    return;
+  }
+
+  localStorage.removeItem("eeDraft");
+
+  location.reload();
+
+};
+
+/* =========================================
+   PAGE
+========================================= */
 
 export function EE() {
 
@@ -21,13 +84,26 @@ export function EE() {
 
       <div class="card">
 
-        <h3>Writing Task</h3>
+        <div
+          id="timer"
+          style="
+            font-size:28px;
+            font-weight:bold;
+            margin-bottom:20px;
+          "
+        >
+          30:00
+        </div>
+
+        <h3>Today's Task</h3>
 
         <p>
 
           Vous avez reçu un colis en retard.
 
           Écrivez un courriel de réclamation.
+
+          (150 à 200 mots)
 
         </p>
 
@@ -43,13 +119,40 @@ export function EE() {
 
           style="width:100%;"
 
+          oninput="
+            updateCounter();
+            autoSave();
+          "
+
         >${draft}</textarea>
 
-        <br><br>
+        <hr>
+
+        <p>
+
+          Words :
+          <b id="wordCount">0</b>
+
+          &nbsp;&nbsp;
+
+          Characters :
+          <b id="charCount">0</b>
+
+        </p>
+
+        <br>
 
         <button onclick="saveDraft()">
 
           💾 Save Draft
+
+        </button>
+
+        &nbsp;
+
+        <button onclick="clearEssay()">
+
+          🗑 Clear
 
         </button>
 
