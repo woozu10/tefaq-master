@@ -77,24 +77,23 @@ export function Review() {
       <h2>📖 Review Answers</h2>
 
       <h3>
-
         Question ${current + 1} / ${questions.length}
-
       </h3>
 
-    
       ${AudioPlayer(q.transcript)}
 
       <div class="card">
 
         <h3>${q.question}</h3>
-        
 
         <hr>
 
         <h3>Your Answer</h3>
 
-        <p>
+        <p style="
+          color:${q.userAnswer === q.answer ? "#4CAF50" : "#F44336"};
+          font-weight:bold;
+        ">
 
           ${
             q.userAnswer === q.answer
@@ -102,7 +101,11 @@ export function Review() {
               : "❌"
           }
 
-          ${q.choices[q.userAnswer]}
+          ${
+            q.userAnswer >= 0
+              ? q.choices[q.userAnswer]
+              : "No Answer"
+          }
 
         </p>
 
@@ -110,7 +113,10 @@ export function Review() {
 
         <h3>Correct Answer</h3>
 
-        <p>
+        <p style="
+          color:#4CAF50;
+          font-weight:bold;
+        ">
 
           ✅ ${q.choices[q.answer]}
 
@@ -118,7 +124,7 @@ export function Review() {
 
         <hr>
 
-        <h3>Explanation</h3>
+        <h3>📖 Explanation</h3>
 
         <p>
 
@@ -126,25 +132,68 @@ export function Review() {
 
         </p>
 
+        ${
+          Array.isArray(q.vocabulary) &&
+          q.vocabulary.length > 0
+            ? `
+              <hr>
+
+              <h3>📚 Vocabulary</h3>
+
+              <ul style="text-align:left;">
+
+                ${q.vocabulary
+                  .map(word => `<li>${word}</li>`)
+                  .join("")}
+
+              </ul>
+            `
+            : ""
+        }
+
       </div>
 
-      <button onclick="previousReview()">
+      <div
+        style="
+          display:flex;
+          justify-content:center;
+          gap:10px;
+          margin-top:20px;
+          flex-wrap:wrap;
+        "
+      >
 
-        ← Previous
+        ${
+          current > 0
+            ? `
+              <button onclick="previousReview()">
+                ← Previous
+              </button>
+            `
+            : ""
+        }
 
-      </button>
+        ${
+          current < questions.length - 1
+            ? `
+              <button onclick="nextReview()">
+                Next →
+              </button>
+            `
+            : ""
+        }
 
-      <button onclick="nextReview()">
+        <button
+          style="
+            background:#4CAF50;
+            color:white;
+          "
+          onclick="finishReview()"
+        >
+          ✅ Finish Review
+        </button>
 
-        Next →
-
-      </button>
-
-      <button onclick="finishReview()">
-
-        Finish
-
-      </button>
+      </div>
 
     </main>
 
