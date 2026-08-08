@@ -7,36 +7,47 @@ export function ScoreGraph(history) {
 
         <h3>📈 Score Graph</h3>
 
-        <p>No data.</p>
+        <p>No history.</p>
 
       </div>
     `;
 
   }
 
-  const width = 600;
-  const height = 220;
-  const padding = 30;
-
   const max = 100;
-  const min = 0;
+
+  const width = 100;
+
+  const height = 60;
+
+  const step =
+    history.length === 1
+      ? 0
+      : width / (history.length - 1);
 
   const points = history.map((item, index) => {
 
-    const x =
-      padding +
-      (index * (width - padding * 2)) /
-      Math.max(history.length - 1, 1);
+    const x = index * step;
 
     const y =
       height -
-      padding -
-      ((item.percent - min) / (max - min)) *
-      (height - padding * 2);
+      (item.percent / max) * height;
 
-    return `${x},${y}`;
+    return {
 
-  }).join(" ");
+      x,
+
+      y,
+
+      score: item.percent
+
+    };
+
+  });
+
+  const line = points
+    .map(point => `${point.x},${point.y}`)
+    .join(" ");
 
   return `
 
@@ -45,25 +56,10 @@ export function ScoreGraph(history) {
     <h3>📈 Score Graph</h3>
 
     <svg
+      viewBox="0 0 100 60"
       width="100%"
-      viewBox="0 0 ${width} ${height}"
+      style="overflow:visible;"
     >
-
-      <line
-        x1="${padding}"
-        y1="${height-padding}"
-        x2="${width-padding}"
-        y2="${height-padding}"
-        stroke="#888"
-      />
-
-      <line
-        x1="${padding}"
-        y1="${padding}"
-        x2="${padding}"
-        y2="${height-padding}"
-        stroke="#888"
-      />
 
       <polyline
 
@@ -71,60 +67,52 @@ export function ScoreGraph(history) {
 
         stroke="#4CAF50"
 
-        stroke-width="4"
+        stroke-width="2"
 
-        points="${points}"
+        points="${line}"
 
       />
 
-      ${history.map((item,index)=>{
+      ${points.map(point=>`
 
-        const x =
-          padding +
-          (index*(width-padding*2))/
-          Math.max(history.length-1,1);
+        <circle
 
-        const y =
-          height -
-          padding -
-          (item.percent/100)*
-          (height-padding*2);
+          cx="${point.x}"
 
-        return `
+          cy="${point.y}"
 
-          <circle
+          r="1.8"
 
-            cx="${x}"
+          fill="#4CAF50"
 
-            cy="${y}"
+        />
 
-            r="5"
-
-            fill="#4CAF50"
-
-          />
-
-          <text
-
-            x="${x}"
-
-            y="${y-10}"
-
-            text-anchor="middle"
-
-            font-size="12"
-
-          >
-
-            ${item.percent}
-
-          </text>
-
-        `;
-
-      }).join("")}
+      `).join("")}
 
     </svg>
+
+    <div
+
+      style="
+        display:flex;
+        justify-content:space-between;
+        font-size:12px;
+        margin-top:8px;
+      "
+
+    >
+
+      ${history.map((item,index)=>`
+
+        <div>
+
+          ${index+1}
+
+        </div>
+
+      `).join("")}
+
+    </div>
 
   </div>
 
