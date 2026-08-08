@@ -248,12 +248,8 @@ async function loadQuestionBank() {
 
   loading = true;
   loadError = "";
-
-  try {
-
-    const data = await loadQuestions("B2");
-
-    if (!Array.isArray(data)) {
+const data = await loadQuestions("co", "B2");
+  
       throw new Error(
         "B2.json must contain a JSON array."
       );
