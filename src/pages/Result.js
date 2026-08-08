@@ -3,95 +3,116 @@ import { setReviewQuestions } from "../services/reviewService.js";
 
 window.restartExam = function () {
 
-    localStorage.removeItem("score");
-    localStorage.removeItem("total");
-    localStorage.removeItem("coTimerEnd");
+  localStorage.removeItem("score");
+  localStorage.removeItem("total");
+  localStorage.removeItem("coTimerEnd");
 
-    setCurrentPage("co");
+  setCurrentPage("co");
 
-    location.reload();
+  location.reload();
 
 };
 
 window.goDashboard = function () {
 
-    setCurrentPage("dashboard");
+  setCurrentPage("dashboard");
 
-    location.reload();
+  location.reload();
 
 };
 
 window.reviewAnswers = function () {
 
-    const questions =
-        JSON.parse(localStorage.getItem("lastExamQuestions")) || [];
+  const questions =
+    JSON.parse(
+      localStorage.getItem("lastExamQuestions")
+    ) || [];
 
-    setReviewQuestions(questions);
+  setReviewQuestions(questions);
 
-    setCurrentPage("review");
+  setCurrentPage("review");
 
-    location.reload();
+  location.reload();
 
 };
 
 export function Result(score, total) {
 
-    const percent =
-        total === 0
-            ? 0
-            : Math.round((score / total) * 100);
+  const percent =
+    total === 0
+      ? 0
+      : Math.round((score / total) * 100);
 
-    return `
+  let message = "";
+  let color = "";
 
-    <main class="content">
+  if (percent >= 90) {
+    message = "🌟 Excellent!";
+    color = "#4CAF50";
+  } else if (percent >= 80) {
+    message = "🎉 Very Good!";
+    color = "#4CAF50";
+  } else if (percent >= 60) {
+    message = "👍 Good Job!";
+    color = "#FF9800";
+  } else {
+    message = "💪 Keep Practicing!";
+    color = "#F44336";
+  }
 
-        <h2>🎉 Test Finished</h2>
+  return `
 
-        <div class="card">
+  <main class="content">
 
-            <h3>Final Score</h3>
+    <h2>🎉 Exam Finished</h2>
 
-            <h1>${score}/${total}</h1>
+    <div class="card">
 
-            <h2 style="
-color:
-${
-percent >= 80
-? '#4CAF50'
-: percent >= 60
-? '#FF9800'
-: '#F44336'
-};
-">
+      <h3>Final Score</h3>
 
-${percent}%
+      <h1>${score} / ${total}</h1>
 
-</h2>
+      <h2
+        style="
+          color:${color};
+          font-size:42px;
+        "
+      >
+        ${percent}%
+      </h2>
 
-            <p>
-                Accuracy : ${percent}%
-            </p>
+      <h3>${message}</h3>
 
-            <button onclick="reviewAnswers()">
-                📖 Review Answers
-            </button>
+      <hr>
 
-            <br><br>
+      <p><strong>Correct :</strong> ${score}</p>
 
-            <button onclick="restartExam()">
-                Try Again
-            </button>
+      <p><strong>Wrong :</strong> ${total - score}</p>
 
-            <br><br>
+      <p><strong>Total :</strong> ${total}</p>
 
-            <button onclick="goDashboard()">
-                Dashboard
-            </button>
+      <hr>
 
-        </div>
+      <button onclick="reviewAnswers()">
+        📖 Review Answers
+      </button>
 
-    </main>
+      <br><br>
 
-    `;
+      <button onclick="restartExam()">
+        🔄 Try Again
+      </button>
+
+      <br><br>
+
+      <button onclick="goDashboard()">
+        🏠 Dashboard
+      </button>
+
+    </div>
+
+  </main>
+
+  `;
 
 }
