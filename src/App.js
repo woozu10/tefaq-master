@@ -1,4 +1,3 @@
-import { Settings } from "./pages/Settings.js";
 import { Review } from "./pages/Review.js";
 import { Dashboard } from "./pages/Dashboard.js";
 import { COHome } from "./pages/COHome.js";
@@ -9,16 +8,23 @@ import { Favorites } from "./pages/Favorites.js";
 import { WrongNotes } from "./pages/WrongNotes.js";
 import { Statistics } from "./pages/Statistics.js";
 import { Result } from "./pages/Result.js";
-import { getCurrentPage } from "./services/router.js";
+import { Settings } from "./pages/Settings.js";
+import { Admin } from "./pages/Admin.js";
+
+import {
+  getCurrentPage
+} from "./services/router.js";
+
 
 export function App() {
 
-  const page = getCurrentPage();
+  const page =
+    getCurrentPage();
 
   switch (page) {
 
-  case "review":
-  return Review();
+    case "review":
+      return Review();
 
     case "co":
       return COHome();
@@ -41,17 +47,34 @@ export function App() {
     case "statistics":
       return Statistics();
 
+    case "settings":
+      return Settings();
+
+    case "admin":
+      return Admin();
+
     case "result": {
 
-      const score = Number(localStorage.getItem("score"));
-      const total = Number(localStorage.getItem("total"));
+      const score =
+        Number(
+          localStorage.getItem(
+            "score"
+          )
+        );
 
-      return Result(score, total);
+      const total =
+        Number(
+          localStorage.getItem(
+            "total"
+          )
+        );
+
+      return Result(
+        score,
+        total
+      );
 
     }
-      case "settings":
-
-    return Settings();
 
     default:
       return Dashboard();
