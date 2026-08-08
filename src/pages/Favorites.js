@@ -55,14 +55,31 @@ export function Favorites() {
 
     <main class="content">
 
-      <div style="display:flex;gap:10px;margin-bottom:20px;">
+      <h2>⭐ Favorite Questions</h2>
+
+      <div class="card">
+
+        <h3>Total Favorites</h3>
+
+        <h1>${favorites.length}</h1>
+
+      </div>
+
+      <div
+      style="
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:center;
+      margin-bottom:20px;
+      ">
 
         <button onclick="goCOHome()">
-          ← CO
+          ← CO Home
         </button>
 
         <button onclick="retryFavorites()">
-          ▶ Practice Favorites
+          ▶ Start Favorite Quiz
         </button>
 
         <button onclick="clearAllFavorites()">
@@ -71,24 +88,56 @@ export function Favorites() {
 
       </div>
 
-      <h2>⭐ Favorites</h2>
-
-      <p>Total : ${favorites.length}</p>
-
-      <hr>
-
       ${
         favorites.length === 0
-          ? "<p>No favorite questions.</p>"
-          : favorites.map(q => `
-              <div class="card">
+          ? `
+          <div class="card">
 
-                <h3>${q.question}</h3>
+            <h3>No Favorite Questions</h3>
 
-                <p>Level : ${q.level}</p>
+            <p>
+              Add favorite questions while studying.
+            </p>
 
-              </div>
-            `).join("")
+          </div>
+          `
+          : favorites.map((q,index)=>`
+
+            <div class="card">
+
+              <h3>
+
+                #${index+1}
+
+              </h3>
+
+              <p>
+
+                ${q.question}
+
+              </p>
+
+              <hr>
+
+              <p>
+
+                <strong>Category :</strong>
+
+                ${q.category || "-"}
+
+              </p>
+
+              <p>
+
+                <strong>Level :</strong>
+
+                ${q.level || "-"}
+
+              </p>
+
+            </div>
+
+          `).join("")
       }
 
     </main>
