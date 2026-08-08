@@ -562,3 +562,26 @@ button:active{
     border-color:#4CAF50;
 
 }
+.sidebar button{
+
+    color:#000 !important;
+
+    background:#fff !important;
+
+    font-size:18px;
+
+    text-align:left;
+
+}
+
+.sidebar button:hover{
+
+    color:#000 !important;
+
+}
+
+.sidebar button *{
+
+    color:#000 !important;
+
+}
