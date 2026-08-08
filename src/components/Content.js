@@ -36,12 +36,22 @@ window.goStatistics = function () {
 
 };
 
+window.goSettings = function () {
+
+  setCurrentPage("settings");
+
+  location.reload();
+
+};
+
 export function Content() {
 
   const sample = getQuestion("B2");
 
   const favorites = getFavorites().length;
+
   const wrongs = getWrongQuestions().length;
+
   const history = getHistory();
 
   const lastScore =
@@ -61,23 +71,47 @@ export function Content() {
       <h2>📚 TEFAQ MASTER</h2>
 
       <div class="card">
+
+        <h3>🎯 Continue Learning</h3>
+
+        <button onclick="goCO()">
+
+          ▶ Continue Practice
+
+        </button>
+
+      </div>
+
+      <div class="card">
+
         <h3>📊 Last Score</h3>
+
         <h1>${lastScore}</h1>
+
       </div>
 
       <div class="card">
+
         <h3>🏆 Best Score</h3>
+
         <h1>${bestScore}</h1>
+
       </div>
 
       <div class="card">
+
         <h3>⭐ Favorites</h3>
+
         <h1>${favorites}</h1>
+
       </div>
 
       <div class="card">
+
         <h3>❌ Wrong Notes</h3>
+
         <h1>${wrongs}</h1>
+
       </div>
 
       <div class="card">
@@ -85,44 +119,60 @@ export function Content() {
         <h3>🚀 Quick Start</h3>
 
         <button onclick="goCO()">
+
           🎧 Practice Listening
+
         </button>
 
         <br><br>
 
         <button onclick="goFavorites()">
-          ⭐ Review Favorites
+
+          ⭐ Favorites
+
         </button>
 
         <br><br>
 
         <button onclick="goWrongNotes()">
-          ❌ Review Wrong Answers
+
+          ❌ Wrong Notes
+
         </button>
 
         <br><br>
 
         <button onclick="goStatistics()">
-          📊 View Statistics
+
+          📊 Statistics
+
+        </button>
+
+        <br><br>
+
+        <button onclick="goSettings()">
+
+          ⚙ Settings
+
         </button>
 
       </div>
 
-      <hr>
-
       <div class="card">
 
-        <h3>${sample.title || "Sample Question"}</h3>
+        <h3>📈 Study Progress</h3>
 
-        <p>${sample.question || ""}</p>
+        <p>Total Exams : ${history.length}</p>
 
       </div>
 
       <div class="card">
 
-        <h3>📈 Progress</h3>
+        <h3>📝 Sample Question</h3>
 
-        <p>Total Exams : ${history.length}</p>
+        <p>${sample.title || ""}</p>
+
+        <p>${sample.question || ""}</p>
 
       </div>
 
