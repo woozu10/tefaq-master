@@ -13,6 +13,16 @@ window.openCE = function () {
   location.reload();
 };
 
+window.openEE = function () {
+  setCurrentPage("ee");
+  location.reload();
+};
+
+window.openEO = function () {
+  setCurrentPage("eo");
+  location.reload();
+};
+
 export function Dashboard() {
 
   return `
@@ -35,6 +45,14 @@ export function Dashboard() {
 
           <button onclick="openCE()">
             📖 Compréhension Écrite
+          </button>
+
+          <button onclick="openEE()">
+            ✍️ Expression Écrite
+          </button>
+
+          <button onclick="openEO()">
+            🎤 Expression Orale
           </button>
 
         </div>
