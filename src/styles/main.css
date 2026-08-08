@@ -463,3 +463,60 @@ button:disabled {
     background:#1565C0;
 
 }
+/* ===========================
+   UI SYSTEM v2
+=========================== */
+
+.content{
+
+    max-width:720px;
+
+    margin:auto;
+
+    padding:20px;
+
+}
+
+.card{
+
+    background:#ffffff;
+
+    border-radius:16px;
+
+    padding:20px;
+
+    margin-bottom:18px;
+
+    border:1px solid #e6e6e6;
+
+    box-shadow:0 4px 12px rgba(0,0,0,.08);
+
+}
+
+button{
+
+    padding:14px 18px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#4CAF50;
+
+    color:white;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.2s;
+
+}
+
+button:hover{
+
+    background:#43A047;
+
+}
