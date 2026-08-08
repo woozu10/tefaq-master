@@ -1,15 +1,58 @@
+import { setCurrentPage } from "../services/router.js";
+
+window.goDashboard = function () {
+  setCurrentPage("dashboard");
+  location.reload();
+};
+
+window.goCO = function () {
+  setCurrentPage("co");
+  location.reload();
+};
+
+window.goFavorites = function () {
+  setCurrentPage("favorites");
+  location.reload();
+};
+
+window.goWrongNotes = function () {
+  setCurrentPage("wrong-notes");
+  location.reload();
+};
+
+window.goStatistics = function () {
+  setCurrentPage("statistics");
+  location.reload();
+};
+
 export function Sidebar() {
+
   return `
+
     <aside class="sidebar">
 
-      <div style="color:red;font-size:30px;">
-        TEST 12345
-      </div>
-
       <button onclick="goDashboard()">
-        Dashboard
+        🏠 Dashboard
+      </button>
+
+      <button onclick="goCO()">
+        🎧 Listening
+      </button>
+
+      <button onclick="goFavorites()">
+        ⭐ Favorites
+      </button>
+
+      <button onclick="goWrongNotes()">
+        ❌ Wrong Notes
+      </button>
+
+      <button onclick="goStatistics()">
+        📊 Statistics
       </button>
 
     </aside>
+
   `;
+
 }
