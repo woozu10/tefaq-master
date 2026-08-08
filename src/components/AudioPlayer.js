@@ -144,3 +144,9 @@ window.playAudio = function () {
   speechSynthesis.speak(utterance);
 
 };
+
+speechSynthesis.onvoiceschanged = function () {
+
+  speechSynthesis.getVoices();
+
+};
