@@ -1,0 +1,602 @@
+[
+  {
+    "id": 1,
+    "category": "Logement",
+    "level": "B2",
+    "text": "Une résidence informe ses locataires que l’eau chaude sera coupée mardi de 9 h à 13 h pour des travaux de maintenance.",
+    "question": "Quand les locataires n’auront-ils pas d’eau chaude ?",
+    "choices": [
+      "Lundi matin",
+      "Mardi matin",
+      "Mardi soir",
+      "Mercredi matin"
+    ],
+    "answer": 1,
+    "explanation": "La coupure est annoncée mardi de 9 h à 13 h.",
+    "vocabulary": [
+      "coupure",
+      "maintenance",
+      "locataire"
+    ]
+  },
+  {
+    "id": 2,
+    "category": "Travail",
+    "level": "B2",
+    "text": "Le service des ressources humaines rappelle que les demandes de congé pour les fêtes doivent être soumises avant le 15 novembre. Les réponses seront envoyées au plus tard le 1er décembre.",
+    "question": "Que doivent faire les employés avant le 15 novembre ?",
+    "choices": [
+      "Prendre leurs vacances",
+      "Envoyer une demande de congé",
+      "Répondre au service RH",
+      "Choisir leurs horaires"
+    ],
+    "answer": 1,
+    "explanation": "Le texte demande de soumettre la demande de congé avant le 15 novembre.",
+    "vocabulary": [
+      "congé",
+      "soumettre",
+      "ressources humaines"
+    ]
+  },
+  {
+    "id": 3,
+    "category": "Transport",
+    "level": "B2",
+    "text": "En raison de travaux sur la ligne verte, les trains ne circuleront pas entre Berri-UQAM et Frontenac ce week-end. Un service de navettes sera disponible.",
+    "question": "Quelle solution est proposée aux voyageurs ?",
+    "choices": [
+      "Prendre un taxi gratuit",
+      "Utiliser des navettes",
+      "Reporter leur voyage",
+      "Prendre la ligne orange"
+    ],
+    "answer": 1,
+    "explanation": "Un service de navettes est prévu pendant l’interruption.",
+    "vocabulary": [
+      "travaux",
+      "navette",
+      "circuler"
+    ]
+  },
+  {
+    "id": 4,
+    "category": "Santé",
+    "level": "B2",
+    "text": "La clinique accepte désormais les consultations sans rendez-vous uniquement le matin, de 8 h à 11 h. L’après-midi est réservé aux patients ayant un rendez-vous.",
+    "question": "Qui peut venir l’après-midi ?",
+    "choices": [
+      "Tous les patients",
+      "Les patients avec rendez-vous",
+      "Seulement les enfants",
+      "Les nouveaux patients"
+    ],
+    "answer": 1,
+    "explanation": "L’après-midi est réservé aux patients ayant un rendez-vous.",
+    "vocabulary": [
+      "désormais",
+      "sans rendez-vous",
+      "réservé"
+    ]
+  },
+  {
+    "id": 5,
+    "category": "Banque",
+    "level": "B2",
+    "text": "Votre carte bancaire expirera à la fin du mois. Une nouvelle carte vous sera envoyée automatiquement à l’adresse inscrite à votre dossier.",
+    "question": "Que doit faire le client pour recevoir sa nouvelle carte ?",
+    "choices": [
+      "Téléphoner à la banque",
+      "Se rendre en succursale",
+      "Rien, l’envoi est automatique",
+      "Remplir un formulaire"
+    ],
+    "answer": 2,
+    "explanation": "La nouvelle carte sera envoyée automatiquement.",
+    "vocabulary": [
+      "expirer",
+      "dossier",
+      "automatiquement"
+    ]
+  },
+  {
+    "id": 6,
+    "category": "École",
+    "level": "B2",
+    "text": "Les parents qui souhaitent inscrire leur enfant au service de garde doivent remplir le formulaire en ligne avant vendredi. Après cette date, les places restantes seront attribuées selon les disponibilités.",
+    "question": "Pourquoi faut-il remplir le formulaire avant vendredi ?",
+    "choices": [
+      "Pour obtenir une réduction",
+      "Pour augmenter les chances d’avoir une place",
+      "Pour changer d’école",
+      "Pour recevoir les notes"
+    ],
+    "answer": 1,
+    "explanation": "Après vendredi, seules les places encore disponibles seront attribuées.",
+    "vocabulary": [
+      "inscrire",
+      "service de garde",
+      "disponibilité"
+    ]
+  },
+  {
+    "id": 7,
+    "category": "Administration",
+    "level": "B2",
+    "text": "Pour renouveler votre permis, vous devez présenter une pièce d’identité, une preuve d’adresse récente et votre ancien permis. Les paiements en espèces ne sont pas acceptés.",
+    "question": "Quel document n’est pas demandé ?",
+    "choices": [
+      "Une preuve d’adresse",
+      "Une pièce d’identité",
+      "L’ancien permis",
+      "Une preuve d’emploi"
+    ],
+    "answer": 3,
+    "explanation": "Le texte ne demande aucune preuve d’emploi.",
+    "vocabulary": [
+      "renouveler",
+      "preuve",
+      "espèces"
+    ]
+  },
+  {
+    "id": 8,
+    "category": "Commerce",
+    "level": "B2",
+    "text": "Le magasin offre 20 % de réduction sur tous les manteaux jusqu’à dimanche, sauf les articles déjà soldés.",
+    "question": "Quels articles ne bénéficient pas de la réduction ?",
+    "choices": [
+      "Les manteaux pour enfants",
+      "Les manteaux déjà soldés",
+      "Les manteaux noirs",
+      "Les manteaux achetés dimanche"
+    ],
+    "answer": 1,
+    "explanation": "Les articles déjà soldés sont exclus de la promotion.",
+    "vocabulary": [
+      "réduction",
+      "soldé",
+      "sauf"
+    ]
+  },
+  {
+    "id": 9,
+    "category": "Loisirs",
+    "level": "B2",
+    "text": "La bibliothèque sera exceptionnellement fermée samedi matin pour une formation du personnel. Elle rouvrira à 14 h.",
+    "question": "À quelle heure la bibliothèque rouvrira-t-elle ?",
+    "choices": [
+      "10 h",
+      "12 h",
+      "14 h",
+      "16 h"
+    ],
+    "answer": 2,
+    "explanation": "Le texte indique une réouverture à 14 h.",
+    "vocabulary": [
+      "exceptionnellement",
+      "formation",
+      "rouvrir"
+    ]
+  },
+  {
+    "id": 10,
+    "category": "Assurance",
+    "level": "B2",
+    "text": "En cas de dégât d’eau, prenez des photos avant de déplacer les objets endommagés et communiquez avec votre assureur dans les plus brefs délais.",
+    "question": "Que faut-il faire avant de déplacer les objets ?",
+    "choices": [
+      "Les jeter",
+      "Les nettoyer",
+      "Les photographier",
+      "Les remplacer"
+    ],
+    "answer": 2,
+    "explanation": "Il faut prendre des photos avant de déplacer les objets endommagés.",
+    "vocabulary": [
+      "dégât",
+      "endommagé",
+      "assureur"
+    ]
+  },
+  {
+    "id": 11,
+    "category": "Logement",
+    "level": "B2",
+    "text": "Une résidence informe ses locataires que l’eau chaude sera coupée mardi de 9 h à 13 h pour des travaux de maintenance. Mise à jour 2: les consignes restent les mêmes.",
+    "question": "Quand les locataires n’auront-ils pas d’eau chaude ?",
+    "choices": [
+      "Lundi matin",
+      "Mardi matin",
+      "Mardi soir",
+      "Mercredi matin"
+    ],
+    "answer": 1,
+    "explanation": "La coupure est annoncée mardi de 9 h à 13 h.",
+    "vocabulary": [
+      "coupure",
+      "maintenance",
+      "locataire"
+    ]
+  },
+  {
+    "id": 12,
+    "category": "Travail",
+    "level": "B2",
+    "text": "Le service des ressources humaines rappelle que les demandes de congé pour les fêtes doivent être soumises avant le 15 novembre. Les réponses seront envoyées au plus tard le 1er décembre. Mise à jour 2: les consignes restent les mêmes.",
+    "question": "Que doivent faire les employés avant le 15 novembre ?",
+    "choices": [
+      "Prendre leurs vacances",
+      "Envoyer une demande de congé",
+      "Répondre au service RH",
+      "Choisir leurs horaires"
+    ],
+    "answer": 1,
+    "explanation": "Le texte demande de soumettre la demande de congé avant le 15 novembre.",
+    "vocabulary": [
+      "congé",
+      "soumettre",
+      "ressources humaines"
+    ]
+  },
+  {
+    "id": 13,
+    "category": "Transport",
+    "level": "B2",
+    "text": "En raison de travaux sur la ligne verte, les trains ne circuleront pas entre Berri-UQAM et Frontenac ce week-end. Un service de navettes sera disponible. Mise à jour 2: les consignes restent les mêmes.",
+    "question": "Quelle solution est proposée aux voyageurs ?",
+    "choices": [
+      "Prendre un taxi gratuit",
+      "Utiliser des navettes",
+      "Reporter leur voyage",
+      "Prendre la ligne orange"
+    ],
+    "answer": 1,
+    "explanation": "Un service de navettes est prévu pendant l’interruption.",
+    "vocabulary": [
+      "travaux",
+      "navette",
+      "circuler"
+    ]
+  },
+  {
+    "id": 14,
+    "category": "Santé",
+    "level": "B2",
+    "text": "La clinique accepte désormais les consultations sans rendez-vous uniquement le matin, de 8 h à 11 h. L’après-midi est réservé aux patients ayant un rendez-vous. Mise à jour 2: les consignes restent les mêmes.",
+    "question": "Qui peut venir l’après-midi ?",
+    "choices": [
+      "Tous les patients",
+      "Les patients avec rendez-vous",
+      "Seulement les enfants",
+      "Les nouveaux patients"
+    ],
+    "answer": 1,
+    "explanation": "L’après-midi est réservé aux patients ayant un rendez-vous.",
+    "vocabulary": [
+      "désormais",
+      "sans rendez-vous",
+      "réservé"
+    ]
+  },
+  {
+    "id": 15,
+    "category": "Banque",
+    "level": "B2",
+    "text": "Votre carte bancaire expirera à la fin du mois. Une nouvelle carte vous sera envoyée automatiquement à l’adresse inscrite à votre dossier. Mise à jour 2: les consignes restent les mêmes.",
+    "question": "Que doit faire le client pour recevoir sa nouvelle carte ?",
+    "choices": [
+      "Téléphoner à la banque",
+      "Se rendre en succursale",
+      "Rien, l’envoi est automatique",
+      "Remplir un formulaire"
+    ],
+    "answer": 2,
+    "explanation": "La nouvelle carte sera envoyée automatiquement.",
+    "vocabulary": [
+      "expirer",
+      "dossier",
+      "automatiquement"
+    ]
+  },
+  {
+    "id": 16,
+    "category": "École",
+    "level": "B2",
+    "text": "Les parents qui souhaitent inscrire leur enfant au service de garde doivent remplir le formulaire en ligne avant vendredi. Après cette date, les places restantes seront attribuées selon les disponibilités. Mise à jour 2: les consignes restent les mêmes.",
+    "question": "Pourquoi faut-il remplir le formulaire avant vendredi ?",
+    "choices": [
+      "Pour obtenir une réduction",
+      "Pour augmenter les chances d’avoir une place",
+      "Pour changer d’école",
+      "Pour recevoir les notes"
+    ],
+    "answer": 1,
+    "explanation": "Après vendredi, seules les places encore disponibles seront attribuées.",
+    "vocabulary": [
+      "inscrire",
+      "service de garde",
+      "disponibilité"
+    ]
+  },
+  {
+    "id": 17,
+    "category": "Administration",
+    "level": "B2",
+    "text": "Pour renouveler votre permis, vous devez présenter une pièce d’identité, une preuve d’adresse récente et votre ancien permis. Les paiements en espèces ne sont pas acceptés. Mise à jour 2: les consignes restent les mêmes.",
+    "question": "Quel document n’est pas demandé ?",
+    "choices": [
+      "Une preuve d’adresse",
+      "Une pièce d’identité",
+      "L’ancien permis",
+      "Une preuve d’emploi"
+    ],
+    "answer": 3,
+    "explanation": "Le texte ne demande aucune preuve d’emploi.",
+    "vocabulary": [
+      "renouveler",
+      "preuve",
+      "espèces"
+    ]
+  },
+  {
+    "id": 18,
+    "category": "Commerce",
+    "level": "B2",
+    "text": "Le magasin offre 20 % de réduction sur tous les manteaux jusqu’à dimanche, sauf les articles déjà soldés. Mise à jour 2: les consignes restent les mêmes.",
+    "question": "Quels articles ne bénéficient pas de la réduction ?",
+    "choices": [
+      "Les manteaux pour enfants",
+      "Les manteaux déjà soldés",
+      "Les manteaux noirs",
+      "Les manteaux achetés dimanche"
+    ],
+    "answer": 1,
+    "explanation": "Les articles déjà soldés sont exclus de la promotion.",
+    "vocabulary": [
+      "réduction",
+      "soldé",
+      "sauf"
+    ]
+  },
+  {
+    "id": 19,
+    "category": "Loisirs",
+    "level": "B2",
+    "text": "La bibliothèque sera exceptionnellement fermée samedi matin pour une formation du personnel. Elle rouvrira à 14 h. Mise à jour 2: les consignes restent les mêmes.",
+    "question": "À quelle heure la bibliothèque rouvrira-t-elle ?",
+    "choices": [
+      "10 h",
+      "12 h",
+      "14 h",
+      "16 h"
+    ],
+    "answer": 2,
+    "explanation": "Le texte indique une réouverture à 14 h.",
+    "vocabulary": [
+      "exceptionnellement",
+      "formation",
+      "rouvrir"
+    ]
+  },
+  {
+    "id": 20,
+    "category": "Assurance",
+    "level": "B2",
+    "text": "En cas de dégât d’eau, prenez des photos avant de déplacer les objets endommagés et communiquez avec votre assureur dans les plus brefs délais. Mise à jour 2: les consignes restent les mêmes.",
+    "question": "Que faut-il faire avant de déplacer les objets ?",
+    "choices": [
+      "Les jeter",
+      "Les nettoyer",
+      "Les photographier",
+      "Les remplacer"
+    ],
+    "answer": 2,
+    "explanation": "Il faut prendre des photos avant de déplacer les objets endommagés.",
+    "vocabulary": [
+      "dégât",
+      "endommagé",
+      "assureur"
+    ]
+  },
+  {
+    "id": 21,
+    "category": "Logement",
+    "level": "B2",
+    "text": "Une résidence informe ses locataires que l’eau chaude sera coupée mardi de 9 h à 13 h pour des travaux de maintenance. Mise à jour 3: les consignes restent les mêmes.",
+    "question": "Quand les locataires n’auront-ils pas d’eau chaude ?",
+    "choices": [
+      "Lundi matin",
+      "Mardi matin",
+      "Mardi soir",
+      "Mercredi matin"
+    ],
+    "answer": 1,
+    "explanation": "La coupure est annoncée mardi de 9 h à 13 h.",
+    "vocabulary": [
+      "coupure",
+      "maintenance",
+      "locataire"
+    ]
+  },
+  {
+    "id": 22,
+    "category": "Travail",
+    "level": "B2",
+    "text": "Le service des ressources humaines rappelle que les demandes de congé pour les fêtes doivent être soumises avant le 15 novembre. Les réponses seront envoyées au plus tard le 1er décembre. Mise à jour 3: les consignes restent les mêmes.",
+    "question": "Que doivent faire les employés avant le 15 novembre ?",
+    "choices": [
+      "Prendre leurs vacances",
+      "Envoyer une demande de congé",
+      "Répondre au service RH",
+      "Choisir leurs horaires"
+    ],
+    "answer": 1,
+    "explanation": "Le texte demande de soumettre la demande de congé avant le 15 novembre.",
+    "vocabulary": [
+      "congé",
+      "soumettre",
+      "ressources humaines"
+    ]
+  },
+  {
+    "id": 23,
+    "category": "Transport",
+    "level": "B2",
+    "text": "En raison de travaux sur la ligne verte, les trains ne circuleront pas entre Berri-UQAM et Frontenac ce week-end. Un service de navettes sera disponible. Mise à jour 3: les consignes restent les mêmes.",
+    "question": "Quelle solution est proposée aux voyageurs ?",
+    "choices": [
+      "Prendre un taxi gratuit",
+      "Utiliser des navettes",
+      "Reporter leur voyage",
+      "Prendre la ligne orange"
+    ],
+    "answer": 1,
+    "explanation": "Un service de navettes est prévu pendant l’interruption.",
+    "vocabulary": [
+      "travaux",
+      "navette",
+      "circuler"
+    ]
+  },
+  {
+    "id": 24,
+    "category": "Santé",
+    "level": "B2",
+    "text": "La clinique accepte désormais les consultations sans rendez-vous uniquement le matin, de 8 h à 11 h. L’après-midi est réservé aux patients ayant un rendez-vous. Mise à jour 3: les consignes restent les mêmes.",
+    "question": "Qui peut venir l’après-midi ?",
+    "choices": [
+      "Tous les patients",
+      "Les patients avec rendez-vous",
+      "Seulement les enfants",
+      "Les nouveaux patients"
+    ],
+    "answer": 1,
+    "explanation": "L’après-midi est réservé aux patients ayant un rendez-vous.",
+    "vocabulary": [
+      "désormais",
+      "sans rendez-vous",
+      "réservé"
+    ]
+  },
+  {
+    "id": 25,
+    "category": "Banque",
+    "level": "B2",
+    "text": "Votre carte bancaire expirera à la fin du mois. Une nouvelle carte vous sera envoyée automatiquement à l’adresse inscrite à votre dossier. Mise à jour 3: les consignes restent les mêmes.",
+    "question": "Que doit faire le client pour recevoir sa nouvelle carte ?",
+    "choices": [
+      "Téléphoner à la banque",
+      "Se rendre en succursale",
+      "Rien, l’envoi est automatique",
+      "Remplir un formulaire"
+    ],
+    "answer": 2,
+    "explanation": "La nouvelle carte sera envoyée automatiquement.",
+    "vocabulary": [
+      "expirer",
+      "dossier",
+      "automatiquement"
+    ]
+  },
+  {
+    "id": 26,
+    "category": "École",
+    "level": "B2",
+    "text": "Les parents qui souhaitent inscrire leur enfant au service de garde doivent remplir le formulaire en ligne avant vendredi. Après cette date, les places restantes seront attribuées selon les disponibilités. Mise à jour 3: les consignes restent les mêmes.",
+    "question": "Pourquoi faut-il remplir le formulaire avant vendredi ?",
+    "choices": [
+      "Pour obtenir une réduction",
+      "Pour augmenter les chances d’avoir une place",
+      "Pour changer d’école",
+      "Pour recevoir les notes"
+    ],
+    "answer": 1,
+    "explanation": "Après vendredi, seules les places encore disponibles seront attribuées.",
+    "vocabulary": [
+      "inscrire",
+      "service de garde",
+      "disponibilité"
+    ]
+  },
+  {
+    "id": 27,
+    "category": "Administration",
+    "level": "B2",
+    "text": "Pour renouveler votre permis, vous devez présenter une pièce d’identité, une preuve d’adresse récente et votre ancien permis. Les paiements en espèces ne sont pas acceptés. Mise à jour 3: les consignes restent les mêmes.",
+    "question": "Quel document n’est pas demandé ?",
+    "choices": [
+      "Une preuve d’adresse",
+      "Une pièce d’identité",
+      "L’ancien permis",
+      "Une preuve d’emploi"
+    ],
+    "answer": 3,
+    "explanation": "Le texte ne demande aucune preuve d’emploi.",
+    "vocabulary": [
+      "renouveler",
+      "preuve",
+      "espèces"
+    ]
+  },
+  {
+    "id": 28,
+    "category": "Commerce",
+    "level": "B2",
+    "text": "Le magasin offre 20 % de réduction sur tous les manteaux jusqu’à dimanche, sauf les articles déjà soldés. Mise à jour 3: les consignes restent les mêmes.",
+    "question": "Quels articles ne bénéficient pas de la réduction ?",
+    "choices": [
+      "Les manteaux pour enfants",
+      "Les manteaux déjà soldés",
+      "Les manteaux noirs",
+      "Les manteaux achetés dimanche"
+    ],
+    "answer": 1,
+    "explanation": "Les articles déjà soldés sont exclus de la promotion.",
+    "vocabulary": [
+      "réduction",
+      "soldé",
+      "sauf"
+    ]
+  },
+  {
+    "id": 29,
+    "category": "Loisirs",
+    "level": "B2",
+    "text": "La bibliothèque sera exceptionnellement fermée samedi matin pour une formation du personnel. Elle rouvrira à 14 h. Mise à jour 3: les consignes restent les mêmes.",
+    "question": "À quelle heure la bibliothèque rouvrira-t-elle ?",
+    "choices": [
+      "10 h",
+      "12 h",
+      "14 h",
+      "16 h"
+    ],
+    "answer": 2,
+    "explanation": "Le texte indique une réouverture à 14 h.",
+    "vocabulary": [
+      "exceptionnellement",
+      "formation",
+      "rouvrir"
+    ]
+  },
+  {
+    "id": 30,
+    "category": "Assurance",
+    "level": "B2",
+    "text": "En cas de dégât d’eau, prenez des photos avant de déplacer les objets endommagés et communiquez avec votre assureur dans les plus brefs délais. Mise à jour 3: les consignes restent les mêmes.",
+    "question": "Que faut-il faire avant de déplacer les objets ?",
+    "choices": [
+      "Les jeter",
+      "Les nettoyer",
+      "Les photographier",
+      "Les remplacer"
+    ],
+    "answer": 2,
+    "explanation": "Il faut prendre des photos avant de déplacer les objets endommagés.",
+    "vocabulary": [
+      "dégât",
+      "endommagé",
+      "assureur"
+    ]
+  }
+]
