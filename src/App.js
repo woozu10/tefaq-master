@@ -1,3 +1,4 @@
+import { EEResult } from "./pages/EEResult.js";
 import { EE } from "./pages/EE.js";
 import { Review } from "./pages/Review.js";
 import { Dashboard } from "./pages/Dashboard.js";
@@ -94,6 +95,8 @@ export function App() {
     }
       case "ee-quiz":
     return EE();
+      case "ee-result":
+    return EEResult();
 
     default:
       return Dashboard();
